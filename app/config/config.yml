@@ -78,3 +78,18 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+galmi_airways:
+    sources:
+        AirAsia:
+            source: "AirAsia"
+            uri:
+                routes: "http://www.airasia.com/th/en/home.page"
+                results: "https://booking.airasia.com/Flight/InternalSelect"
+            parser: "galmi_airways.parser.airasia"
+        NokAir:
+            source: "NokAir"
+            uri:
+                routes: "http://www.nokair.com/nokconnext/aspx/Index.aspx?currlang=en-US"
+                results: "http://www.nokair.com/nokconnext/aspx/Index.aspx?currlang=en-US"
+            parser: "galmi_airways.parser.nokair"

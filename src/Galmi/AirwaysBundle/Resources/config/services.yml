@@ -1,0 +1,13 @@
+services:
+#    galmi_airways.example:
+#        class: Galmi\AirwaysBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+    galmi_airways.handlers.downloader:
+        class: Galmi\AirwaysBundle\Handlers\Downloader
+
+    galmi_airways.handler:
+        class: Galmi\AirwaysBundle\Handlers\Handler
+        arguments: [%galmi_airways.airasia.sources%, @galmi_airways.handlers.downloader]
+
+    galmi_airways.parser.airasia:
+        class: Galmi\AirwaysBundle\Handlers\Parsers\AirAsia
