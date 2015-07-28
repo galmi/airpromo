@@ -26,7 +26,7 @@ class DownloaderTest extends WebTestCase
     public function testPost()
     {
         $downloader = new Downloader();
-        $html = $downloader->post('http://www.posttestserver.com/post.php', array('param' => 'value'));
+        $html = $downloader->submit('http://www.posttestserver.com/post.php', array('param' => 'value'));
         $this->assertContains('Successfully dumped 1 post variables', $html);
     }
 }

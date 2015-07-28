@@ -38,6 +38,7 @@ class Result
     public function setDate($date)
     {
         $this->date = $date;
+        return $this;
     }
 
     /**
@@ -54,6 +55,7 @@ class Result
     public function setOrigin($origin)
     {
         $this->origin = $origin;
+        return $this;
     }
 
     /**
@@ -70,6 +72,7 @@ class Result
     public function setDestination($destination)
     {
         $this->destination = $destination;
+        return $this;
     }
 
     /**
@@ -86,6 +89,7 @@ class Result
     public function setDepartureTime($departureTime)
     {
         $this->departureTime = $departureTime;
+        return $this;
     }
 
     /**
@@ -102,6 +106,7 @@ class Result
     public function setArrivalTime($arrivalTime)
     {
         $this->arrivalTime = $arrivalTime;
+        return $this;
     }
 
     /**
@@ -118,10 +123,11 @@ class Result
     public function setPrice($price)
     {
         $this->price = $price;
+        return $this;
     }
-    
+
     public function __toString()
     {
-        return $this->getDepartureTime(). ' ' . $this->getOrigin() . ' ' . $this->getArrivalTime() . ' ' . $this->getDestination() . ' ' . $this->getPrice();
+        return $this->getDepartureTime() . ' ' . $this->getOrigin() . ' ' . $this->getArrivalTime() . ' ' . $this->getDestination() . ' ' . $this->getPrice();
     }
 }

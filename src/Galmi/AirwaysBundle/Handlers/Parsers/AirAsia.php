@@ -19,6 +19,7 @@ class AirAsia
      */
     /** @var string */
     private $uri = 'https://booking.airasia.com/Flight/InternalSelect';
+    /** @var  Downloader */
     private $downloader;
 
     public function __construct($downloader)
@@ -34,6 +35,7 @@ class AirAsia
     {
         $uri = $this->uri . $this->getParamsString($params);
         $html = $this->downloader->get($uri);
+        return $this->parseResults($html);
     }
 
     /**
@@ -45,7 +47,7 @@ class AirAsia
         $data = [
             'o1' => $params->getOrigin(),
             'd1' => $params->getDestination(),
-            'dd1' => $params->getDepartDate()?$params->getDepartDate()->format('Y-m-d'):null,
+            'dd1' => $params->getDepartDate() ? $params->getDepartDate()->format('Y-m-d') : null,
             'ADT' => 1,
             'CHD' => 0,
             'inl' => 0,
@@ -72,8 +74,8 @@ class AirAsia
         $departure = $table_avail_tables->first();
         $departure
             ->filter('.fare-light-row, .fare-dark-row')
-            ->reduce(function (Crawler $node, $i) use(&$results) {
-                if ($node->filter('.avail-table-detail-table')->count()==0)
+            ->reduce(function (Crawler $node) use (&$results) {
+                if ($node->filter('.avail-table-detail-table')->count() == 0)
                     return;
                 $result = new Result();
                 $result->setDepartureTime($node->filter('.avail-table-detail-table')->eq(0)->filter('.avail-table-detail .text-center div')->eq(0)->text());

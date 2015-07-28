@@ -10,6 +10,7 @@ namespace Galmi\AirwaysBundle\Handlers;
 
 
 use Buzz\Browser;
+use Symfony\Component\HttpFoundation\Request;
 
 class Downloader
 {
@@ -23,6 +24,7 @@ class Downloader
     {
         $this->browser = new Browser($this->client);
     }
+
     /**
      * @param string $uri
      * @return string
@@ -39,9 +41,21 @@ class Downloader
      * @param array $data
      * @return string
      */
-    public function post($uri, array $data)
+    public function submit($uri, array $data)
     {
         $response = $this->browser->submit($uri, $data);
+
+        return $response->getContent();
+    }
+
+    /**
+     * @param string $uri
+     * @param string $data
+     * @return string
+     */
+    public function post($uri, $data)
+    {
+        $response = $this->browser->post($uri, array(), $data);
 
         return $response->getContent();
     }
