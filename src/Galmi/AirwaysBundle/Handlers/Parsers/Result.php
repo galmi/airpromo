@@ -128,6 +128,6 @@ class Result
 
     public function __toString()
     {
-        return $this->getDepartureTime() . ' ' . $this->getOrigin() . ' ' . $this->getArrivalTime() . ' ' . $this->getDestination() . ' ' . $this->getPrice();
+        return $this->getDate()->format('d.m.Y') . ' ' . $this->getDepartureTime() . ' ' . $this->getOrigin() . ' ' . $this->getArrivalTime() . ' ' . $this->getDestination() . ' ' . $this->getPrice();
     }
 }

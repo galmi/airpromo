@@ -35,7 +35,7 @@ class AirAsia
     {
         $uri = $this->uri . $this->getParamsString($params);
         $html = $this->downloader->get($uri);
-        return $this->parseResults($html);
+        return $this->parseResults($html, $params);
     }
 
     /**
@@ -66,7 +66,7 @@ class AirAsia
      * @param $html
      * @return Result[]
      */
-    protected function parseResults($html)
+    protected function parseResults($html, Params $params)
     {
         $results = [];
         $crawler = new Crawler($html);
@@ -74,7 +74,7 @@ class AirAsia
         $departure = $table_avail_tables->first();
         $departure
             ->filter('.fare-light-row, .fare-dark-row')
-            ->reduce(function (Crawler $node) use (&$results) {
+            ->reduce(function (Crawler $node) use (&$results, $params) {
                 if ($node->filter('.avail-table-detail-table')->count() == 0)
                     return;
                 $result = new Result();
@@ -87,6 +87,7 @@ class AirAsia
                     $price = $node->filter('.LF .avail-fare-price:not(.discount)')->text();
                 $price = filter_var($price, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $result->setPrice($price);
+                $result->setDate($params->getDepartDate());
 
                 $results[] = $result;
             });

@@ -81,9 +81,9 @@ class NokAirTest extends WebTestCase
         $results = $parseResults->invokeArgs($nokairParser, [$downloader->get('123'), $this->createParamsReturn()]);
 
         $resultCheck = [
-            '07:50 BKK 09:00 URT 638.32',
-            '14:20 BKK 15:30 URT 2609.35',
-            '18:10 BKK 19:20 URT 1300.93'
+            '20.08.2015 07:50 BKK 09:00 URT 638.32',
+            '20.08.2015 14:20 BKK 15:30 URT 2609.35',
+            '20.08.2015 18:10 BKK 19:20 URT 1300.93'
         ];
 
         foreach ($results as &$row) {

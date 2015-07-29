@@ -1,0 +1,1285 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Thai Lion Air - Freedom to Fly</title>
+    <!--Inclusion of Common javascript files-->
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>-->
+
+    <script src="/mobile/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="/mobile/Scripts/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/mobile/Scripts/bootstrap/js/modernizr.custom.js" type="text/javascript"></script>
+    <script src="/mobile/Scripts/bootstrap/js/date.js" type="text/javascript"></script>
+    <script src="/mobile/Scripts/bootstrap/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="/mobile/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+    <!--End of Inclusion of Common javascript files-->
+    <!--Inclusion of Style Sheets-->
+    <link href="/mobile/Styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/mobile/Customers/207/Styles/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/mobile/Customers/207/Styles/css/flight-style.css" rel="stylesheet" type="text/css"/>
+    <link href="/mobile/Customers/207/Styles/css/font-icons2.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/Customers/207/Styles/css/icon-font.css" rel="stylesheet" type="text/css"/>
+    <link href="/mobile/Styles/bootstrap/css/datepicker.css"rel="stylesheet" type="text/css" media="all"  />
+    <!--End of Inclusion of Style Sheets-->
+
+
+</head>
+<body>
+<div id="divHomeHeader" style="width: 100%;">
+
+
+    <header class="header-red">
+        <div class="wrapper">
+            <div>
+                <div class="head-left">
+                    <a class="nav-btn" href="javascript:void(0);" onclick="GoHome();" id="backLink"><i class="fa fa-bars"></i></a>
+                </div>
+                <div class="head-mid">
+                    <a href="javascript:void(0);" onclick="GoHome();">
+                        <img src="/mobile/Customers/207/logo.png"/></a>
+
+                </div>
+
+                <div class="head-right">
+
+
+                    <a href="#myLoginModal" role="button" class="nav-btn" data-toggle="modal" id="lnkShowLogin" data-login="false"><i class="fa fa-user"></i></a>
+
+                </div>
+                <label id="loginInstruction" style="display: none;" class="login-indicator">Please login and get the user details</label>
+            </div>
+            <div class="hidden-menu" id="main_menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                    <li><a href="#">Link 5</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</div>
+<div id="divHomeContent" style="width: 100%; margin-top: 51px;">
+
+
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready()
+        {
+            $("#show_menu").click(function () {
+                $("#main_menu").slideToggle("slow");
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: '/mobile/BookFlight/IsUserLoggedIn',
+                data: { t: GetParameterValues('t') },
+                success: function (data) {
+                    if (data != null && data != '') {
+                        //$("#forgotPassword").css("display", "none");
+                        //$("#loginform").css("display", "none");
+                        //$("#alreadySignedIn").css("display", "block");
+                        //$("#signoutform").css("display", "block");
+                    }
+                    else {
+                        //$("#forgotPassword").css("display", "block");
+                        //$("#loginform").css("display", "block");
+                        //$("#alreadySignedIn").css("display", "none");
+                        //$("#signoutform").css("display", "none");
+                    }
+                },
+                error: function (err) {
+
+                }
+            });
+
+            function GetParameterValues(param) {
+                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < url.length; i++) {
+                    var urlparam = url[i].split('=');
+                    if (urlparam[0] == param) {
+                        return urlparam[1];
+                    }
+                }
+            }
+            //$("#myModal").modal('show');
+            /* $('.pop_launch').click(function(){
+             var target_pop = $(this).attr("href");
+             //alert("hi : "+target_title);
+             loadModal('#'+target_title);
+             });
+             function loadModal (modal) {
+             lv_target = $(modal).attr('data-target');
+             lv_url = $(modal).attr('href');
+             $(lv_target).load(lv_url);
+             //alert("modal : "+modal)
+             $(modal).modal('show');
+             }*/
+
+            /// To display the flight selection on load
+            function SelectFlightOnLoad(divFlightSelect) {
+                var selFlight;
+                if (divFlightSelect != null && divFlightSelect != 'undefined' && divFlightSelect != '') {
+
+                    selFlight = "#" + divFlightSelect;
+                    if (!$(selFlight).hasClass("clsOBSelectedFlight")) {
+                        $(selFlight).addClass("clsOBSelectedFlight");
+                    }
+                }
+
+            }
+            function SelectInsuranceOnLoad() {
+                if ($("#divNoInsurance").hasClass("clsOBSelectedFlight")) {
+                    $("#divNoInsurance").removeClass("clsOBSelectedFlight");
+                }
+                if (!$("#divInsurance").hasClass("clsOBSelectedFlight")) {
+                    $("#divInsurance").addClass("clsOBSelectedFlight");
+                }
+            }
+            //$("#divLoadingImage").css("display", "none");
+        }
+
+
+    </script>
+    <script type="text/javascript" language="javascript">
+        function GetParameterValues(param) {
+            var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < url.length; i++) {
+                var urlparam = url[i].split('=');
+                if (urlparam[0] == param) {
+                    return urlparam[1];
+                }
+            }
+        }
+        function setSelectedFlight(FIndex, FlightClass, category, AFIndex, divSelFlight) {
+            $("#divLoadingImage").css("display", "block");
+            try {
+
+                var selFlightDiv;
+                if (FlightClass != null && FlightClass != 'undefined' && FlightClass != ''
+                        && category != null && category != 'undefined' && category != ''
+                        && divSelFlight != null && divSelFlight != 'undefined' && divSelFlight != '') {
+
+
+                    selFlightDiv = "#" + divSelFlight;
+
+                    // Called when selected flights is unselected
+                    if ($(selFlightDiv).hasClass("clsOBSelectedFlight")) {
+                        $(selFlightDiv).removeClass("clsOBSelectedFlight");
+
+                        if (category == "OB") {       // Checking whether the selected flight is outbound
+
+                            $("#hfOBClass").val('');  // Settings hidden field value as empty in order to show flight error .
+                            $("#hfOBIndex").val(-1);
+                            $("#hfOBAFIndex").val('');
+                            FIndex = -1;
+                            FlightClass = "";
+                            AFIndex = 0;
+
+                            // Calling Ajax functionality for the selecting a flight
+                            CallingSetOBSelectedFlight(FIndex, FlightClass, category, AFIndex, divSelFlight);
+
+                        }
+                        else if (category == "IB") {
+                            $("#hfIBClass").val('');
+                            $("#hfIBIndex").val(-1);
+                            $("#hfIBAFIndex").val('');
+                            FIndex = -1;
+                            FlightClass = "";
+                            AFIndex = 0;
+
+                            // Calling Ajax functionality for the selecting a flight
+                            CallingSetIBSelectedFlight(FIndex, FlightClass, category, AFIndex, divSelFlight);
+                        }
+                    }
+                    else {
+
+                        if (category == "OB") {
+
+                            document.getElementById('hfOBClass').value = FlightClass;
+                            document.getElementById('hfOBIndex').value = FIndex;
+                            document.getElementById('hfOBAFIndex').value = AFIndex;
+
+                            if (FlightClass == "E") {     /// removing the other class values
+                                $("#divOBEconomy").children().removeClass("clsOBSelectedFlight");
+                            }
+                            else if (FlightClass == "P") {
+                                $("#divOBPromo").children().removeClass("clsOBSelectedFlight");
+                            }
+                            else if (FlightClass == "B") {
+                                $("#divOBBusiness").children().removeClass("clsOBSelectedFlight");
+                            }
+
+                            // Calling Ajax functionality for the selecting a flight
+                            CallingSetOBSelectedFlight(FIndex, FlightClass, category, AFIndex, divSelFlight);
+                        }
+                        else if (category == "IB") {
+
+                            document.getElementById('hfIBClass').value = FlightClass;
+                            document.getElementById('hfIBIndex').value = FIndex;
+                            document.getElementById('hfIBAFIndex').value = AFIndex;
+
+                            if (FlightClass == "E") {     /// removing the other class values
+                                $("#divIBEconomy").children().removeClass("clsOBSelectedFlight");
+                            }
+                            else if (FlightClass == "P") {
+                                $("#divIBPromo").children().removeClass("clsOBSelectedFlight");
+                            }
+                            else if (FlightClass == "B") {
+                                $("#divIBBusiness").children().removeClass("clsOBSelectedFlight");
+                            }
+                            // Calling Ajax functionality for the selecting a flight
+                            CallingSetIBSelectedFlight(FIndex, FlightClass, category, AFIndex, divSelFlight);
+                        }
+
+                        //$(selFlightDiv).addClass("clsOBSelectedFlight");       // addding the selected flight class
+                    }
+                    // Exit - hasClass
+
+                }
+
+                category = category.toUpperCase();
+                //$("#divLoadingImage").css("display", "none");
+            }
+            catch (error) {
+                //alert(error);
+                $("#divLoadingImage").css("display", "none");
+            }
+        }
+
+        function setSelectedInsurance(divInsuranceOption) {
+            $("#divLoadingImage").css("display", "block");
+            try
+            {
+                var selInsuranceOption;
+                var OtherInsuranceOption;
+
+                selInsuranceOption = "#divNoInsurance";
+                OtherInsuranceOption = "#divInsurance";
+                if (divInsuranceOption == "1") {
+                    selInsuranceOption = "#divInsurance";
+                    OtherInsuranceOption = "#divNoInsurance";
+                }
+                $("#hfInsuranceStatus").val(divInsuranceOption);
+                $(selInsuranceOption).addClass("clsOBSelectedFlight");
+                $(OtherInsuranceOption).removeClass("clsOBSelectedFlight");
+                SetSelectedInsurnace(divInsuranceOption);
+                $("#divLoadingImage").css("display", "none");
+            }
+            catch (e) {
+                $("#divLoadingImage").css("display", "none");
+            }
+        }
+
+        function insuranceSelection() {
+            $("#divLoadingImage").css("display", "block");
+            try
+            {
+                if ($('#divInsurance').hasClass('clsOBSelectedFlight'))
+                    $("#hfInsuranceStatus").val(1);
+                else
+                    $("#hfInsuranceStatus").val(0);
+                var selectedValue = $("#hfInsuranceStatus").val();
+                SetSelectedInsurnace(selectedValue);
+                $("#divLoadingImage").css("display", "none");
+            }
+            catch (e) {
+                $("#divLoadingImage").css("display", "none");
+            }
+        }
+
+        function SetSelectedInsurnace(selectedValue) {
+            $.ajax({
+                type: 'POST',
+                url: '/mobile/Flight/SetSelectedInsurance',
+                data: { isSelected: selectedValue, t: GetParameterValues('t') },
+                success: function (data) {
+                    DelayedLoader();
+                    window.location.reload(true);
+                },
+                error: function (err) {
+                    DelayedLoader();
+                    window.location.reload(true);
+                }
+            });
+        }
+
+
+        function modifyselection() {
+            $.ajax({
+                type: 'POST',
+                url: '/mobile/Flight/ModifySelection',
+                data: { t: GetParameterValues('t') },
+                success: function (data) {
+                    DelayedLoader();
+                    window.location.reload(true);
+                },
+                error: function (err) {
+                    DelayedLoader();
+                    window.location.reload(true);
+                }
+            });
+        }
+
+        function CheckForFlightSelection() {
+            $("#divLoadingImage").css("display", "block");
+            $("t").val(GetParameterValues('t'));
+            var result;
+            var depClass = $('#hfOBClass').val();
+            var depIndex = $('#hfOBIndex').val();
+            var InsAvail = "0";
+            if ($("#hfInsuranceAvailStatus") != null
+                    && $("#hfInsuranceAvailStatus") != undefined) {
+                InsAvail = $("#hfInsuranceAvailStatus").val();
+            }
+
+
+            if (depClass == null || depClass == 'undefined' || depClass == '' && depIndex == null || depIndex == 'undefined' || depIndex == '' || depIndex == '-1') {
+                // alert('Select Departure & Arrival Flight .');
+                // return false;
+            }
+            else {
+                result = true;
+            }
+            //$("#divLoadingImage").css("display", "none");
+            return result;
+        }
+
+        function divOnClick() {
+            alert("Economy Flight Selection .");
+        }
+
+        // Calling the SetSelectedFlight method to set the selected flights index
+        // for flight booking
+        function CallingSetIBSelectedFlight(FIndex, FlightClass, category, AFIndex, divSelFlight) {
+            $.ajax({
+                type: 'POST',
+                url: '/mobile/Flight/SetSelectedFlightIBIndex',
+                data: { pIBIndex: FIndex, pIBClass: FlightClass, pIBAFIndex: AFIndex, IsOBFlight: "2", t: GetParameterValues('t') },
+                success: function (data) {
+                    DelayedLoader();
+                    window.location.reload(true);
+                },
+                error: function (err) {
+                    DelayedLoader();
+                    window.location.reload(true);
+                }
+            });
+
+        }
+
+        function CallingSetOBSelectedFlight(FIndex, FlightClass, category, AFIndex, divSelFlight) {
+
+            $.ajax({
+                type: 'POST',
+                url: '/mobile/Flight/SetSelectedFlightIBIndex',
+                data: { pIBIndex: FIndex, pIBClass: FlightClass, pIBAFIndex: AFIndex, IsOBFlight: "1", t: GetParameterValues('t') },
+                success: function (data) {
+                    DelayedLoader();
+                    window.location.reload(true);
+                },
+                error: function (err) {
+                    DelayedLoader();
+                    window.location.reload(true);
+                }
+            });
+        }
+
+        function DelayedLoader() {
+            setTimeout(function () {
+                $("#divLoadingImage").css("display", "block");
+            }, 1000);
+        }
+
+    </script>
+    <div style="display: none" id="divLoadingImage" class="trans-bg">
+        <div class="popup-body iframe-inside">
+            <div class="f_logo">
+                <img src="/mobile/Customers/207/f_img.png" />
+            </div>
+            <p id="pls_wait">Please wait</p>
+            <div class="loading_div">
+                <span></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="myLoginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-header">
+            <div id="forgotPassword">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+                <h3 id="myModalLabel">
+                    USER LOGIN ?
+                </h3>
+            </div>
+        </div>
+        <input type="hidden" id="lblErrInvalidLogin" value="Invalid Login Credentials" />
+        <input type="hidden" id="lblErrPwdNotSend" value="Password is not sent to the Email ID ." />
+        <div class="modal-body">
+            <div class="row-fluid resultPage flight_list" id="divExtCust">
+                <div id="loginform">
+                    <div id="extpnl">
+                        <div class="span12 resultRow">
+                            <span>
+                                <p>
+                                    Welcome back! Please Sign in to retrieve all your details that you have entered before.
+                                </p>
+                            </span>
+                        </div>
+                        <div class="span12 resultRow" style="">
+                            <span class="clm4">
+                                <p>User Name : <em>*</em></p>
+                            </span>
+                            <span class="clm8">
+                                <input type="email" id="txtUserName1" name="txtUserName1" placeholder="User Name" />
+                                <span id="errMsgUserName1" class="err_red hide">User Name cannot be empty</span>
+                                <span id="errMsgValidUserName1" class="err_red hide">Enter a valid Email</span>
+                            </span>
+                        </div>
+                        <div class="span12 resultRow">
+                            <span class="clm4">
+                                <p>Password : <em>*</em></p>
+                            </span>
+                            <span class="clm8">
+                                <input type="password" id="txtPassword1" name="txtPassword1" placeholder="Password" />
+                                <span id="errMsgPassword1" class="err_red hide">Password Cannot be empty </span>
+                                <span id="errInvalidPass1" class="err_red hide">Please Enter Valid Password</span>
+                            </span>
+                        </div>
+                        <button id="btn-login" type="button" class="btn btn-danger pull-left" data-loading-text="Loading..."
+                                onclick="ValidatePaxLogin();">
+                            <!--    onclick="location.href=Url.Action("GetLoginDetails", "BookFlight")"-->
+                            <!--"location.href='<%: Url.Action("GetLoginDetails", "BookFlight" , new {UserName : txtUserName , Password:txtPassword}) %>'">
+                            -->
+                            <!-- onclick="CheckForValidPax();"-->
+                            Login
+                        </button>
+                        &nbsp;&nbsp;
+
+                        <a href="#myModal" role="button" onclick="forgotPassword()" class="btn pull-left" data-toggle="modal" style="margin-top: 8px;">Forgot Password</a>
+
+                        <a role="button" class="btn pull-right" data-toggle="modal" style="margin-top: 8px;" onclick="openCreateAcc()">Create Account </a>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    function openCreateAcc() {
+                        var curl = "/mobile/Profile" + "?t=" + GetParameterValues1('t') + '&isCreate=true';
+                        window.location.href = curl;
+                    }
+                    $(document).ready(function () {
+                        $("#lnkShowLogin").attr('data-login', false);
+                    });
+                </script>
+
+            </div>
+            <input type="hidden" value="" id="hdnTabID" />
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true" style="display: none;">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                ×
+            </button>
+            <h3 id="myModalLabel">FORGOT YOUR PASSWORD ?</h3>
+        </div>
+        <div class="modal-body">
+            <div class="content clear">
+                <div class="row-fluid resultPage">
+
+                    <div class="span12 resultRow" style="">
+                    <span class="clm4">
+                        <p>
+                            Please enter the Email ID : <em>*</em>
+                        </p>
+                    </span>
+                    <span class="clm8">
+                        <input type="text" id="txtLoginUserName" name="txtLoginUserName" />
+                        <span id="errMsg" class="err_red hide">Please enter a valid Email ID</span>
+                        <span id="successMsg" class="success hide">Password has been sent to the Email ID</span>
+                    </span>
+                    </div>
+                    <button class="btn btn-danger pull-right" type="button" id="submit_forgot" onclick="return IsSendEmail()">
+                        Send Password
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true" style="display: none;">
+                Close
+            </button>
+
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        $(document).ready()
+        {
+            $("#myLoginModal").on("show", function () {
+                $(".err_red").removeClass('show').addClass('hide');
+                $(".err_red").parent().removeClass('er-show');
+                $('#txtUserName1').val('');
+                $('#txtPassword1').val('');
+            });
+            function forgotPassword() {
+                $('#myLoginModal').modal('hide');
+                $("#txtLoginUserName").val('');
+                $(".err_red").removeClass('show').addClass('hide').parent().removeClass('er-show');
+                $(".success").removeClass('show').addClass('hide').parent().removeClass('er-show');
+                //$('.err_red').css('display', 'none');
+                //$('#successMsg').css('display', 'none');
+                //$("#forgotPasswordModal").dialog("open");
+            }
+
+            function IsSendEmail() {
+
+                $(".success").removeClass('show').addClass('hide').parent().removeClass('er-show');
+                $(".err_red").removeClass('show').addClass('hide').parent().removeClass('er-show');
+
+                //$("#successMsg").css("display", "none");
+                //$("#errMsg").css("display", "none");
+                var email = $("#txtLoginUserName").val();
+
+                if (email != null && email != 'undefined' && $.trim(email) != '') {
+
+                    $.post('/mobile/ForgotPassword/SendForgotPasswordMailToUser', { pEmail: email, t: GetParameterValues('t') }, function (data) {
+
+                        if (data != null) {
+
+                            if (!data.isInValidEmail) {
+                                $("#errMsg").removeClass('show').addClass('hide').parent().removeClass('er-show');
+                                $("#successMsg").removeClass('hide').addClass('show').parent().addClass('er-show');
+                                if (data.isMailSent) {
+
+                                    if (data.SuccessMsg != null && data.SuccessMsg != 'undefined' && $.trim(data.SuccessMsg) != '') {
+                                        $("#successMsg").css("color", "green");
+                                        $("#successMsg").text(data.SuccessMsg);
+                                    }
+                                }
+                                else if (data.isNoRecordFound) {
+
+                                    if (data.NoRecordFoundErrMsg != null && data.NoRecordFoundErrMsg != 'undefined' && $.trim(data.NoRecordFoundErrMsg) != '') {
+                                        $("#successMsg").css("color", "red");
+                                        $("#successMsg").text(data.NoRecordFoundErrMsg);
+                                    }
+                                }
+                                else {
+                                    $("#successMsg").css("color", "red");
+                                    $("#successMsg").text($("#lblErrPwdNotSend").val());
+                                    //$("#successMsg").text("Password is not sent to the Email ID .");
+                                }
+                            }
+                            else {
+
+                                $("#errMsg").removeClass('hide').addClass('show').parent().addClass('er-show');
+                                $("#successMsg").removeClass('show').addClass('hide').parent().removeClass('er-show');
+                                if (data.InValidEmailMsg != null && data.InValidEmailMsg != 'undefined' && $.trim(data.InValidEmailMsg) != '') {
+                                    $("#errMsg").text(data.InValidEmailMsg);
+
+                                }
+                            }
+                        }
+                        else {
+                            $("#errMsg").removeClass('hide').addClass('show').parent().addClass('er-show');
+                        }
+
+                    })
+                }
+                else {
+                    $("#errMsg").removeClass('hide').addClass('show').parent().addClass('er-show');
+                }
+
+            }
+        }
+
+
+        function ValidatePaxLogin() {
+            $(".err_red").removeClass('show').addClass('hide');
+            //$("#errInvalidPass").css("display", "none");
+
+            //$("#divLoadingImage").show();
+            //if ($(e.target).attr('id') == 'mybookings')
+            //    alert('mybookings');
+
+            var curPage = $("#btn-login").attr('data-url');
+            var pUserName = $.trim($("#txtUserName1").val());
+            var pPassword = $.trim($("#txtPassword1").val());
+            var errFlag = 0;
+
+            if (!pUserName) { $("#errMsgUserName1").addClass('show').removeClass('hide').parent().addClass('er-show'); errFlag = 1; }
+            else if (!isValidLoginPaxEmail(pUserName)) { $("#errMsgValidUserName1").addClass('show').removeClass('hide').parent().addClass('er-show'); errFlag = 1; }
+
+            if (!pPassword) { $("#errMsgPassword1").addClass('show').removeClass('hide').parent().addClass('er-show'); errFlag = 1; }
+            if (errFlag == 1) {
+                //$("#divLoadingImage").hide();
+                return false;
+            }
+            $("#divLoadingImage").css("display", "block");
+            $.ajax({
+                type: 'POST',
+                url: '/mobile/Login/GetLoginDetails',
+                data: { UserName: pUserName, Password: pPassword, t: GetParameterValues1('t') },
+                success: function (data) {
+                    $("#divLoadingImage").css("display", "none");
+                    if (data != null && data != undefined && data != '') {
+                        $('#txtUserName1').val('');
+                        $('#txtPassword1').val('');
+                        if (curPage == 'mybookings') {
+                            var curl = "/mobile/MyBookings" + "?t=" + GetParameterValues1('t');
+                            //var curl = "/MyBookings?t=" + GetParameterValues1('t');
+                            window.location.href = curl;
+                        }
+                        else if (curPage == "myprofile") {
+                            var curl = "/mobile/Profile" + "?t=" + GetParameterValues1('t');
+                            //var curl = "/Profile?t=" + GetParameterValues1('t');
+                            window.location.href = curl;
+                        }
+                        //}
+                        //else if (curPage == "myprofile") {
+                        //    var curl = "/Profile?t=" + GetParameterValues1('t');
+                        //    window.location.href = curl;
+                        //}
+                        else
+                            window.location.reload();
+                        //$('#myLoginModal').modal('hide');
+                        //$('#myLoginModal').style.display = 'none';
+                        //alert('ok');
+                    }
+                    else {
+                        $('#txtPassword1').val('');
+                        alert($("#lblErrInvalidLogin").val());
+                        //alert('Invalid Login Credentials');
+                        //$("#extpnl").slideToggle("slow");
+                        //$("#divLoadingImage").hide();
+                    }
+                },
+                error: function (err) {
+                    $("#divLoadingImage").css("display", "none");
+                    alert($("#lblErrInvalidLogin").val());
+                    //alert('Invalid Login Credentials');
+                    //$("#extpnl").slideToggle("slow");
+                    //$("#divLoadingImage").hide();
+                    //alert(err);
+                    //$("#divLoadingImage").hide();
+                }
+            });
+
+            $("#divLoadingImage").css("display", "none");
+        }
+
+        function openMyBookingsLogin() {
+            $.ajax({
+                type: "POST",
+                url: "/Home/MyBookings/",
+                data: { t: '35' },
+                success: function (data) {
+                    console.log(data);
+                    window.location.href = data;
+                },
+                error: function () { }
+            });
+        }
+        function isValidLoginPaxEmail(emailID) {
+
+            var isValid = false;
+            $.ajax({
+                type: 'POST',
+                url: '/mobile/BookFlight/isValidLoginEmail',
+                data: { pEmail: emailID },
+                success: function (data) {
+                    if (data.isValidBookingEmail) { isValid = true; }
+                    else { isValid = false; }
+                },
+                async: false
+            });
+
+
+
+            return isValid;
+        }
+
+        function GetParameterValues1(param) {
+            var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < url.length; i++) {
+                var urlparam = url[i].split('=');
+                if (urlparam[0] == param) {
+                    if (urlparam[1] != null && urlparam[1] != 'undefined' && urlparam[1] != ''
+                            && urlparam[1].indexOf('#') != -1) {
+                        var ps = urlparam[1].split('#');
+                        if (ps.length > 0) {
+                            urlparam[1] = ps[0];
+                        }
+                    }
+                    return urlparam[1];
+                }
+            }
+        }
+        function GetParameterValues(param) {
+            var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < url.length; i++) {
+                var urlparam = url[i].split('=');
+                if (urlparam[0] == param) {
+                    if (urlparam[1] != null && urlparam[1] != 'undefined' && urlparam[1] != ''
+                            && urlparam[1].indexOf('#') != -1) {
+                        var ps = urlparam[1].split('#');
+                        if (ps.length > 0) {
+                            urlparam[1] = ps[0];
+                        }
+                    }
+                    return urlparam[1];
+                }
+            }
+        }
+        function GetTabValueFromQryString(param) {
+            var qt = "";
+            var t = "";
+            var tabid = "";
+
+            var tbid = GetParameterValues1(param);
+            if (tbid != null && tbid != '' && tbid != 'undefined') {
+                return tbid;
+            }
+
+
+
+            try {
+                qt = "35";
+                t = "35";
+
+            }
+            catch (e) { }
+
+            if (qt != null && qt != '' && qt.indexOf("#") == -1) {
+                tabid = t;
+            }
+            else if (qt != null && qt != '' && qt.indexOf("#") != -1) {
+                var ps = qt.split('#');
+                if (ps.length > 0) {
+                    tabid = ps[0];
+                }
+            }
+
+            if (tabid == "") {
+                var hdnabid = $("#hdnTabID").val();
+                if (hdnabid != null && hdnabid != '') {
+                    tabid = hdnabid;
+                }
+            }
+            else {
+                $("#hdnTabID").val(tabid);
+            }
+            return tabid;
+        }
+
+        function logout() {
+            $.ajax({
+                type: 'POST',
+                url: '/mobile/Login/Logout',
+                data: { t: GetParameterValues1('t') },
+                success: function (data) {
+
+                    if (data == true) {
+                        if (window.location.href.indexOf("MyBookings") > -1) {
+                            var curl = "/mobile/Home" + "?t=" + GetParameterValues1('t');
+                            //var curl = "/Home?t=" + GetParameterValues1('t');
+                            window.location.href = curl;
+                        }
+                        else
+                            window.location.reload();
+                    }
+                    else
+                        alert('Error in logging out');
+                    $('#loginInstruction').css("display", "none");
+                },
+                error: function (err) {
+                    //$("#divLoadingImage").hide();
+                    alert('Error in logging out');
+                    $("#divLoadingImage").css("display", "none");
+                }
+            });
+        };
+
+
+
+
+    </script>
+
+
+    <div class="process_tab">
+        <ul class="f-personal-header">
+            <li class="flight_search first">Flight Search</li>
+            <li class="go_out current">Going Out</li>
+            <li class="sel_flight last">Coming Back</li>
+        </ul>
+    </div>
+    <div id="wrapper">
+        <form action="/mobile/Flight/ConfirmFlight?t=35" id="ConfirmBooking" method="post"><input id="hfOBClass" name="hfOBClass" type="hidden" value="" /><input id="hfOBIndex" name="hfOBIndex" type="hidden" value="" /><input id="hfOBAFIndex" name="hfOBAFIndex" type="hidden" value="" /><input id="hfIBClass" name="hfIBClass" type="hidden" value="" /><input id="hfIBIndex" name="hfIBIndex" type="hidden" value="" /><input id="hfIBAFIndex" name="hfIBAFIndex" type="hidden" value="" />        <div class="row-fluid">
+
+        </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <script type="text/javascript" language="javascript">
+                        $(document).ready(function () {
+                            try {
+                                var timeout = 0;
+                                var hdnSessionout = 10;
+                                hdnSessionout=15;
+
+                                if (hdnSessionout != null && hdnSessionout != 'undefined' && hdnSessionout != "") {
+                                    timeout = hdnSessionout * 60 * 1000;
+                                    $('#hdnTimer').val(timeout);
+                                }
+                                else {
+                                    timeout = 20 * 60 * 1000;
+                                    $('#hdnTimer').val(timeout);
+                                }
+                                var timer = setInterval(function () {
+                                    //timeout -= 1000;
+
+                                    timeout=Number($('#hdnTimer').val());
+                                    timeout -= 1000;
+                                    $('#hdnTimer').val(timeout);
+                                    //                var timecountmsg = document.getElementById('ucSessiontimeOut_lblTimeCount');
+                                    // $(".SessionTimeOut").show();
+                                    //timerTxt= (timerTxt==null || timerTxt=='')?'Your session will expire in : ':timerTxt;
+                                    //$("#lblTimeCount").text('Your session will expire in : ' + time(timeout) + " mins");
+
+                                    $("#timeText").text(time(timeout) + " mins");
+                                    $("#lbltime").text(time(timeout));
+                                    if (timeout == 0) {
+                                        clearInterval(timer);
+                                        CallPostBack();
+                                    }
+                                }, 1000);
+                                function two(x) { return ((x > 9) ? "" : "0") + x }
+                                function time(ms) {
+                                    var t = '';
+                                    var sec = Math.floor(ms / 1000);
+                                    ms = ms % 1000
+                                    var min = Math.floor(sec / 60);
+                                    sec = sec % 60;
+                                    t = two(sec);
+                                    min = min % 60;
+                                    t = two(min) + ":" + t;
+                                    return t;
+                                }
+                                function CallPostBack() {
+                                    var myPageName = "";
+                                    try {
+                                        var url = $("#RedirectTo").val(); ;
+
+                                    } catch (err) { }
+                                    window.location = url;
+                                }
+
+                            }
+                            catch (e) {
+                                alert("Error" + e);
+                            }
+                        });
+                    </script>
+                    <div id="divSession" runat="server" class="SessionTimeOut">
+                        <input id="RedirectTo" name="RedirectTo" type="hidden" value="/mobile/SessionTimeout" />
+
+
+                        <input id="hdnTimer" name="hdnTimer" type="hidden" value="" />
+                        <label id="lblTimeCount">Your session will expire in : <span id="timeText"> 15:00 mins </span></label>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <script type="text/javascript">
+                function CallAvailability() {
+                }
+                $(document).ready(function () {
+                    $(".triple").click(function () {
+                        $("#divLoadingImage").css("display", "block");
+                    });
+                });
+            </script>
+
+            <div class="tabbed result">
+                <a href="/mobile/Flight/Availability?FlightClass=Economy&amp;FlightDirection=OutBound&amp;t=35"
+                   class= "single active">Economy</a>
+            </div>
+            <div class="content clear">
+                <div class="wrapper">
+                    <div class="row-fluid resultPage">
+
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+
+                                if ($("#divLoadingImage").css("display") == "block") {
+
+                                    $("#divLoadingImage").css("display", "none");
+                                    //  alert("Page Load");
+                                }
+
+                            });
+                        </script>
+
+                        <div id="divOBEconomy"  style = "display:block" >
+
+
+                            <div class="span12 flight_list" id="divOBE4"
+                                 onclick="javascript:setSelectedFlight(4,'E', 'OB',0,'divOBE4')">
+                                <input id="hfOB_E_4" name="hfOB_E_4" type="hidden" value="OB_E_0_4" />
+
+                                <div class="title_head">
+                                    <span class="left route">DMK <i class="flig-dir-img"></i> URT</span>
+        <span class="right f_price">THB
+                <label>1,095.00</label>
+        </span>
+                                </div>
+
+
+
+                                <div class="f_content">
+                                    <div class="row f_cities">
+                                        <div class="clm1">
+
+                                            <img src="/mobile/assets/flightimages/airlines/SL_50.gif" class="logo-img-size">
+                                            <span>Thai Lion air</span>
+                                        </div>
+                                        <div class="clm9">
+                                <span>
+                                    <i class="flig-dept-img"></i>Don Muang Airport
+                                </span>
+                                <span>
+                                    <i class="flig-arvl-img"></i>
+                                    Surat Thani Airport
+                                </span>
+                                        </div>
+                                    </div>
+                                    <div class="row date_time">
+                                        <div class="double">
+                                            <label> DMK</label>
+                                            <span>20 Aug</span>
+                                            <large>08:55</large>
+                                        </div>
+                                        <div class="double">
+                                            <label>URT</label>
+                                            <span>20 Aug</span>
+                                            <large>10:10</large>
+                                        </div>
+                                    </div>
+                                    <div class="row f_oper">
+                            <span>
+                                <span class="rp_fnumber">Flight No.</span>
+                                <label>SL 8570</label>
+                            </span>
+                                        <button class="btn btn-danger" type="button" id="btnSlct">Select</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="span12 flight_list" id="divOBE2"
+                                 onclick="javascript:setSelectedFlight(2,'E', 'OB',1,'divOBE2')">
+                                <input id="hfOB_E_2" name="hfOB_E_2" type="hidden" value="OB_E_1_2" />
+
+                                <div class="title_head">
+                                    <span class="left route">DMK <i class="flig-dir-img"></i> URT</span>
+        <span class="right f_price">THB
+                <label>995.00</label>
+        </span>
+                                </div>
+
+
+
+                                <div class="f_content">
+                                    <div class="row f_cities">
+                                        <div class="clm1">
+
+                                            <img src="/mobile/assets/flightimages/airlines/SL_50.gif" class="logo-img-size">
+                                            <span>Thai Lion air</span>
+                                        </div>
+                                        <div class="clm9">
+                                <span>
+                                    <i class="flig-dept-img"></i>Don Muang Airport
+                                </span>
+                                <span>
+                                    <i class="flig-arvl-img"></i>
+                                    Surat Thani Airport
+                                </span>
+                                        </div>
+                                    </div>
+                                    <div class="row date_time">
+                                        <div class="double">
+                                            <label> DMK</label>
+                                            <span>20 Aug</span>
+                                            <large>14:00</large>
+                                        </div>
+                                        <div class="double">
+                                            <label>URT</label>
+                                            <span>20 Aug</span>
+                                            <large>15:10</large>
+                                        </div>
+                                    </div>
+                                    <div class="row f_oper">
+                            <span>
+                                <span class="rp_fnumber">Flight No.</span>
+                                <label>SL 8564</label>
+                            </span>
+                                        <button class="btn btn-danger" type="button" id="btnSlct">Select</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="span12 flight_list" id="divOBP1"
+                                 onclick="javascript:setSelectedFlight(1,'P', 'OB',2,'divOBP1')">
+                                <input id="hfOB_P_1" name="hfOB_P_1" type="hidden" value="OB_P_2_1" />
+
+                                <div class="title_head">
+                                    <span class="left route">DMK <i class="flig-dir-img"></i> URT</span>
+        <span class="right f_price">THB
+                <label>795.00</label>
+        </span>
+                                </div>
+
+
+
+                                <div class="f_content">
+                                    <div class="row f_cities">
+                                        <div class="clm1">
+
+                                            <img src="/mobile/assets/flightimages/airlines/SL_50.gif" class="logo-img-size">
+                                            <span>Thai Lion air</span>
+                                        </div>
+                                        <div class="clm9">
+                                <span>
+                                    <i class="flig-dept-img"></i>Don Muang Airport
+                                </span>
+                                <span>
+                                    <i class="flig-arvl-img"></i>
+                                    Surat Thani Airport
+                                </span>
+                                        </div>
+                                    </div>
+                                    <div class="row date_time">
+                                        <div class="double">
+                                            <label> DMK</label>
+                                            <span>20 Aug</span>
+                                            <large>15:05</large>
+                                        </div>
+                                        <div class="double">
+                                            <label>URT</label>
+                                            <span>20 Aug</span>
+                                            <large>16:15</large>
+                                        </div>
+                                    </div>
+                                    <div class="row f_oper">
+                            <span>
+                                <span class="rp_fnumber">Flight No.</span>
+                                <label>SL 8566</label>
+                            </span>
+                                        <button class="btn btn-danger" type="button" id="btnSlct">Select</button>
+                                        <span class="rp_promo flight-cls" ><i class="fa fa-tag"></i> Promo</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="span12 flight_list" id="divOBE3"
+                                 onclick="javascript:setSelectedFlight(3,'E', 'OB',3,'divOBE3')">
+                                <input id="hfOB_E_3" name="hfOB_E_3" type="hidden" value="OB_E_3_3" />
+
+                                <div class="title_head">
+                                    <span class="left route">DMK <i class="flig-dir-img"></i> URT</span>
+        <span class="right f_price">THB
+                <label>995.00</label>
+        </span>
+                                </div>
+
+
+
+                                <div class="f_content">
+                                    <div class="row f_cities">
+                                        <div class="clm1">
+
+                                            <img src="/mobile/assets/flightimages/airlines/SL_50.gif" class="logo-img-size">
+                                            <span>Thai Lion air</span>
+                                        </div>
+                                        <div class="clm9">
+                                <span>
+                                    <i class="flig-dept-img"></i>Don Muang Airport
+                                </span>
+                                <span>
+                                    <i class="flig-arvl-img"></i>
+                                    Surat Thani Airport
+                                </span>
+                                        </div>
+                                    </div>
+                                    <div class="row date_time">
+                                        <div class="double">
+                                            <label> DMK</label>
+                                            <span>20 Aug</span>
+                                            <large>18:55</large>
+                                        </div>
+                                        <div class="double">
+                                            <label>URT</label>
+                                            <span>20 Aug</span>
+                                            <large>20:10</large>
+                                        </div>
+                                    </div>
+                                    <div class="row f_oper">
+                            <span>
+                                <span class="rp_fnumber">Flight No.</span>
+                                <label>SL 8568</label>
+                            </span>
+                                        <button class="btn btn-danger" type="button" id="btnSlct">Select</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="divOBBusiness" style = "display:none">
+                        </div>
+                        <div style="float: left; height: 40px; width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none" id="divLoadingImage" class="trans-bg">
+                <div class="popup-body iframe-inside">
+                    <div class="f_logo">
+                        <img src="/mobile/Customers/207/f_img.png" />
+                    </div>
+                    <p id="pls_wait">Please wait</p>
+                    <div class="loading_div">
+                        <span></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clear">
+            </div>
+        </form>
+
+    </div>
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+
+            var link_text = "";
+            var link_Class = "";
+            $(".coming_soon span").on({
+                mouseenter: function () {
+                    link_text = $(this).text();
+                    link_Class = $(this).attr('class');
+                    $(this).removeClass(link_Class);
+                    $(this).text("Coming Soon");
+
+                },
+                mouseleave: function () {
+                    $(this).text("");
+                    $(this).addClass(link_Class);
+                }
+            });
+            //$("#hotel_menu").click(function () {
+            //    $("#SearchForm").submit();
+            //    ShowLoadingImage()
+            //});
+            //$("#backLink").click(function () {
+            //    event.preventDefault();
+            //    history.back(1);
+            //});
+
+        });
+    </script>
+
+    <div id="divHomeFooter" style="width: 100%;">
+
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    </div>
+
+    <script type="text/javascript">
+
+        function GoHome() {
+            var t = GetParameterValues1('t');
+            if (window.location.href.indexOf('/BookFlight') > 0) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/mobile/BookFlight/GetTabID',
+                    success: function (data) {
+                        if (data != null && data != "" && data != undefined)
+                            t = data;
+                    },
+                    async: false
+                });
+            }
+            var curl = "/mobile/Home" + "?t=" + t;
+            window.location.href = curl;
+        }
+
+
+    </script>
+
+</div>
+<script type="text/javascript">
+    function hideLoadingImg() {
+        if (!isIOSapp()) {
+            $("#divLoadingImage").css("display", "none");
+        }
+    }
+    //if ((/iphone|ipod|ipad.*os 5/gi).test(navigator.appVersion)) {
+    //window.onpageshow = function (evt) {
+    //     //If persisted then it is in the page cache, force a reload of the page.
+    //      if (evt.persisted) {
+    //        $("#divLoadingImage").css("display", "block");
+    //        }
+    //    };
+    //}
+    window.onpagehide = function (evt) {
+        // If persisted then it is in the page cache, force a reload of the page.
+        //if (evt.persisted) {
+        $("#divLoadingImage").css("display", "none");
+        //location.reload();
+        //}
+    };
+
+    function isIOSapp() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

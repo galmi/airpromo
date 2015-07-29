@@ -105,7 +105,8 @@ class NokAir
                         ->setOrigin($params->getOrigin())
                         ->setDestination($params->getDestination())
                         ->setDepartureTime($node->filter('td')->eq(0)->text())
-                        ->setArrivalTime($node->filter('td')->eq(1)->text());
+                        ->setArrivalTime($node->filter('td')->eq(1)->text())
+                        ->setDate($params->getDepartDate());
                     $pricePromo = filter_var($node->filter('td')->eq(6)->text(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                     if ($pricePromo) {
                         $result->setPrice($pricePromo);

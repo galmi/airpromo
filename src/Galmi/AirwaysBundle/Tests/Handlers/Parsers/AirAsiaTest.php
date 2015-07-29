@@ -38,14 +38,14 @@ class AirAsiaTest extends WebTestCase
         $airasiaParser = new AirAsia($downloader);
         $parseResults = self::getMethod('parseResults');
         /** @var Result[] $results */
-        $results = $parseResults->invokeArgs($airasiaParser, [$downloader->get('123')]);
+        $results = $parseResults->invokeArgs($airasiaParser, [$downloader->get('123'), $this->createParamsReturn()]);
 
         $resultCheck = [
-            '07:00 (DMK) 08:10 (URT) 891.99',
-            '09:50 (DMK) 10:55 (URT) 1052.00',
-            '11:40 (DMK) 12:50 (URT) 891.99',
-            '14:30 (DMK) 15:40 (URT) 891.99',
-            '19:10 (DMK) 20:20 (URT) 891.99'
+            '27.08.2015 07:00 (DMK) 08:10 (URT) 891.99',
+            '27.08.2015 09:50 (DMK) 10:55 (URT) 1052.00',
+            '27.08.2015 11:40 (DMK) 12:50 (URT) 891.99',
+            '27.08.2015 14:30 (DMK) 15:40 (URT) 891.99',
+            '27.08.2015 19:10 (DMK) 20:20 (URT) 891.99'
         ];
 
         foreach ($results as &$row)
