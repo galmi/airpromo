@@ -10,7 +10,7 @@ namespace Galmi\AirwaysBundle\Handlers;
 
 
 use Buzz\Browser;
-use Symfony\Component\HttpFoundation\Request;
+use Galmi\AirwaysBundle\Buzz\Client\Curl;
 
 class Downloader
 {
@@ -22,6 +22,7 @@ class Downloader
 
     public function __construct()
     {
+        $this->client = new Curl();
         $this->browser = new Browser($this->client);
     }
 
@@ -31,9 +32,11 @@ class Downloader
      */
     public function get($uri)
     {
-        $response = $this->browser->get($uri);
+        $cookieTmp = tempnam('/tmp','cookie');
+//        $postData = http_build_query($data, '', '&');
+        $html = shell_exec("curl -c {$cookieTmp} -L $uri");
 
-        return $response->getContent();
+        return $html;
     }
 
     /**
@@ -43,9 +46,12 @@ class Downloader
      */
     public function submit($uri, array $data)
     {
-        $response = $this->browser->submit($uri, $data);
+//        curl -c /private/tmp/coockie123 --data "pjourney=2&depCity=DMK&arrCity=URT&dpd1=06%2F08%2F2015&dpd2=&sAdult=1&sChild=0&sInfant=0&currency=THB&cTabID=35" -L http://search.lionairthai.com/mobile/Search/SearchFlight
+        $cookieTmp = tempnam('/tmp','cookie');
+        $postData = http_build_query($data, '', '&');
+        $html = shell_exec("curl -c {$cookieTmp} --data \"$postData\" -L $uri");
 
-        return $response->getContent();
+        return $html;
     }
 
     /**

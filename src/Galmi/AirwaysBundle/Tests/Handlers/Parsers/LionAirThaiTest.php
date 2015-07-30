@@ -8,6 +8,7 @@
 
 namespace Galmi\AirwaysBundle\Tests\Handlers\Parsers;
 
+use Galmi\AirwaysBundle\Handlers\Downloader;
 use Galmi\AirwaysBundle\Handlers\Parsers\LionAirThai;
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
 use Galmi\AirwaysBundle\Handlers\Parsers\Result;
@@ -77,6 +78,15 @@ class LionAirThaiTest extends WebTestCase
         $this->assertEquals($results, $resultCheck);
     }
 
+    public function testGetResults()
+    {
+        $downloader = new Downloader();
+        $lionThaiAirParser = new LionAirThai($downloader);
+        $params = $this->createParamsOneWayWeek();
+        $results = $lionThaiAirParser->getResults($params);
+        $this->assertGreaterThan(0, count($results));
+    }
+
     /**
      * @param $name
      * @return \ReflectionMethod
@@ -126,5 +136,20 @@ class LionAirThaiTest extends WebTestCase
             ->method('get')
             ->will($this->returnValue(file_get_contents(__DIR__ . '/LionAirThaiResults.html')));
         return $mock;
+    }
+
+    /**
+     * @return Params
+     */
+    private function createParamsOneWayWeek()
+    {
+        $params = new Params();
+        $date = new \DateTime();
+        $date->add(\DateInterval::createFromDateString('+1 week'));
+        $params
+            ->setOrigin('DMK')
+            ->setDestination('URT')
+            ->setDepartDate($date);
+        return $params;
     }
 }
