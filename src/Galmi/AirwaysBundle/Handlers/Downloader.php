@@ -10,7 +10,7 @@ namespace Galmi\AirwaysBundle\Handlers;
 
 
 use Buzz\Browser;
-use Galmi\AirwaysBundle\Buzz\Client\Curl;
+use Buzz\Client\Curl;
 
 class Downloader
 {
@@ -33,8 +33,7 @@ class Downloader
     public function get($uri)
     {
         $cookieTmp = tempnam('/tmp','cookie');
-//        $postData = http_build_query($data, '', '&');
-        $html = shell_exec("curl -c {$cookieTmp} -L $uri");
+        $html = shell_exec("curl -c {$cookieTmp} -L \"$uri\"");
 
         return $html;
     }
@@ -49,7 +48,7 @@ class Downloader
 //        curl -c /private/tmp/coockie123 --data "pjourney=2&depCity=DMK&arrCity=URT&dpd1=06%2F08%2F2015&dpd2=&sAdult=1&sChild=0&sInfant=0&currency=THB&cTabID=35" -L http://search.lionairthai.com/mobile/Search/SearchFlight
         $cookieTmp = tempnam('/tmp','cookie');
         $postData = http_build_query($data, '', '&');
-        $html = shell_exec("curl -c {$cookieTmp} --data \"$postData\" -L $uri");
+        $html = shell_exec("curl -c {$cookieTmp} --data \"$postData\" -L \"$uri\"");
 
         return $html;
     }
