@@ -23,6 +23,15 @@ class Result
     private $arrivalTime;
     /** @var string */
     private $price;
+    /**
+     * @var array
+     * [
+     *  "url",
+     *  "method",
+     *  "data"
+     * ]
+     */
+    private $source;
 
     /**
      * @return \DateTime
@@ -129,5 +138,34 @@ class Result
     public function __toString()
     {
         return $this->getDate()->format('d.m.Y') . ' ' . $this->getDepartureTime() . ' ' . $this->getOrigin() . ' ' . $this->getArrivalTime() . ' ' . $this->getDestination() . ' ' . $this->getPrice();
+    }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * @param string $source
+     */
+    public function setSource($source)
+    {
+        $this->source = $source;
+    }
+
+    public function toArray()
+    {
+        return [
+            'date' => $this->getDate()->format('Y-m-d'),
+            'origin' => $this->getOrigin(),
+            'destination' => $this->getDestination(),
+            'departTime' => $this->getDepartureTime(),
+            'arrivalTime' => $this->getArrivalTime(),
+            'price' => $this->getPrice(),
+            'source' => $this->getSource()
+        ];
     }
 }

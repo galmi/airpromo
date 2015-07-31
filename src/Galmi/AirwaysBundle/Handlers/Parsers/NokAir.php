@@ -99,7 +99,8 @@ class NokAir extends ParserAbstract
                         ->setDestination($params->getDestination())
                         ->setDepartureTime($node->filter('td')->eq(0)->text())
                         ->setArrivalTime($node->filter('td')->eq(1)->text())
-                        ->setDate($params->getDepartDate());
+                        ->setDate($params->getDepartDate())
+                        ->setSource($this->getSourceData($params));
                     $pricePromo = filter_var($node->filter('td')->eq(6)->text(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                     if ($pricePromo) {
                         $result->setPrice($pricePromo);
@@ -120,5 +121,18 @@ class NokAir extends ParserAbstract
                 }
             });
         return $results;
+    }
+
+    /**
+     * @param Params $params
+     * @return array
+     */
+    protected function getSourceData(Params $params)
+    {
+        return [
+            'uri' => $this->uri,
+            'method' => 'POST',
+            'data' => $this->getParamsData($params)
+        ];
     }
 }

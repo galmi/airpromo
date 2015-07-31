@@ -80,9 +80,23 @@ class AirAsia extends ParserAbstract
                 $price = filter_var($price, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $result->setPrice($price);
                 $result->setDate($params->getDepartDate());
+                $result->setSource($this->getSourceData($params));
 
                 $results[] = $result;
             });
         return $results;
+    }
+
+    /**
+     * @param Params $params
+     * @return array
+     */
+    protected function getSourceData(Params $params)
+    {
+        return [
+            'uri' => $this->uri,
+            'method' => 'GET',
+            'data' => $this->getParamsString($params)
+        ];
     }
 }

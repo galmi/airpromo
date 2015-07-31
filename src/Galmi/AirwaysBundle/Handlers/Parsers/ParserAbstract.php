@@ -17,13 +17,27 @@ abstract class ParserAbstract
     protected $uri;
     /** @var  Downloader */
     protected $downloader;
+    /** @var string */
+    protected $source;
 
+    /**
+     * @param $downloader
+     * @param null|string $uri
+     */
     public function __construct($downloader, $uri = null)
     {
         $this->downloader = $downloader;
         if (!empty($uri)) {
             $this->uri = $uri;
         }
+    }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->source;
     }
 
     /**
@@ -37,4 +51,10 @@ abstract class ParserAbstract
      * @return Result[]
      */
     abstract protected function parseResults($html, Params $params);
+
+    /**
+     * @param Params $params
+     * @return array
+     */
+    abstract protected function getSourceData(Params $params);
 }

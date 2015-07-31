@@ -83,11 +83,24 @@ class LionAirThai extends ParserAbstract
                         ->setDepartureTime($node->filter('.date_time .double')->eq(0)->filter('large')->text())
                         ->setDestination(trim($node->filter('.date_time .double')->eq(1)->filter('label')->text()))
                         ->setArrivalTime($node->filter('.date_time .double')->eq(1)->filter('large')->text())
-                        ->setDate($params->getDepartDate());
+                        ->setDate($params->getDepartDate())
+                        ->setSource($this->getSourceData($params));
                     $results[] = $result;
                 }
             });
         return $results;
     }
 
+    /**
+     * @param Params $params
+     * @return array
+     */
+    protected function getSourceData(Params $params)
+    {
+        return [
+            'uri' => $this->uri,
+            'method' => 'POST',
+            'data' => $this->getParamsData($params)
+        ];
+    }
 }
