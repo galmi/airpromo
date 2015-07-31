@@ -8,9 +8,9 @@
 
 namespace Galmi\AirwaysBundle\Handlers;
 
-
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
 use Galmi\AirwaysBundle\Handlers\Parsers\ParserAbstract;
+use Galmi\AirwaysBundle\Handlers\Parsers\Result;
 
 class Searcher
 {
@@ -35,9 +35,16 @@ class Searcher
 
     /**
      * @param Params $params
+     * @return Result[]
      */
     public function search(Params $params)
     {
-
+        $results = [];
+        foreach ($this->getSources() as $source)
+        {
+            $result = $source->getResults($params);
+            $results = array_merge($results, $result);
+        }
+        return $results;
     }
 }
