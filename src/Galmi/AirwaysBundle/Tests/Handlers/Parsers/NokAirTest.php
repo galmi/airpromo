@@ -8,6 +8,7 @@
 
 namespace Galmi\AirwaysBundle\Tests\Handlers\Parsers;
 
+use Galmi\AirwaysBundle\Handlers\Downloader;
 use Galmi\AirwaysBundle\Handlers\Parsers\NokAir;
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
 use Galmi\AirwaysBundle\Handlers\Parsers\Result;
@@ -27,20 +28,20 @@ class NokAirTest extends WebTestCase
             "Criteria" => [
                 "From" => 'BKK',
                 "To" => 'URT',
-                "RoundTrip" => "1",
-                "Adult" => 1,
-                "Child" => 0,
-                "Infant" => null,
-                "Departure" => '08/20/2015',
+                "RoundTrip" => "0",
+                "Adult" => "1",
+                "Child" => "0",
+                "Infant" => "0",
+                "Departure" => '2015/08/20',
                 "Arrival" => '',
                 "ProductClass" => "",
                 "FareClass" => "",
                 "BookingNo" => "",
-                "IsBulk" => 0,
+                "IsBulk" => "0",
                 "PromotionCode" => ""
             ],
             "Currency" => "THB"
-        ]);
+        ], JSON_UNESCAPED_SLASHES);
         $this->assertEquals($query, $testResult);
     }
 
@@ -56,19 +57,19 @@ class NokAirTest extends WebTestCase
                 "From" => 'BKK',
                 "To" => 'URT',
                 "RoundTrip" => "1",
-                "Adult" => 1,
-                "Child" => 0,
-                "Infant" => null,
-                "Departure" => '08/20/2015',
-                "Arrival" => '08/30/2015',
+                "Adult" => "1",
+                "Child" => "0",
+                "Infant" => "0",
+                "Departure" => '2015/08/20',
+                "Arrival" => '2015/08/30',
                 "ProductClass" => "",
                 "FareClass" => "",
                 "BookingNo" => "",
-                "IsBulk" => 0,
+                "IsBulk" => "0",
                 "PromotionCode" => ""
             ],
             "Currency" => "THB"
-        ]);
+        ], JSON_UNESCAPED_SLASHES);
         $this->assertEquals($query, $testResult);
     }
 
@@ -81,15 +82,25 @@ class NokAirTest extends WebTestCase
         $results = $parseResults->invokeArgs($nokairParser, [$downloader->get('123'), $this->createParamsReturn()]);
 
         $resultCheck = [
-            '20.08.2015 07:50 BKK 09:00 URT 638.32',
-            '20.08.2015 14:20 BKK 15:30 URT 2609.35',
-            '20.08.2015 18:10 BKK 19:20 URT 1300.93'
+            '20.08.2015 06:10 BKK 07:20 URT 1300.93',
+            '20.08.2015 09:20 BKK 10:30 URT 1300.93',
+            '20.08.2015 12:40 BKK 13:50 URT 1300.93',
+            '20.08.2015 16:25 BKK 17:35 URT 591.59'
         ];
 
         foreach ($results as &$row) {
             $row = $row->__toString();
         }
         $this->assertEquals($results, $resultCheck);
+    }
+
+    public function testGetResults()
+    {
+        $downloader = new Downloader();
+        $nokAirParser = new NokAir($downloader);
+        $params = $this->createParamsOneWayWeek();
+        $results = $nokAirParser->getResults($params);
+        $this->assertGreaterThan(0, count($results));
     }
 
     /**
@@ -141,5 +152,20 @@ class NokAirTest extends WebTestCase
             ->method('get')
             ->will($this->returnValue(file_get_contents(__DIR__ . '/NokAirResults.html')));
         return $mock;
+    }
+
+    /**
+     * @return Params
+     */
+    private function createParamsOneWayWeek()
+    {
+        $params = new Params();
+        $date = new \DateTime();
+        $date->add(\DateInterval::createFromDateString('+1 week'));
+        $params
+            ->setOrigin('DMK')
+            ->setDestination('URT')
+            ->setDepartDate($date);
+        return $params;
     }
 }

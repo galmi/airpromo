@@ -28,8 +28,8 @@ class NokAir
      *      "Adult":1,
      *      "Child":0,
      *      "Infant":null,
-     *      "Departure":"08/19/2015",
-     *      "Arrival":"08/19/2015",
+     *      "Departure":"2015/08/19",
+     *      "Arrival":"2015/08/19",
      *      "ProductClass":"",
      *      "FareClass":"",
      *      "BookingNo":"",
@@ -57,7 +57,7 @@ class NokAir
     {
         $uri = $this->uri;
         $data = $this->getParamsData($params);
-        $html = $this->downloader->post($uri, $data);
+        $html = $this->downloader->submit($uri, $data);
         return $this->parseResults($html, $params);
     }
 
@@ -73,28 +73,28 @@ class NokAir
             "Criteria" => [
                 "From" => $params->getOrigin(),
                 "To" => $params->getDestination(),
-                "RoundTrip" => "1",
-                "Adult" => 1,
-                "Child" => 0,
-                "Infant" => null,
-                "Departure" => $params->getDepartDate() ? $params->getDepartDate()->format('m/d/Y') : "",
-                "Arrival" => $params->getReturnDate() ? $params->getReturnDate()->format('m/d/Y') : "",
+                "RoundTrip" => $params->getReturnDate()?"1":"0",
+                "Adult" => "1",
+                "Child" => "0",
+                "Infant" => "0",
+                "Departure" => $params->getDepartDate() ? $params->getDepartDate()->format('Y/m/d') : "",
+                "Arrival" => $params->getReturnDate() ? $params->getReturnDate()->format('Y/m/d') : "",
                 "ProductClass" => "",
                 "FareClass" => "",
                 "BookingNo" => "",
-                "IsBulk" => 0,
+                "IsBulk" => "0",
                 "PromotionCode" => ""
             ],
             "Currency" => "THB"
         ];
-        return json_encode($data);
+        return json_encode($data, JSON_UNESCAPED_SLASHES);
     }
 
     protected function parseResults($html, Params $params)
     {
         $results = [];
         $crawler = new Crawler($html);
-        $tableDeparture = $crawler->filter('#Inbound_' . $params->getDepartDate()->format('d-m-Y'));
+        $tableDeparture = $crawler->filter('#Outbound_' . $params->getDepartDate()->format('d-m-Y'));
         $tableDeparture
             ->filter('.Text_body tr')
             ->reduce(function (Crawler $node) use (&$results, $params) {

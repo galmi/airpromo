@@ -43,12 +43,15 @@ class Downloader
      * @param array $data
      * @return string
      */
-    public function submit($uri, array $data)
+    public function submit($uri, $data)
     {
 //        curl -c /private/tmp/coockie123 --data "pjourney=2&depCity=DMK&arrCity=URT&dpd1=06%2F08%2F2015&dpd2=&sAdult=1&sChild=0&sInfant=0&currency=THB&cTabID=35" -L http://search.lionairthai.com/mobile/Search/SearchFlight
         $cookieTmp = tempnam('/tmp','cookie');
-        $postData = http_build_query($data, '', '&');
-        $html = shell_exec("curl -c {$cookieTmp} --data \"$postData\" -L \"$uri\"");
+        if (is_array($data)) {
+            $data = http_build_query($data, '', '&');
+        }
+        $curl = "curl -c {$cookieTmp} --data '$data' -L \"$uri\"";
+        $html = shell_exec($curl);
 
         return $html;
     }
