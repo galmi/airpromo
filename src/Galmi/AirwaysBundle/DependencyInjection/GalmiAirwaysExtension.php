@@ -25,21 +25,11 @@ class GalmiAirwaysExtension extends Extension
         foreach ($config as $key => $row) {
             if (count($row) > 1) {
                 foreach ($row as $pkey => $pval) {
-                    if (count($pval) > 0) {
-                        foreach ($pval as $pkey2 => $pval2) {
-                            $name = 'galmi_airways.' . $key . '.' . $pkey . '.' . $pkey2;
-                            $container->setParameter($name, $pval2);
-                        }
-                    } else {
-                        $name = 'galmi_airways.' . $key . '.' . $pkey;
-                        $container->setParameter($name, $pval);
-                    }
+                    $name = 'galmi_airways.' . $key . '.' . $pkey;
+                    $container->setParameter($name, $pval);
                 }
             }
         }
-        $name = 'galmi_airways.' . 'sources';
-        $container->setParameter($name, $config['sources']);
-
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
     }

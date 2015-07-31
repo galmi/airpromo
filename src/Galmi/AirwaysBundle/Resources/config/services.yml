@@ -5,14 +5,23 @@ services:
     galmi_airways.handlers.downloader:
         class: Galmi\AirwaysBundle\Handlers\Downloader
 
+    galmi_airways.searcher:
+        class: Galmi\AirwaysBundle\Handlers\Searcher
+
     galmi_airways.parser.airasia:
         class: Galmi\AirwaysBundle\Handlers\Parsers\AirAsia
-        arguments: [@galmi_airways.handlers.downloader, %galmi_airways.sources.airasia.uri%]
+        arguments: [@galmi_airways.handlers.downloader, %galmi_airways.sources.airasia%]
+        tags:
+            - {name: "galmi_airways.parser"}
 
     galmi_airways.parser.nokair:
         class: Galmi\AirwaysBundle\Handlers\Parsers\NokAir
-        arguments: [@galmi_airways.handlers.downloader, %galmi_airways.sources.nokair.uri%]
+        arguments: [@galmi_airways.handlers.downloader, %galmi_airways.sources.nokair%]
+        tags:
+            - {name: "galmi_airways.parser"}
 
     galmi_airways.parser.lionairthai:
         class: Galmi\AirwaysBundle\Handlers\Parsers\LionAirThai
-        arguments: [@galmi_airways.handlers.downloader, %galmi_airways.sources.lionairthai.uri%]
+        arguments: [@galmi_airways.handlers.downloader, %galmi_airways.sources.lionairthai%]
+        tags:
+            - {name: "galmi_airways.parser"}
