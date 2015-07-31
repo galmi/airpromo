@@ -22,9 +22,12 @@ class AirAsia
     /** @var  Downloader */
     private $downloader;
 
-    public function __construct($downloader)
+    public function __construct($downloader, $uri = null)
     {
         $this->downloader = $downloader;
+        if (!empty($uri)) {
+            $this->uri = $uri;
+        }
     }
 
     /**

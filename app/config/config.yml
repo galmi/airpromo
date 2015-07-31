@@ -81,15 +81,15 @@ swiftmailer:
 
 galmi_airways:
     sources:
-        AirAsia:
+        airasia:
             source: "AirAsia"
-            uri:
-                routes: "http://www.airasia.com/th/en/home.page"
-                results: "https://booking.airasia.com/Flight/InternalSelect"
+            uri: "https://booking.airasia.com/Flight/Select"
             parser: "galmi_airways.parser.airasia"
-        NokAir:
+        nokair:
             source: "NokAir"
-            uri:
-                routes: "http://www.nokair.com/nokconnext/aspx/Index.aspx?currlang=en-US"
-                results: "http://www.nokair.com/nokconnext/aspx/Index.aspx?currlang=en-US"
+            uri: "http://www.nokair.com/nokconnext/Services/AvailabilityServices.aspx?outbound=true"
             parser: "galmi_airways.parser.nokair"
+        lionairthai:
+            source: "LionAirThai"
+            uri: "http://search.lionairthai.com/mobile/Search/SearchFlight"
+            parser: "galmi_airways.parser.lionairthai"

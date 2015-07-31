@@ -97,7 +97,7 @@ class NokAirTest extends WebTestCase
     public function testGetResults()
     {
         $downloader = new Downloader();
-        $nokAirParser = new NokAir($downloader);
+        $nokAirParser = new NokAir($downloader, 'http://www.nokair.com/nokconnext/Services/AvailabilityServices.aspx?outbound=true');
         $params = $this->createParamsOneWayWeek();
         $results = $nokAirParser->getResults($params);
         $this->assertGreaterThan(0, count($results));

@@ -59,7 +59,7 @@ class AirAsiaTest extends WebTestCase
     public function testGetResults()
     {
         $downloader = new Downloader();
-        $airasiaParser = new AirAsia($downloader);
+        $airasiaParser = new AirAsia($downloader, 'https://booking.airasia.com/Flight/Select');
         $params = $this->createParamsOneWayWeek();
         $results = $airasiaParser->getResults($params);
         $this->assertGreaterThan(0, count($results));

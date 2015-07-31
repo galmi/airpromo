@@ -81,7 +81,7 @@ class LionAirThaiTest extends WebTestCase
     public function testGetResults()
     {
         $downloader = new Downloader();
-        $lionThaiAirParser = new LionAirThai($downloader);
+        $lionThaiAirParser = new LionAirThai($downloader, 'http://search.lionairthai.com/mobile/Search/SearchFlight');
         $params = $this->createParamsOneWayWeek();
         $results = $lionThaiAirParser->getResults($params);
         $this->assertGreaterThan(0, count($results));

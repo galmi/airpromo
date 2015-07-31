@@ -33,9 +33,12 @@ class LionAirThai
     /** @var Downloader */
     protected $downloader;
 
-    public function __construct($downloader)
+    public function __construct($downloader, $uri = null)
     {
         $this->downloader = $downloader;
+        if (!empty($uri)) {
+            $this->uri = $uri;
+        }
     }
 
     /**
@@ -60,7 +63,7 @@ class LionAirThai
             'depCity' => $params->getOrigin(),
             'arrCity' => $params->getDestination(),
             'dpd1' => $params->getDepartDate()->format('d/m/Y'),//'20/08/2015',
-            'dpd2' => $params->getReturnDate()?$params->getReturnDate()->format('d/m/Y'):'',//'30/08/2015',
+            'dpd2' => $params->getReturnDate() ? $params->getReturnDate()->format('d/m/Y') : '',//'30/08/2015',
             'sAdult' => 1,
             'sChild' => 0,
             'sInfant' => 0,

@@ -44,9 +44,12 @@ class NokAir
     /** @var  Downloader */
     private $downloader;
 
-    public function __construct($downloader)
+    public function __construct($downloader, $uri = null)
     {
         $this->downloader = $downloader;
+        if (!empty($uri)) {
+            $this->uri = $uri;
+        }
     }
 
     /**
@@ -73,7 +76,7 @@ class NokAir
             "Criteria" => [
                 "From" => $params->getOrigin(),
                 "To" => $params->getDestination(),
-                "RoundTrip" => $params->getReturnDate()?"1":"0",
+                "RoundTrip" => $params->getReturnDate() ? "1" : "0",
                 "Adult" => "1",
                 "Child" => "0",
                 "Infant" => "0",
