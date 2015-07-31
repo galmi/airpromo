@@ -12,7 +12,7 @@ namespace Galmi\AirwaysBundle\Handlers\Parsers;
 use Galmi\AirwaysBundle\Handlers\Downloader;
 use Symfony\Component\DomCrawler\Crawler;
 
-class NokAir
+class NokAir extends ParserAbstract
 {
 
     /*
@@ -40,17 +40,7 @@ class NokAir
      * }
      */
 
-    private $uri = 'http://www.nokair.com/nokconnext/Services/AvailabilityServices.aspx?outbound=true';
-    /** @var  Downloader */
-    private $downloader;
-
-    public function __construct($downloader, $uri = null)
-    {
-        $this->downloader = $downloader;
-        if (!empty($uri)) {
-            $this->uri = $uri;
-        }
-    }
+    protected $uri = 'http://www.nokair.com/nokconnext/Services/AvailabilityServices.aspx?outbound=true';
 
     /**
      * @param Params $params
@@ -68,7 +58,7 @@ class NokAir
      * @param $params
      * @return string
      */
-    protected function getParamsData(Params $params)
+    private function getParamsData(Params $params)
     {
         $data = [
             "RequestType" => "NewFlight",

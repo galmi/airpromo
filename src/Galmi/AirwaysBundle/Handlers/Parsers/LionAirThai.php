@@ -9,10 +9,9 @@
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 
 
-use Galmi\AirwaysBundle\Handlers\Downloader;
 use Symfony\Component\DomCrawler\Crawler;
 
-class LionAirThai
+class LionAirThai extends ParserAbstract
 {
 
     /*
@@ -28,18 +27,7 @@ class LionAirThai
      * cTabID:35
      */
     /** @var string */
-    private $uri = 'http://search.lionairthai.com/mobile/Search/SearchFlight';
-
-    /** @var Downloader */
-    protected $downloader;
-
-    public function __construct($downloader, $uri = null)
-    {
-        $this->downloader = $downloader;
-        if (!empty($uri)) {
-            $this->uri = $uri;
-        }
-    }
+    protected $uri = 'http://search.lionairthai.com/mobile/Search/SearchFlight';
 
     /**
      * @param Params $params
@@ -78,7 +66,7 @@ class LionAirThai
      * @param Params $params
      * @return Params[]
      */
-    private function parseResults($html, Params $params)
+    protected function parseResults($html, Params $params)
     {
         $results = [];
         $crawler = new Crawler($html);

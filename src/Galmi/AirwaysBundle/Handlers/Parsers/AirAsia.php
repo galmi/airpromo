@@ -8,27 +8,16 @@
 
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 
-use Galmi\AirwaysBundle\Handlers\Downloader;
 use Symfony\Component\DomCrawler\Crawler;
 
-class AirAsia
+class AirAsia extends ParserAbstract
 {
 
     /*
      * Request URL:https://booking.airasia.com/Flight/InternalSelect?o1=DMK&d1=URT&dd1=2015-08-18&dd2=2015-08-18&r=true&ADT=1&CHD=0&inl=0&s=true&mon=true&cc=THB
      */
     /** @var string */
-    private $uri = 'https://booking.airasia.com/Flight/Select';
-    /** @var  Downloader */
-    private $downloader;
-
-    public function __construct($downloader, $uri = null)
-    {
-        $this->downloader = $downloader;
-        if (!empty($uri)) {
-            $this->uri = $uri;
-        }
-    }
+    protected $uri = 'https://booking.airasia.com/Flight/Select';
 
     /**
      * @param Params $params
@@ -45,7 +34,7 @@ class AirAsia
      * @param Params $params
      * @return string
      */
-    protected function getParamsString(Params $params)
+    private function getParamsString(Params $params)
     {
         $data = [
             'o1' => $params->getOrigin(),
