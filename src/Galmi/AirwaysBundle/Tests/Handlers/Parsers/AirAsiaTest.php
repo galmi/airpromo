@@ -54,6 +54,8 @@ class AirAsiaTest extends WebTestCase
             $row = $row->__toString();
         }
         $this->assertEquals($results, $resultCheck);
+
+        //todo Добавить проверку source
     }
 
     public function testGetResults()

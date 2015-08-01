@@ -33,6 +33,19 @@ class SearcherTest extends WebTestCase
         $searcher = $container->get('galmi_airways.searcher');
         $params = $this->createParamsOneWayWeek();
 
+        $results = $searcher->search($params, 0);
+        $this->assertGreaterThan(0, count($results));
+    }
+
+    public function testSearcherAllSources()
+    {
+        $kernel = static::createKernel();
+        $kernel->boot();
+
+        $container = $kernel->getContainer();
+        $searcher = $container->get('galmi_airways.searcher');
+        $params = $this->createParamsOneWayWeek();
+
         $results = $searcher->search($params);
         $this->assertGreaterThan(0, count($results));
     }

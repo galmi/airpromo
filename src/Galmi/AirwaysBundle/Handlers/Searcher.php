@@ -35,15 +35,21 @@ class Searcher
 
     /**
      * @param Params $params
-     * @return Result[]
+     * @param int $sourceId
+     * @return Parsers\Result[]
      */
-    public function search(Params $params)
+    public function search(Params $params, $sourceId = null)
     {
         $results = [];
-        foreach ($this->getSources() as $source)
+        $sources = $this->getSources();
+        if (!is_null($sourceId) && isset($sources[$sourceId]))
         {
-            $result = $source->getResults($params);
-            $results = array_merge($results, $result);
+            $results = $sources[$sourceId]->getResults($params);
+        } else {
+            foreach ($sources as $source) {
+                $result = $source->getResults($params);
+                $results = array_merge($results, $result);
+            }
         }
         return $results;
     }
