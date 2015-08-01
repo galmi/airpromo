@@ -1,0 +1,1170 @@
+{
+  "AM1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "DMK": [
+    {
+      "code": "AM1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "BFV",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    },
+    {
+      "code": "CNX",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "CEI",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "CH1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "CJM",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "HDY",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "KKC",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    },
+    {
+      "code": "KBV",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "KB1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "LPT",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "LOE",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    },
+    {
+      "code": "MAQ",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "MS1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "MH1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "KOP",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    },
+    {
+      "code": "NST",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    },
+    {
+      "code": "KN1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "NNT",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    },
+    {
+      "code": "PHS",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    },
+    {
+      "code": "PRH",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "HKT",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "PG1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "KL1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "SW1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "UNN",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "ROI",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    },
+    {
+      "code": "SNO",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    },
+    {
+      "code": "SU1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "TP1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "URT",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "ST1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "KS1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "RP1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "SR1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "TST",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    },
+    {
+      "code": "UBP",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "UTH",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "UD1",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "KD0",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "LT0",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "LP0",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "MK0",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "NY0",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "NG0",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "TSP",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "PP0",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "USM",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "TA0",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "1AA",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "1AB",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "1AC",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "1AD",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "1AE",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "1AF",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "1AG",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "1AH",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "3AA",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "3AB",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "3AC",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "3AD",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "3AE",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "3AG",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "3AH",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "3AI",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "3AJ",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "HHQ",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "NAW",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "BFV": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    }
+  ],
+  "CNX": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "UTH",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "1AA",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "1AD",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "HDY",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "HKT",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "KBV",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "L1G",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "URT",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "CEI": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    }
+  ],
+  "CH1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "CJM": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "HDY": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "CNX",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "UTH",
+      "sources": [
+        "lionairthai"
+      ]
+    }
+  ],
+  "KKC": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    }
+  ],
+  "KBV": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "CNX",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "L1F",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "L1G",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "KB1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "LPT": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "LOE": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    }
+  ],
+  "MAQ": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "MS1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "MH1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "KOP": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    }
+  ],
+  "NST": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    }
+  ],
+  "KN1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "NNT": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    }
+  ],
+  "PHS": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    }
+  ],
+  "PRH": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "HKT": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "CNX",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "UTH",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "PG1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "KL1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "SW1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "UNN": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "ROI": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    }
+  ],
+  "SNO": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    }
+  ],
+  "SU1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "TP1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "URT": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "CNX",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "ST1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "KS1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "RP1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "SR1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "TST": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia"
+      ]
+    },
+    {
+      "code": "L1E",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "UBP": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    }
+  ],
+  "UTH": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair",
+        "airasia",
+        "lionairthai"
+      ]
+    },
+    {
+      "code": "CNX",
+      "sources": [
+        "nokair"
+      ]
+    },
+    {
+      "code": "HKT",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "HDY",
+      "sources": [
+        "lionairthai"
+      ]
+    }
+  ],
+  "UD1": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "KD0": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "LT0": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "LP0": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "MK0": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "NY0": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "NG0": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "TSP": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "PP0": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "USM": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "TA0": [
+    {
+      "code": "DMK",
+      "sources": [
+        "nokair"
+      ]
+    }
+  ],
+  "1AE": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "1AF": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "NAW": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "1AH": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "3AA": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "3AB": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "3AC": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "3AD": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "3AE": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "1AG": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "3AG": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "3AH": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "L1E": [
+    {
+      "code": "TST",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "L1F": [
+    {
+      "code": "KBV",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "L1G": [
+    {
+      "code": "CNX",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "KBV",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "1AA": [
+    {
+      "code": "CNX",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "1AB": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "1AC": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "1AD": [
+    {
+      "code": "CNX",
+      "sources": [
+        "airasia"
+      ]
+    },
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "HHQ": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "3AI": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ],
+  "3AJ": [
+    {
+      "code": "DMK",
+      "sources": [
+        "airasia"
+      ]
+    }
+  ]
+}

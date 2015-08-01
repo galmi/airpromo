@@ -1,0 +1,74 @@
+{
+  "DMK": [
+    {
+      "code": "CNX"
+    },
+    {
+      "code": "CEI"
+    },
+    {
+      "code": "HDY"
+    },
+    {
+      "code": "KBV"
+    },
+    {
+      "code": "HKT"
+    },
+    {
+      "code": "URT"
+    },
+    {
+      "code": "UBP"
+    },
+    {
+      "code": "UTH"
+    }
+  ],
+  "CNX": [
+    {
+      "code": "DMK"
+    }
+  ],
+  "CEI": [
+    {
+      "code": "DMK"
+    }
+  ],
+  "HDY": [
+    {
+      "code": "DMK"
+    },
+    {
+      "code": "UTH"
+    }
+  ],
+  "KBV": [
+    {
+      "code": "DMK"
+    }
+  ],
+  "HKT": [
+    {
+      "code": "DMK"
+    }
+  ],
+  "URT": [
+    {
+      "code": "DMK"
+    }
+  ],
+  "UBP": [
+    {
+      "code": "DMK"
+    }
+  ],
+  "UTH": [
+    {
+      "code": "DMK"
+    },
+    {
+      "code": "HDY"
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+[
+  {
+    "name": "Amnat Charoen",
+    "type": "D",
+    "code": "AM1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Bangkok (Don Mueang)",
+    "type": "A",
+    "code": "DMK",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Buri Ram",
+    "type": "A",
+    "code": "BFV",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Chiang Mai",
+    "type": "A",
+    "code": "CNX",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Chiang Rai",
+    "type": "A",
+    "code": "CEI",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Chiang Rai (Chiang Khong)",
+    "type": "D",
+    "code": "CH1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Chumphon",
+    "type": "A",
+    "code": "CJM",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Hat Yai",
+    "type": "A",
+    "code": "HDY",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Khon Kaen",
+    "type": "A",
+    "code": "KKC",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Krabi",
+    "type": "A",
+    "code": "KBV",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Krabi (Ao Nang)",
+    "type": "D",
+    "code": "KB1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Lampang",
+    "type": "A",
+    "code": "LPT",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Loei",
+    "type": "A",
+    "code": "LOE",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Mae Sot",
+    "type": "A",
+    "code": "MAQ",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Maha Sarakham",
+    "type": "D",
+    "code": "MS1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Mukdahan",
+    "type": "D",
+    "code": "MH1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Nakhon Phanom",
+    "type": "A",
+    "code": "KOP",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Nakhon Si Thammarat",
+    "type": "A",
+    "code": "NST",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Nakhon Si Thammarat (Khanom)",
+    "type": "D",
+    "code": "KN1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Nan",
+    "type": "A",
+    "code": "NNT",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Phitsanulok",
+    "type": "A",
+    "code": "PHS",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Phrae",
+    "type": "A",
+    "code": "PRH",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Phuket",
+    "type": "A",
+    "code": "HKT",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Phang Nga",
+    "type": "D",
+    "code": "PG1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Phang Nga (Khao Lak)",
+    "type": "D",
+    "code": "KL1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Sakon Nakhon (Sawang Daen Din)",
+    "type": "D",
+    "code": "SW1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Ranong",
+    "type": "A",
+    "code": "UNN",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Roi Et",
+    "type": "A",
+    "code": "ROI",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Sakon Nakhon",
+    "type": "A",
+    "code": "SNO",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Satun",
+    "type": "D",
+    "code": "SU1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Satun (Tammalang Port)",
+    "type": "D",
+    "code": "TP1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Surat Thani",
+    "type": "A",
+    "code": "URT",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Sukhothai",
+    "type": "D",
+    "code": "ST1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Surat Thani (Khao Sok)",
+    "type": "D",
+    "code": "KS1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Surat Thani (Ratchaprapa Dam)",
+    "type": "D",
+    "code": "RP1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Surin",
+    "type": "D",
+    "code": "SR1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Trang",
+    "type": "A",
+    "code": "TST",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Ubon Ratchathani",
+    "type": "A",
+    "code": "UBP",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Udon Thani",
+    "type": "A",
+    "code": "UTH",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Uttaradit",
+    "type": "D",
+    "code": "UD1",
+    "flynride": "y",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Pakse",
+    "type": "B",
+    "code": "PS1",
+    "flynride": "y",
+    "country": "LAOS"
+  },
+  {
+    "name": "Vientiane",
+    "type": "B",
+    "code": "VT1",
+    "flynride": "y",
+    "country": "LAOS"
+  },
+  {
+    "name": "Yangon",
+    "type": "B",
+    "code": "RGN",
+    "flynride": "n",
+    "country": "MYANMAR"
+  },
+  {
+    "name": "Hefei Xinqiao, China",
+    "type": "B",
+    "code": "HFE",
+    "flynride": "n",
+    "country": "CHINA"
+  },
+  {
+    "name": "Ho Chi Minh",
+    "type": "B",
+    "code": "SGN",
+    "flynride": "n",
+    "country": "VIETNAM"
+  },
+  {
+    "name": "Koh Kradan",
+    "type": "C",
+    "code": "KD0",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Koh Lanta (Saladan pier)",
+    "type": "C",
+    "code": "LT0",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Koh Lipe",
+    "type": "C",
+    "code": "LP0",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Koh Mook",
+    "type": "C",
+    "code": "MK0",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Koh Nangyuan",
+    "type": "C",
+    "code": "NY0",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Koh Ngai",
+    "type": "C",
+    "code": "NG0",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Koh Phangan (Tong Sala Pier)",
+    "type": "C",
+    "code": "TSP",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Koh Phi Phi",
+    "type": "C",
+    "code": "PP0",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Koh Samui (Nar Ton Pier)",
+    "type": "C",
+    "code": "USM",
+    "flynride": "n",
+    "country": "THAILAND"
+  },
+  {
+    "name": "Koh Tao",
+    "type": "C",
+    "code": "TA0",
+    "flynride": "n",
+    "country": "THAILAND"
+  }
+]

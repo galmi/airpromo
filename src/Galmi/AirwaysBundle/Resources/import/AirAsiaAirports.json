@@ -1,0 +1,1621 @@
+[{
+  "stationCategories": "C",
+  "isD7Station": "true",
+  "countryCode": "AU",
+  "macCode": "",
+  "name": "Adelaide",
+  "provinceStateCode": "SA",
+  "shortName": "Adelaide Airport",
+  "code": "ADL"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Alor Setar",
+  "provinceStateCode": "KED",
+  "shortName": "Sultan Abdul Halim Airport",
+  "code": "AOR"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Bali",
+  "provinceStateCode": "BA",
+  "shortName": "Denpasar Ngurah Rai International Airport",
+  "code": "DPS"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Balikpapan",
+  "provinceStateCode": "KI",
+  "shortName": "Sepinggan Airport",
+  "code": "BPN"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Banda Aceh",
+  "provinceStateCode": "AC",
+  "shortName": "Sultan Iskandarmuda Airport",
+  "code": "BTJ"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Bandung",
+  "provinceStateCode": "JB",
+  "shortName": "Husein Sastranegara Airport",
+  "code": "BDO"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "BAK",
+  "name": "Bangkok",
+  "provinceStateCode": "AS",
+  "shortName": "Suvarnabhumi International Airport",
+  "code": "BKK"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Bangkok - Don Mueang",
+  "provinceStateCode": "AS",
+  "shortName": "Don Mueang International Airport ( Terminal 1)",
+  "code": "DMK"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Beijing",
+  "provinceStateCode": "AC",
+  "shortName": "Beijing Capital International Airport (Terminal 2)",
+  "code": "PEK"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Bengaluru",
+  "provinceStateCode": "KA",
+  "shortName": "Bengaluru International Airport",
+  "code": "BLR"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CX",
+  "macCode": "",
+  "name": "Christmas Island (Charter)",
+  "provinceStateCode": "OTH",
+  "shortName": "Christmas Island (Charter)",
+  "code": "XCH"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Bintulu",
+  "provinceStateCode": "SWR",
+  "shortName": "Bintulu Airport",
+  "code": "BTU"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "BN",
+  "macCode": "",
+  "name": "Brunei",
+  "provinceStateCode": "BM",
+  "shortName": "Brunei International Airport",
+  "code": "BWN"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Buri Ram",
+  "provinceStateCode": "AC",
+  "shortName": "Buri Ram Airport",
+  "code": "BFV"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "KR",
+  "macCode": "",
+  "name": "Busan",
+  "provinceStateCode": "OTH",
+  "shortName": "Gimhae International Airport",
+  "code": "PUS"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "PH",
+  "macCode": "",
+  "name": "Cagayan de Oro",
+  "provinceStateCode": "CAG",
+  "shortName": "Cagayan De Oro Airport",
+  "code": "CGY"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "PH",
+  "macCode": "",
+  "name": "Cebu",
+  "provinceStateCode": "CEB",
+  "shortName": "Mactan-Cebu International Airport",
+  "code": "CEB"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Chandigarh",
+  "provinceStateCode": "CH",
+  "shortName": "Chandigarh Airport",
+  "code": "IXC"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Changsha",
+  "provinceStateCode": "AO",
+  "shortName": "Changsha Huanghua International Airport",
+  "code": "CSX"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Chengdu",
+  "provinceStateCode": "AZ",
+  "shortName": "Chengdu Shuangliu International Airport",
+  "code": "CTU"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Chennai",
+  "provinceStateCode": "TN",
+  "shortName": "Chennai International Airport",
+  "code": "MAA"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Chiang Mai",
+  "provinceStateCode": "AI",
+  "shortName": "Chiang Mai International Airport",
+  "code": "CNX"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Guiyang (Charter)",
+  "provinceStateCode": "AI",
+  "shortName": "Guiyang (Charter)",
+  "code": "KWE"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Chiang Rai",
+  "provinceStateCode": "AJ",
+  "shortName": "Chiang Rai International Airport",
+  "code": "CEI"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Chongqing",
+  "provinceStateCode": "AD",
+  "shortName": "Chongqing Jiangbei International Airport (Terminal 1)",
+  "code": "CKG"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "NZ",
+  "macCode": "",
+  "name": "Christchurch",
+  "provinceStateCode": "CAN",
+  "shortName": "Christchurch International Airport",
+  "code": "CHC"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "PH",
+  "macCode": "",
+  "name": "Clark",
+  "provinceStateCode": "PAM",
+  "shortName": "Diosdado Macapagal International Airport",
+  "code": "CRK"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "LK",
+  "macCode": "",
+  "name": "Colombo",
+  "provinceStateCode": "E",
+  "shortName": "Bandaranayake International Airport",
+  "code": "CMB"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "VN",
+  "macCode": "",
+  "name": "Da Nang",
+  "provinceStateCode": "AQ",
+  "shortName": "Da Nang International Airport",
+  "code": "DAD"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "AU",
+  "macCode": "",
+  "name": "Darwin",
+  "provinceStateCode": "NT",
+  "shortName": "Darwin International Airport",
+  "code": "DRW"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "PH",
+  "macCode": "",
+  "name": "Davao",
+  "provinceStateCode": "DAS",
+  "shortName": "Francisco Bangoy International airport",
+  "code": "DVO"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Goa",
+  "provinceStateCode": "GA",
+  "shortName": "Goa International Airport",
+  "code": "GOI"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "AU",
+  "macCode": "",
+  "name": "Gold Coast",
+  "provinceStateCode": "QLD",
+  "shortName": "Coolangatta Airport",
+  "code": "OOL"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Guangzhou",
+  "provinceStateCode": "AG",
+  "shortName": "Baiyun International Airport",
+  "code": "CAN"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Guilin",
+  "provinceStateCode": "AH",
+  "shortName": "Liangjiang International Airport",
+  "code": "KWL"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Hangzhou",
+  "provinceStateCode": "BG",
+  "shortName": "Hangzhou (Xiaoshan International Airport)",
+  "code": "HGH"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "VN",
+  "macCode": "",
+  "name": "Hanoi",
+  "provinceStateCode": "AZ",
+  "shortName": "Noi Bai International Airport",
+  "code": "HAN"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Hat Yai",
+  "provinceStateCode": "CN",
+  "shortName": "Hat Yai International airport",
+  "code": "HDY"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "VN",
+  "macCode": "",
+  "name": "Ho Chi Minh City",
+  "provinceStateCode": "BE",
+  "shortName": "Tan Son Nhat International Airport (Terminal 2)",
+  "code": "SGN"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "HK",
+  "macCode": "",
+  "name": "Hong Kong",
+  "provinceStateCode": "OTH",
+  "shortName": "Hong Kong International Airport (Terminal 2)",
+  "code": "HKG"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Hyderabad",
+  "provinceStateCode": "AP",
+  "shortName": "Rajiv Gandhi International Airport",
+  "code": "HYD"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Jaipur",
+  "provinceStateCode": "RJ",
+  "shortName": "Jaipur International Airport",
+  "code": "JAI"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Jakarta",
+  "provinceStateCode": "BT",
+  "shortName": "Soekarno Hatta International Airport",
+  "code": "CGK"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "SA",
+  "macCode": "",
+  "name": "Jeddah",
+  "provinceStateCode": "K",
+  "shortName": "King Abdulaziz International Airport",
+  "code": "JED"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Jinjiang",
+  "provinceStateCode": "AE",
+  "shortName": "Quanzhou Jinjiang Airport",
+  "code": "JJN"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Johor Bahru",
+  "provinceStateCode": "JHB",
+  "shortName": "Senai International Airport",
+  "code": "JHB"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "PH",
+  "macCode": "",
+  "name": "Kalibo - Boracay",
+  "provinceStateCode": "AKL",
+  "shortName": "Kalibo International Airport",
+  "code": "KLO"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Lipe (Sunrise Beach)",
+  "provinceStateCode": "IL",
+  "shortName": "Lipe (Sunrise Beach)",
+  "code": "1AE"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "NP",
+  "macCode": "",
+  "name": "Kathmandu",
+  "provinceStateCode": "BA",
+  "shortName": "Tribhuvan International Airport",
+  "code": "KTM"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Khon Kaen",
+  "provinceStateCode": "AQ",
+  "shortName": "Khon Kaen Airport",
+  "code": "KKC"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Kochi",
+  "provinceStateCode": "KL",
+  "shortName": "Cochin International Airport",
+  "code": "COK"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Kolkata",
+  "provinceStateCode": "WB",
+  "shortName": "Netaji Subhash Chandra Bose International Airport",
+  "code": "CCU"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Kota Bharu",
+  "provinceStateCode": "KEL",
+  "shortName": "Sultan Ismail Petra Airport",
+  "code": "KBR"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Kota Kinabalu",
+  "provinceStateCode": "SAB",
+  "shortName": "Kota Kinabalu International Airport (Terminal 2)",
+  "code": "BKI"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Krabi",
+  "provinceStateCode": "AR",
+  "shortName": "Krabi International Airport (Terminal 1)",
+  "code": "KBV"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Kuala Lumpur",
+  "provinceStateCode": "KUL",
+  "shortName": "Kuala Lumpur International Airport 2 (klia2)",
+  "code": "KUL"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Kuala Terengganu",
+  "provinceStateCode": "TGG",
+  "shortName": "Sultan Mahmud Airport",
+  "code": "TGG"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Kuantan",
+  "provinceStateCode": "PHA",
+  "shortName": "Kuantan Airport",
+  "code": "KUA"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Kuching",
+  "provinceStateCode": "SWR",
+  "shortName": "Kuching International Airport, Main Terminal",
+  "code": "KCH"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Kunming",
+  "provinceStateCode": "BF",
+  "shortName": "Kunming Changshui International Airport",
+  "code": "KMG"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Labuan",
+  "provinceStateCode": "SAB",
+  "shortName": "Labuan Airport",
+  "code": "LBU"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Langkawi",
+  "provinceStateCode": "KED",
+  "shortName": "Langkawi International Airport",
+  "code": "LGK"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Loei",
+  "provinceStateCode": "AV",
+  "shortName": "Loei Airport",
+  "code": "LOE"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Lombok",
+  "provinceStateCode": "NB",
+  "shortName": "Lombok International Airport",
+  "code": "LOP"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "GB",
+  "macCode": "",
+  "name": "London",
+  "provinceStateCode": "EN",
+  "shortName": "London Gatwick Airport",
+  "code": "LGW"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Nanjing (Charter)",
+  "provinceStateCode": "AP",
+  "shortName": "Nanjing (Charter)",
+  "code": "NKG"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MO",
+  "macCode": "",
+  "name": "Macau",
+  "provinceStateCode": "OTH",
+  "shortName": "Macau International Airport",
+  "code": "MFM"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Makassar",
+  "provinceStateCode": "SN",
+  "shortName": "Hasanuddin International Airport",
+  "code": "UPG"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MV",
+  "macCode": "",
+  "name": "Male",
+  "provinceStateCode": "N",
+  "shortName": "Malé International Airport",
+  "code": "MLE"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Ngai (KohNgai Villa) ",
+  "provinceStateCode": "IL",
+  "shortName": "Ngai (KohNgai Villa) ",
+  "code": "1AF"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MM",
+  "macCode": "",
+  "name": "Mandalay",
+  "provinceStateCode": "H",
+  "shortName": "Mandalay International Airport",
+  "code": "MDL"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "PH",
+  "macCode": "",
+  "name": "Manila",
+  "provinceStateCode": "MNL",
+  "shortName": "Ninoy Aquino International Airport",
+  "code": "MNL"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Medan - Kualanamu",
+  "provinceStateCode": "SU",
+  "shortName": "Kualanamu Airport",
+  "code": "KNO"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Ningbo (Charter)",
+  "provinceStateCode": "BG",
+  "shortName": "Ningbo (Charter)",
+  "code": "NGB"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "AU",
+  "macCode": "",
+  "name": "Melbourne",
+  "provinceStateCode": "VIC",
+  "shortName": "Melbourne Airport",
+  "code": "MEL"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Miri",
+  "provinceStateCode": "SWR",
+  "shortName": "Miri Airport",
+  "code": "MYY"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Mumbai",
+  "provinceStateCode": "MH",
+  "shortName": "Chhatrapati Shivaji International Airport",
+  "code": "BOM"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "true",
+  "countryCode": "JP",
+  "macCode": "",
+  "name": "Nagoya - Chubu",
+  "provinceStateCode": "AA",
+  "shortName": "Chubu Centrair International Airport",
+  "code": "NGO"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Nakhon Phanom",
+  "provinceStateCode": "BC",
+  "shortName": "Nakhon Phanom Airport",
+  "code": "KOP"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Nakhon Si Thammarat",
+  "provinceStateCode": "BG",
+  "shortName": "Nakhon Si Thammarat Airport",
+  "code": "NST"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Nan",
+  "provinceStateCode": "BH",
+  "shortName": "Nan Airport",
+  "code": "NNT"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Nanning",
+  "provinceStateCode": "AH",
+  "shortName": "Nanning Wuxu International Airport",
+  "code": "NNG"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Narathiwat",
+  "provinceStateCode": "BI",
+  "shortName": "Narathiwat Airport",
+  "code": "NAW"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Zhengzhou Airport",
+  "provinceStateCode": "AM",
+  "shortName": "Zhengzhou Airport",
+  "code": "CGO"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "New Delhi",
+  "provinceStateCode": "DL",
+  "shortName": "Indira Gandhi International Airport (Terminal 3)",
+  "code": "DEL"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "JP",
+  "macCode": "",
+  "name": "Osaka - Kansai",
+  "provinceStateCode": "CI",
+  "shortName": "Kansai International Airport",
+  "code": "KIX"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Padang",
+  "provinceStateCode": "SB",
+  "shortName": "Minangkabau International Airport",
+  "code": "PDG"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Palembang",
+  "provinceStateCode": "SS",
+  "shortName": "Sultan Mahmud Badaruddin II International Airport",
+  "code": "PLM"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "AE",
+  "macCode": "",
+  "name": "Dubai Airport",
+  "provinceStateCode": "DU",
+  "shortName": "Dubai Airport",
+  "code": "DXB"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Pekanbaru",
+  "provinceStateCode": "RI",
+  "shortName": "Sultan Syarif Kasim II Airport",
+  "code": "PKU"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Penang",
+  "provinceStateCode": "PEN",
+  "shortName": "Penang International Airport",
+  "code": "PEN"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "AU",
+  "macCode": "",
+  "name": "Perth",
+  "provinceStateCode": "WA",
+  "shortName": "Perth International Airport",
+  "code": "PER"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Phitsanulok",
+  "provinceStateCode": "BU",
+  "shortName": "Phitsanulok Airport",
+  "code": "PHS"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "KH",
+  "macCode": "",
+  "name": "Phnom Penh",
+  "provinceStateCode": "H",
+  "shortName": "Phnom Penh International Airport",
+  "code": "PNH"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Phuket",
+  "provinceStateCode": "BX",
+  "shortName": "Phuket International Airport",
+  "code": "HKT"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "PH",
+  "macCode": "",
+  "name": "Puerto Princesa - Palawan",
+  "provinceStateCode": "PLW",
+  "shortName": "Puerto Princesa International Airport",
+  "code": "PPS"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Pune",
+  "provinceStateCode": "MH",
+  "shortName": "Pune Airport",
+  "code": "PNQ"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Harbin Airport",
+  "provinceStateCode": "AL",
+  "shortName": "Harbin Airport",
+  "code": "HRB"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Roi Et",
+  "provinceStateCode": "CD",
+  "shortName": "Roi Et Airport",
+  "code": "ROI"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Sakon Nakhon",
+  "provinceStateCode": "CF",
+  "shortName": "Sakon Nakhon Airport",
+  "code": "SNO"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Sandakan",
+  "provinceStateCode": "SAB",
+  "shortName": "Sandakan Airport",
+  "code": "SDK"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "JP",
+  "macCode": "",
+  "name": "Sapporo - Shin-Chitose",
+  "provinceStateCode": "AI",
+  "shortName": "Shin Chitose Airport",
+  "code": "CTS"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "AE",
+  "macCode": "",
+  "name": "Sharjah Airport",
+  "provinceStateCode": "SH",
+  "shortName": "Sharjah Airport",
+  "code": "SHJ"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Semarang",
+  "provinceStateCode": "JT",
+  "shortName": "Ahmad Yani International Airport",
+  "code": "SRG"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "KR",
+  "macCode": "",
+  "name": "Seoul",
+  "provinceStateCode": "K",
+  "shortName": "Incheon International Airport",
+  "code": "ICN"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Shanghai",
+  "provinceStateCode": "AA",
+  "shortName": "Shanghai Pudong International Airport (T2)",
+  "code": "PVG"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Shanghai",
+  "provinceStateCode": "OTH",
+  "shortName": "Shanghai Hongqiao International Airport",
+  "code": "SHA"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Shenzhen",
+  "provinceStateCode": "AG",
+  "shortName": "Bao'an International Airport (International Terminal)",
+  "code": "SZX"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Sibu",
+  "provinceStateCode": "SWR",
+  "shortName": "Sibu Airport",
+  "code": "SBW"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "KH",
+  "macCode": "",
+  "name": "Siem Reap",
+  "provinceStateCode": "U",
+  "shortName": "Siem Reap International Airport",
+  "code": "REP"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "SG",
+  "macCode": "",
+  "name": "Singapore",
+  "provinceStateCode": "SGN",
+  "shortName": "Changi Airport (Terminal 1)",
+  "code": "SIN"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "FR",
+  "macCode": "",
+  "name": "Blagnac Airport",
+  "provinceStateCode": "OTH",
+  "shortName": "Blagnac Airport",
+  "code": "TLS"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Solo",
+  "provinceStateCode": "JT",
+  "shortName": "Adi Sumarmo International Airport",
+  "code": "SOC"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Surabaya",
+  "provinceStateCode": "JI",
+  "shortName": "Juanda International Airport (Terminal 2)",
+  "code": "SUB"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Surat Thani",
+  "provinceStateCode": "CQ",
+  "shortName": "Surat Thani Airport",
+  "code": "URT"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "AU",
+  "macCode": "",
+  "name": "Sydney",
+  "provinceStateCode": "NS",
+  "shortName": "Sydney (Kingsford Smith) Airport",
+  "code": "SYD"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "PH",
+  "macCode": "",
+  "name": "Tacloban",
+  "provinceStateCode": "LEY",
+  "shortName": "Tacloban-Daniel Z. Romualdez Airport",
+  "code": "TAC"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "PH",
+  "macCode": "",
+  "name": "Tagbilaran",
+  "provinceStateCode": "BOH",
+  "shortName": "Tagbilaran Airport",
+  "code": "TAG"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "TW",
+  "macCode": "",
+  "name": "Taipei",
+  "provinceStateCode": "TPE",
+  "shortName": "Taoyuan International Airport (Terminal 1)",
+  "code": "TPE"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Tawau",
+  "provinceStateCode": "SAB",
+  "shortName": "Tawau Airport",
+  "code": "TWU"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "IR",
+  "macCode": "",
+  "name": "Tehran",
+  "provinceStateCode": "BF",
+  "shortName": "Imam Khomeini International Airport",
+  "code": "IKA"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Tiruchirappalli",
+  "provinceStateCode": "TN",
+  "shortName": "Tiruchirappalli Civil Airport",
+  "code": "TRZ"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "JP",
+  "macCode": "",
+  "name": "Tokyo - Haneda",
+  "provinceStateCode": "CC",
+  "shortName": "Tokyo International Airport",
+  "code": "HND"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "IQ",
+  "macCode": "",
+  "name": "Baghdad International Airport",
+  "provinceStateCode": "BG",
+  "shortName": "Baghdad International Airport",
+  "code": "BGW"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "JP",
+  "macCode": "",
+  "name": "Tokyo - Narita",
+  "provinceStateCode": "CC",
+  "shortName": "Narita International Airport (Terminal 2)",
+  "code": "NRT"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Trang",
+  "provinceStateCode": "CT",
+  "shortName": "Trang Airport",
+  "code": "TST"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Ubon Ratchathani",
+  "provinceStateCode": "CV",
+  "shortName": "Ubon Ratchathani Airport",
+  "code": "UBP"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Tao Island (Seatran pier)",
+  "provinceStateCode": "IL",
+  "shortName": "Tao Island (Seatran pier)",
+  "code": "1AH"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Udon Thani",
+  "provinceStateCode": "CW",
+  "shortName": "Udon Thani International Airport",
+  "code": "UTH"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "LA",
+  "macCode": "",
+  "name": "Vientiane",
+  "provinceStateCode": "VT",
+  "shortName": "Wattay International Airport",
+  "code": "VTE"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "PW",
+  "macCode": "",
+  "name": "Airai Airport",
+  "provinceStateCode": "OTH",
+  "shortName": "Airai Airport",
+  "code": "ROR"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Wuhan",
+  "provinceStateCode": "AN",
+  "shortName": "Wuhan Tianhe International Airport",
+  "code": "WUH"
+}, {
+  "stationCategories": "",
+  "isD7Station": "true",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Xi'an",
+  "provinceStateCode": "AW",
+  "shortName": "Xi'an Xianyang International Airport (Terminal 3)",
+  "code": "XIY"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "MM",
+  "macCode": "",
+  "name": "Yangon",
+  "provinceStateCode": "N",
+  "shortName": "Yangon International Airport",
+  "code": "RGN"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Yogyakarta",
+  "provinceStateCode": "YO",
+  "shortName": "Adi Sucipto Airport",
+  "code": "JOG"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Pai (Pai Bus Station)",
+  "provinceStateCode": "IC",
+  "shortName": "Pai Bus station",
+  "code": "3AA"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Sukhothai (Historical Park)",
+  "provinceStateCode": "IC",
+  "shortName": "Sukhothai historical park",
+  "code": "3AB"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Mukdahan (Indochina Market)",
+  "provinceStateCode": "IC",
+  "shortName": "Mukdahan",
+  "code": "3AC"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Kalasin (Kud Nam Kin Park)",
+  "provinceStateCode": "IC",
+  "shortName": "Kalasin",
+  "code": "3AD"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Mahasarakham (Sermthai Complex)",
+  "provinceStateCode": "IC",
+  "shortName": "Mahasarakham ",
+  "code": "3AE"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Yao Noi (Manoh pier)",
+  "provinceStateCode": "IL",
+  "shortName": "Yao Noi (Manoh pier)",
+  "code": "1AG"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "LB",
+  "macCode": "",
+  "name": "Beirut International Airport",
+  "provinceStateCode": "BA",
+  "shortName": "Beirut International Airport",
+  "code": "BEY"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Khanom",
+  "provinceStateCode": "IC",
+  "shortName": "Khanom",
+  "code": "3AG"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Khaolak",
+  "provinceStateCode": "IC",
+  "shortName": "Khaolak",
+  "code": "3AH"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Donsak pier",
+  "provinceStateCode": "IL",
+  "shortName": "Donsak pier",
+  "code": "L1A"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Sultan Abdul Aziz Shah Airport",
+  "provinceStateCode": "KUL",
+  "shortName": "Sultan Abdul Aziz Shah Airport",
+  "code": "SZB"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Gaya Airport",
+  "provinceStateCode": "BR",
+  "shortName": "Gaya Airport (Charter)",
+  "code": "GAY"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Rassada pier",
+  "provinceStateCode": "IL",
+  "shortName": "Rassada pier",
+  "code": "L1B"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "KR",
+  "macCode": "",
+  "name": "Jeju (Charter)",
+  "provinceStateCode": "P",
+  "shortName": "Jeju (Charter)",
+  "code": "CJU"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Nopparatthara pier",
+  "provinceStateCode": "IL",
+  "shortName": "Nopparatthara pier",
+  "code": "L1C"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Dalian Airport",
+  "provinceStateCode": "AS",
+  "shortName": "Dalian Airport",
+  "code": "DLC"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Pakbara pier",
+  "provinceStateCode": "IL",
+  "shortName": "Pakbara pier",
+  "code": "L1D"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Hefei (Charter)",
+  "provinceStateCode": "AA",
+  "shortName": "Hefei (Charter)",
+  "code": "HFE"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Pakmeng pier",
+  "provinceStateCode": "IL",
+  "shortName": "Pakmeng pier",
+  "code": "L1E"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Nopparattara pier",
+  "provinceStateCode": "IL",
+  "shortName": "Nopparattara pier",
+  "code": "L1F"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Hua Hin pier",
+  "provinceStateCode": "IL",
+  "shortName": "Hua Hin pier",
+  "code": "L1G"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Samui (Lipa Noi Pier)",
+  "provinceStateCode": "IL",
+  "shortName": "Samui (Lipa Noi pier)",
+  "code": "1AA"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "SA",
+  "macCode": "",
+  "name": "Mohammad Bin Abdulaziz Airport",
+  "provinceStateCode": "K",
+  "shortName": "Mohammad Bin Abdulaziz Airport",
+  "code": "MED"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Phangan (Thong Sala Pier)",
+  "provinceStateCode": "IL",
+  "shortName": "Phangan (Thong Sala pier)",
+  "code": "1AB"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "MY",
+  "macCode": "",
+  "name": "Batu Berendum Airport",
+  "provinceStateCode": "MEL",
+  "shortName": "Batu Berendum Airport",
+  "code": "MKZ"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Phi Phi (Phi Phi Pier)",
+  "provinceStateCode": "IL",
+  "shortName": "Phi Phi (Phi Phi pier)",
+  "code": "1AC"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "KR",
+  "macCode": "",
+  "name": "Muan (Charter)",
+  "provinceStateCode": "N",
+  "shortName": "Muan (Charter)",
+  "code": "MWX"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Lanta (Saladan Pier)",
+  "provinceStateCode": "IL",
+  "shortName": "Lanta Island (Saladan pier)",
+  "code": "1AD"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Tao Island (Seatran pier)",
+  "provinceStateCode": "AX",
+  "shortName": "Qingdao (Charter)",
+  "code": "TAO"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Wenzhou (Charter)",
+  "provinceStateCode": "BG",
+  "shortName": "Wenzhou (Charter) ",
+  "code": "WNZ"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "KZ",
+  "macCode": "",
+  "name": "Almaty Airport",
+  "provinceStateCode": "OTH",
+  "shortName": "Almaty Airport",
+  "code": "ALA"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "SN",
+  "macCode": "",
+  "name": "Yoff Airport",
+  "provinceStateCode": "DK",
+  "shortName": "Yoff Airport",
+  "code": "DKR"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Hua Hin Airport",
+  "provinceStateCode": "BZ",
+  "shortName": "Hua Hin Airport",
+  "code": "HHQ"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "TN",
+  "macCode": "",
+  "name": "Carthage Airport",
+  "provinceStateCode": "AX",
+  "shortName": "Carthage Airport",
+  "code": "TUN"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "PH",
+  "macCode": "",
+  "name": "General Santos",
+  "provinceStateCode": "SCO",
+  "shortName": "General Santos",
+  "code": "GES"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "ID",
+  "macCode": "",
+  "name": "Pontianak",
+  "provinceStateCode": "KT",
+  "shortName": "Supadio International Airport",
+  "code": "PNK"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Visakhapatnam",
+  "provinceStateCode": "AP",
+  "shortName": "Visakhapatnam Airport",
+  "code": "VTZ"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Guwahati",
+  "provinceStateCode": "AS",
+  "shortName": "Lokpriya Gopinath Bordoloi International Airport",
+  "code": "GAU"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Surin (The Chang Knowledge Park)",
+  "provinceStateCode": "IC",
+  "shortName": "Surin ",
+  "code": "3AI"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Pattaya",
+  "provinceStateCode": "CC",
+  "shortName": "U-Tapao International Airport",
+  "code": "UTP"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TW",
+  "macCode": "",
+  "name": "Kaohsiung",
+  "provinceStateCode": "KHH",
+  "shortName": "Kaohsiung International Airport",
+  "code": "KHH"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "IN",
+  "macCode": "",
+  "name": "Imphal",
+  "provinceStateCode": "MN",
+  "shortName": "Imphal International Airport",
+  "code": "IMF"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "TH",
+  "macCode": "",
+  "name": "Chiang Khan",
+  "provinceStateCode": "IC",
+  "shortName": "Chiang Khan (The Old ChiangKhan)",
+  "code": "3AJ"
+}, {
+  "stationCategories": "",
+  "isD7Station": "false",
+  "countryCode": "BD",
+  "macCode": "",
+  "name": "Dhaka",
+  "provinceStateCode": "AO",
+  "shortName": "Hazrat Shahjalal International Airport",
+  "code": "DAC"
+}, {
+  "stationCategories": "C",
+  "isD7Station": "false",
+  "countryCode": "CN",
+  "macCode": "",
+  "name": "Wuxi Airport",
+  "provinceStateCode": "AP",
+  "shortName": "Wuxi Airport",
+  "code": "WUX"
+}]

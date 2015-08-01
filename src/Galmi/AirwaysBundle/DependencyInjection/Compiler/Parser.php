@@ -6,14 +6,14 @@
  * Time: 12:48
  */
 
-namespace Galmi\AirwaysBundle\Handlers;
+namespace Galmi\AirwaysBundle\DependencyInjection\Compiler;
 
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-class ParserCompilerPass implements CompilerPassInterface
+class Parser implements CompilerPassInterface
 {
 
     /**
