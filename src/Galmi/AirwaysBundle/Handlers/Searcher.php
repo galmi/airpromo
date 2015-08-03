@@ -22,7 +22,7 @@ class Searcher
      */
     public function addSource(ParserAbstract $parser)
     {
-        $this->sources[] = $parser;
+        $this->sources[$parser->getSourceName()] = $parser;
     }
 
     /**

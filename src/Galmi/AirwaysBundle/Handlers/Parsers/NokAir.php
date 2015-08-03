@@ -40,7 +40,10 @@ class NokAir extends ParserAbstract
      * }
      */
 
+    /** @var string */
     protected $uri = 'http://www.nokair.com/nokconnext/Services/AvailabilityServices.aspx?outbound=true';
+    /** @var string */
+    protected $sourceName = 'nokair';
 
     /**
      * @param Params $params

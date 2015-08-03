@@ -18,7 +18,7 @@ abstract class ParserAbstract
     /** @var  Downloader */
     protected $downloader;
     /** @var string */
-    protected $source;
+    protected $sourceName;
 
     /**
      * @param $downloader
@@ -35,9 +35,9 @@ abstract class ParserAbstract
     /**
      * @return string
      */
-    public function getSource()
+    public function getSourceName()
     {
-        return $this->source;
+        return $this->sourceName;
     }
 
     /**

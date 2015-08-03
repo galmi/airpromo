@@ -1,3 +1,0 @@
-galmi_airways_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: GalmiAirwaysBundle:Default:index }

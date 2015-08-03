@@ -28,6 +28,8 @@ class LionAirThai extends ParserAbstract
      */
     /** @var string */
     protected $uri = 'http://search.lionairthai.com/mobile/Search/SearchFlight';
+    /** @var string */
+    protected $sourceName = 'lionairthai';
 
     /**
      * @param Params $params

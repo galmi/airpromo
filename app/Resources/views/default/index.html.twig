@@ -1,5 +1,62 @@
 {% extends 'base.html.twig' %}
 
+{% block javascripts %}
+    <script src="{{ asset('bundles/galmiairways/js/index.js') }}"></script>
+{% endblock %}
+
 {% block body %}
-    Homepage.
+    <div class="header clearfix">
+        <h3 class="text-muted">Project name</h3>
+    </div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#domestic" aria-controls="domestic" role="tab" data-toggle="tab">Domestic flights</a>
+        </li>
+        <li role="presentation">
+            <a href="#international" aria-controls="international" role="tab" data-toggle="tab">International
+                flights</a>
+        </li>
+        <li role="presentation">
+            <a href="#hotel" aria-controls="hotel" role="tab" data-toggle="tab">Hotel</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="domestic">
+            <div class="jumbotron white">
+                <form id="searchForm">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="origin">Origin</label>
+                            <select class="form-control" id="origin" name="origin">
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="destination">Destination</label>
+                            <select class="form-control" id="destination" name="destination">
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="departureDate">Departure date</label>
+                            <input type="date" class="form-control" id="departureDate" name="departureDate"
+                                   placeholder="Departure date">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-lg btn-primary pull-right" id="submit">Find</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <div class="jumbotron white" id="results">
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="international">
+            <script charset="utf-8" src="//www.travelpayouts.com/widgets/6a56d09ef7adde499da00a5745eebb66.js?v=492"
+                    async></script>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="hotel">
+            <script charset="utf-8" src="//www.travelpayouts.com/widgets/0a4ef006ece369f2a7ed2a01b0fa3587.js?v=492"
+                    async></script>
+        </div>
+    </div>
+
 {% endblock %}

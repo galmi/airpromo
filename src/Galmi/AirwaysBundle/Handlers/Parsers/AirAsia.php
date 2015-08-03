@@ -18,6 +18,8 @@ class AirAsia extends ParserAbstract
      */
     /** @var string */
     protected $uri = 'https://booking.airasia.com/Flight/Select';
+    /** @var string */
+    protected $sourceName = 'airasia';
 
     /**
      * @param Params $params
@@ -74,9 +76,20 @@ class AirAsia extends ParserAbstract
                 $result->setOrigin($params->getOrigin());
                 $result->setArrivalTime($node->filter('.avail-table-detail-table')->eq(0)->filter('.avail-table-detail')->eq(1)->filter('.text-center div')->eq(0)->text());
                 $result->setDestination($params->getDestination());
-                $price = trim($node->filter('.LF .promo-discount-amount')->text());
+                $promoNode = $node->filter('.LF .promo-discount-amount');
+                $price = null;
+                if ($promoNode->count())
+                    $price = trim($promoNode->text());
+                if (empty($price)) {
+                    $lfNode = $node->filter('.LF .avail-fare-price:not(.discount)');
+                    if ($lfNode->count())
+                        $price = $lfNode->text();
+                    $pfNode = $node->filter('.PF .avail-fare-price:not(.discount)');
+                    if ($pfNode->count())
+                        $price = $pfNode->text();
+                }
                 if (empty($price))
-                    $price = $node->filter('.LF .avail-fare-price:not(.discount)')->text();
+                    return;
                 $price = filter_var($price, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $result->setPrice($price);
                 $result->setDate($params->getDepartDate());

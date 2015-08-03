@@ -1,6 +1,6 @@
 galmi_airways:
-    resource: "@GalmiAirwaysBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: "@GalmiAirwaysBundle/Controller/"
+    type:     annotation
 
 app:
     resource: "@AppBundle/Controller/"
