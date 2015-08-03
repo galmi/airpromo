@@ -31,6 +31,8 @@ class Result
      *  "data"
      * ]
      */
+    private $sourceSubmit;
+    /** @var  string */
     private $source;
 
     /**
@@ -143,17 +145,18 @@ class Result
     /**
      * @return string
      */
-    public function getSource()
+    public function getSourceSubmit()
     {
-        return $this->source;
+        return $this->sourceSubmit;
     }
 
     /**
-     * @param string $source
+     * @param string $sourceSubmit
      */
-    public function setSource($source)
+    public function setSourceSubmit($sourceSubmit)
     {
-        $this->source = $source;
+        $this->sourceSubmit = $sourceSubmit;
+        return $this;
     }
 
     public function toArray()
@@ -165,7 +168,25 @@ class Result
             'departTime' => $this->getDepartureTime(),
             'arrivalTime' => $this->getArrivalTime(),
             'price' => $this->getPrice(),
-            'source' => $this->getSource()
+            'sourceSubmit' => $this->getSourceSubmit(),
+            'source' => $this->getSource(),
         ];
+    }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * @param string $source
+     */
+    public function setSource($source)
+    {
+        $this->source = $source;
+        return $this;
     }
 }

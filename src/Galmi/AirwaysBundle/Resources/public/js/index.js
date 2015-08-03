@@ -11,6 +11,8 @@ $(document).ready(function () {
         departureDate: $("#departureDate"),
         submit: $("#submit"),
         results: $("#results"),
+        loader: $("#loader"),
+        requests: 0,
 
         init: function (origin, destination) {
             this.originEl = origin;
@@ -18,14 +20,21 @@ $(document).ready(function () {
 
             this.initOrigin();
             this.initSubmit();
+            $('.datepicker').pickadate({
+                min: new Date(),
+                selectMonths: true,
+                selectYears: 15,
+                format: 'yyyy-mm-dd'
+            });
         },
         initOrigin: function () {
             this.originEl.find('option').remove();
-            this.originEl.append('<option value=""></option>');
+            this.originEl.append('<option value="" disabled selected>Choose your option</option>');
             for (var key in this.airports) {
                 this.originEl.append('<option value=' + key + '>' + this.airports[key].name + '</option>');
             }
             this.originEl.find('option').sort(NASort).appendTo(this.originEl);
+            this.originEl.material_select();
 
             this.originEl.on('change', function () {
                 Router.updateDestination();
@@ -51,16 +60,21 @@ $(document).ready(function () {
                 this.clearResults();
 
                 var urlTpl = "search/origin/{origin}/destination/{destination}/departureDate/{departureDate}?sourceId={sourceId}";
-                for (var i in routeDestination.sources) {
-                    var source = routeDestination.sources[i];
-                    dataObj['sourceId'] = source;
-                    $.get(urlTpl.apply(dataObj), function (data) {
-                        this.updateResults(data);
-                    }.bind(this));
+                if (routeDestination && routeDestination.sources.length > 0) {
+                    this.loaderShow(true);
+                    for (var i in routeDestination.sources) {
+                        this.requests++;
+                        var source = routeDestination.sources[i];
+                        dataObj['sourceId'] = source;
+                        $.get(urlTpl.apply(dataObj), function (data) {
+                            this.updateResults(data);
+                        }.bind(this)).always(this.cameResponse);
+                    }
                 }
             }, this));
         },
         updateDestination: function () {
+            this.destinationEl.material_select('destroy');
             this.destinationEl.find('option').remove();
             var originCode = this.originEl.val();
             var route = this.routes[originCode];
@@ -70,21 +84,55 @@ $(document).ready(function () {
                 this.destinationEl.append('<option value=' + airport.code + '>' + airport.name + '</option>');
             }
             this.destinationEl.find('option').sort(NASort).appendTo(this.destinationEl);
+            this.destinationEl.material_select();
         },
         updateResults: function (data) {
-            var rowTemplate = '<div class="jumbotron result-row"><div class="text-center col-md-3"><h3><span class="price">{price}</span> THB</h3><button type="button" class="btn btn-lg btn-success" id="submit">BOOK NOW</button></div> <div class="col-md-1"></div><div class="col-md-8"><div class="col-md-12"><h4>{origin_name} <span class="glyphicon glyphicon-arrow-right"></span> {destination_name}</h4></div> <p></p> <div class="col-md-6"><h3 class="departTime">{departTime}</h3></div> <div class="col-md-6"><h3>{arrivalTime}</h3></div> </div> <div class="clearfix"></div> </div>';
+            var rowTemplate = '<div class="card-panel row result-row"><div class="center col s3"><h5><span class="price">{price}</span> THB</h5><button type="button" class="btn btn-large waves-effect waves-light orange">BOOK NOW</button></div> <div class="col s7"><div class="col s12"><div class="col s6"><h6>{origin_name}</h6></div><div class="col s6"><h6>{destination_name}</h6></div></div><div class="col s12"><div class="col s6"><h5 class="departTime">{departTime}</h5>{date}</div> <div class="col s6"><h5>{arrivalTime}</h5>{date}</div> </div></div><div class="col s2"><img src="/images/airlines/{source}.png"></div> </div>';
 
             for (var i in data) {
                 var row = data[i];
                 row['origin_name'] = Router.airports[row.origin].name;
                 row['destination_name'] = Router.airports[row.destination].name;
-                this.results.append(rowTemplate.apply(row));
+                var div = $(rowTemplate.apply(row));
+                this.initBookSubmit(div, row);
+                this.results.append(div);
             }
 
             this.results.find('.result-row').sort(ResultSort).appendTo(this.results);
         },
+        initBookSubmit: function($div, submitData) {
+            $div.find('button').on('click', function() {
+                var newForm = jQuery('<form>', {
+                    'action': submitData.sourceSubmit.uri,
+                    'method': submitData.sourceSubmit.method,
+                    'target': '_blank'
+                });
+                for (var key in submitData.sourceSubmit.data) {
+                    newForm.append(jQuery('<input>', {
+                        'name': key,
+                        'value': submitData.sourceSubmit.data[key],
+                        'type': 'hidden'
+                    }));
+                }
+                newForm.submit();
+            });
+        },
         clearResults: function () {
             this.results.find('.result-row').remove();
+        },
+        loaderShow: function (value) {
+            if (value) {
+                this.loader.removeClass('hide');
+            } else {
+                this.loader.addClass('hide');
+            }
+        },
+        cameResponse: function () {
+            Router.requests--;
+            if (Router.requests <= 0) {
+                Router.loaderShow(false);
+                Router.requests = 0;
+            }
         }
     };
     $.getJSON('/bundles/galmiairways/js/airports.json', function (data) {
@@ -122,7 +170,7 @@ function ResultSort(a, b) {
 String.prototype.apply = function (data) {
     var string = this.toString();
     for (var key in data) {
-        var pattern = new RegExp('\{' + key + '\}');
+        var pattern = new RegExp('\{' + key + '\}', 'g');
         string = string.replace(pattern, data[key]);
     }
     return string;

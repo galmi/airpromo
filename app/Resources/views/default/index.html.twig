@@ -5,58 +5,57 @@
 {% endblock %}
 
 {% block body %}
-    <div class="header clearfix">
-        <h3 class="text-muted">Project name</h3>
+    <div class="row white">
+        <ul class="tabs">
+            <li class="tab col s4">
+                <a href="#domestic">{{ "Domestic flights" | trans }}</a>
+            </li>
+            <li class="tab col s4">
+                <a href="#international">{{ "International flights" | trans }}</a>
+            </li>
+            <li class="tab col s4">
+                <a href="#hotel">{{ "Hotels" | trans }}</a>
+            </li>
+        </ul>
     </div>
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active">
-            <a href="#domestic" aria-controls="domestic" role="tab" data-toggle="tab">Domestic flights</a>
-        </li>
-        <li role="presentation">
-            <a href="#international" aria-controls="international" role="tab" data-toggle="tab">International
-                flights</a>
-        </li>
-        <li role="presentation">
-            <a href="#hotel" aria-controls="hotel" role="tab" data-toggle="tab">Hotel</a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="domestic">
-            <div class="jumbotron white">
-                <form id="searchForm">
-                    <div class="row">
-                        <div class="form-group col-md-4">
-                            <label for="origin">Origin</label>
-                            <select class="form-control" id="origin" name="origin">
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="destination">Destination</label>
-                            <select class="form-control" id="destination" name="destination">
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="departureDate">Departure date</label>
-                            <input type="date" class="form-control" id="departureDate" name="departureDate"
-                                   placeholder="Departure date">
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-lg btn-primary pull-right" id="submit">Find</button>
-                    <div class="clearfix"></div>
-                </form>
-            </div>
-            <div class="jumbotron white" id="results">
-                <div class="clearfix"></div>
-            </div>
+    <div id="domestic" class="col s12">
+        <div class="row white section">
+            <form id="searchForm" >
+                <div class="input-field col s1"></div>
+                <div class="input-field col s3">
+                    <select id="origin" name="origin">
+                    </select>
+                    <label for="origin">{{ "Origin" | trans }}</label>
+                </div>
+                <div class="input-field col s3">
+                    <select id="destination" name="destination">
+                    </select>
+                    <label for="destination">{{ "Destination" | trans }}</label>
+                </div>
+                <div class="input-field col s3 center">
+                    <input type="date" class="datepicker" id="departureDate" name="departureDate">
+                    <label for="departureDate">{{ "Departure date" | trans }}</label>
+                </div>
+                <div class="input-field col s2 center">
+                    <button type="button" class="btn-large waves-effect waves-light orange" id="submit">{{ "Find" | trans }}</button>
+                </div>
+            </form>
         </div>
-        <div role="tabpanel" class="tab-pane" id="international">
-            <script charset="utf-8" src="//www.travelpayouts.com/widgets/6a56d09ef7adde499da00a5745eebb66.js?v=492"
-                    async></script>
+        <div class="progress hide" id="loader">
+            <div class="indeterminate"></div>
         </div>
-        <div role="tabpanel" class="tab-pane" id="hotel">
-            <script charset="utf-8" src="//www.travelpayouts.com/widgets/0a4ef006ece369f2a7ed2a01b0fa3587.js?v=492"
-                    async></script>
-        </div>
-    </div>
+        <div  id="results">
 
+        </div>
+    </div>
+    <div id="international" class="col s12">
+        <script charset="utf-8"
+                src="//www.travelpayouts.com/widgets/6a56d09ef7adde499da00a5745eebb66.js?v=492"
+                async></script>
+    </div>
+    <div id="hotel" class="col s12">
+        <script charset="utf-8"
+                src="//www.travelpayouts.com/widgets/0a4ef006ece369f2a7ed2a01b0fa3587.js?v=492"
+                async></script>
+    </div>
 {% endblock %}

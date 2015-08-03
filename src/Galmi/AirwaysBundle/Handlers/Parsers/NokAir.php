@@ -103,7 +103,8 @@ class NokAir extends ParserAbstract
                         ->setDepartureTime($node->filter('td')->eq(0)->text())
                         ->setArrivalTime($node->filter('td')->eq(1)->text())
                         ->setDate($params->getDepartDate())
-                        ->setSource($this->getSourceData($params));
+                        ->setSourceSubmit($this->getSourceData($params))
+                        ->setSource('nokair');
                     $pricePromo = filter_var($node->filter('td')->eq(6)->text(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                     if ($pricePromo) {
                         $result->setPrice($pricePromo);
@@ -133,9 +134,20 @@ class NokAir extends ParserAbstract
     protected function getSourceData(Params $params)
     {
         return [
-            'uri' => $this->uri,
+            'uri' => 'http://www.nokair.com/nokconnext/aspx/Availability.aspx',
             'method' => 'POST',
-            'data' => $this->getParamsData($params)
+            'data' => [
+                'lstChild'          => 0,
+                'boardDate'         => $params->getDepartDate()->format('m/d/Y'), //'08/03/2015',
+                'ddlCurrency'       => 'THB',
+                'returnDate'        => $params->getDepartDate()->format('m/d/Y'),
+                'lstArrival'        => $params->getDestination(),
+                'lstDepartureMonth' => $params->getDepartDate()->format('m/Y'), //'08/2015',
+                'lstDepartureDate'  => $params->getDepartDate()->format('d'),
+                'lstAdult'          => 1,
+                'lstDeparture'      => $params->getOrigin(),
+                'roundtripFlag'     => '0'
+            ]
         ];
     }
 }

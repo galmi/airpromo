@@ -86,7 +86,8 @@ class LionAirThai extends ParserAbstract
                         ->setDestination(trim($node->filter('.date_time .double')->eq(1)->filter('label')->text()))
                         ->setArrivalTime($node->filter('.date_time .double')->eq(1)->filter('large')->text())
                         ->setDate($params->getDepartDate())
-                        ->setSource($this->getSourceData($params));
+                        ->setSourceSubmit($this->getSourceData($params))
+                        ->setSource('lionairthai');
                     $results[] = $result;
                 }
             });
@@ -99,10 +100,24 @@ class LionAirThai extends ParserAbstract
      */
     protected function getSourceData(Params $params)
     {
+        /**
+         * https://search.lionairthai.com/default.aspx?depCity=DMK&depDate=23%2F08%2F2015&aid=207&St=fa&Jtype=1&infant1=0&currency=THB&arrCity=URT&adult1=1&child1=0
+         */
         return [
-            'uri' => $this->uri,
-            'method' => 'POST',
-            'data' => $this->getParamsData($params)
+            'uri' => "https://search.lionairthai.com/default.aspx",
+            'method' => 'GET',
+            'data' => [
+                'depCity'   => $params->getOrigin(),
+                'depDate'   => $params->getDepartDate()->format('d/m/Y'),
+                'aid'       => 207,
+                'St'        => 'fa',
+                'Jtype'     => 1,
+                'infant1'   => 0,
+                'currency'  => 'THB',
+                'arrCity'   => $params->getDestination(),
+                'adult1'    => 1,
+                'child1'    => 0
+            ]
         ];
     }
 }

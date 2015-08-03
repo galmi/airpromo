@@ -82,18 +82,21 @@ class AirAsia extends ParserAbstract
                     $price = trim($promoNode->text());
                 if (empty($price)) {
                     $lfNode = $node->filter('.LF .avail-fare-price:not(.discount)');
-                    if ($lfNode->count())
+                    if ($lfNode->count()) {
                         $price = $lfNode->text();
-                    $pfNode = $node->filter('.PF .avail-fare-price:not(.discount)');
-                    if ($pfNode->count())
-                        $price = $pfNode->text();
+                    } else {
+                        $pfNode = $node->filter('.PF .avail-fare-price:not(.discount)');
+                        if ($pfNode->count())
+                            $price = $pfNode->text();
+                    }
                 }
                 if (empty($price))
                     return;
                 $price = filter_var($price, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $result->setPrice($price);
                 $result->setDate($params->getDepartDate());
-                $result->setSource($this->getSourceData($params));
+                $result->setSourceSubmit($this->getSourceData($params));
+                $result->setSource('airasia');
 
                 $results[] = $result;
             });
@@ -106,10 +109,24 @@ class AirAsia extends ParserAbstract
      */
     protected function getSourceData(Params $params)
     {
+        /**
+         * http://booking.airasia.com/Flight/InternalSelect?dd1=2015-08-23&culture=en-GB&ADT=1&inl=0&o1=DMK&CHD=0&r=false&s=true&d1=URT&mon=true&marker=kxe20w15g
+         */
         return [
-            'uri' => $this->uri,
+            'uri' => 'http://booking.airasia.com/Flight/InternalSelect',
             'method' => 'GET',
-            'data' => $this->getParamsString($params)
+            'data' => [
+                'dd1' => $params->getDepartDate()->format('Y-m-d'),
+                'culture' => 'en-GB',
+                'ADT' => 1,
+                'inl' => 0,
+                'o1' => $params->getOrigin(),
+                'CHD' => 0,
+                'r' => 'false',
+                's' => 'true',
+                'd1' => $params->getDestination(),
+                'mon' => 'true'
+            ]
         ];
     }
 }
