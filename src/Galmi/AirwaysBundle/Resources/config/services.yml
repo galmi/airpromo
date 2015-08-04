@@ -25,3 +25,9 @@ services:
         arguments: [@galmi_airways.handlers.downloader, %galmi_airways.sources.lionairthai%]
         tags:
             - {name: "galmi_airways.parser"}
+
+    galmi_airways.locale_listener:
+        class: Galmi\AirwaysBundle\EventListener\LocaleListener
+        arguments: ["%kernel.default_locale%"]
+        tags:
+            - { name: kernel.event_subscriber }

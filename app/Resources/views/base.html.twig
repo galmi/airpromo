@@ -14,12 +14,22 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 
     <script src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.cookie.js') }}"></script>
     {#<script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>#}
     <script src="{{ asset('js/materialize.js') }}"></script>
 </head>
 <body class="light-blue lighten-5">
 <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">ThaiAir Promotions</a>
+        <ul class="right hide-on-small-and-down">
+            <li>
+                <ul>
+                    <li><a href="#" class="left locale" data-locale="en" style="padding: 0 5px;">English</a></li>
+                    <li>|</li>
+                    <li><a href="#" class="left locale" data-locale="th" style="padding: 0 5px;">ไทย</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </nav>
 <div class="section no-pad-bot">
@@ -30,6 +40,14 @@
 {% block javascripts %}{% endblock %}
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-{#<script src="{{ asset('js/bootstrap.min.js') }}"></script>#}
+<script type="application/javascript">
+    $(document).ready(function(){
+        $('.locale').on('click', function() {
+            var locale = $(this).data('locale');
+            $.cookie('locale', locale, {"path":"/"});
+            document.location.reload();
+        })
+    });
+</script>
 </body>
 </html>
