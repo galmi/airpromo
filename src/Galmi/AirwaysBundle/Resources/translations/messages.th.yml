@@ -1,0 +1,224 @@
+txt:
+  domestic_flight: เที่ยวบินภายในประเทศ
+  international_flights: เที่ยวบินระหว่างประเทศ
+  hotels: โรงแรม
+  origin: ที่มา
+  destination: ปลายทาง
+  departure_date: วันออกเดินทาง
+  find: ค้นหา
+  THB: บาท
+  book_now: จองตอนนี้
+airports:
+    1AA: 'สมุย (ท่าเรือลิปะน้อย)'
+    1AB: 'พงัน (ท่าเรือท้องศาลา)'
+    1AC: 'พีพี (ท่าเรือพีพี)'
+    1AD: 'ลันตา (ท่าเรือศาลาด่าน)'
+    1AE: 'หลีเป๊ะ (หาดชาวเล)'
+    1AF: 'ไหง (เกาะไหงวิลล่า) '
+    1AG: 'ยาวน้อย (ท่าเรือมาเนาะ)'
+    1AH: 'เกาะเต่า (ท่าเรือซีทราน)'
+    3AA: 'ปาย (สถานีขนส่งปาย)'
+    3AB: 'สุโขทัย (อุทยานประวัติศาสตร์ฯ)'
+    3AC: 'มุกดาหาร (ตลาดอินโดจีน) '
+    3AD: 'กาฬสินธุ์ (สวนสาธารณะกุดน้ำกิน)'
+    3AE: 'มหาสารคาม (เสริมไทยคอมเพล็กซ์)'
+    3AG: ขนอม
+    3AH: เขาหลัก
+    3AI: 'สุรินทร์ (เดอะช้าง โนวเลจพาร์ค) '
+    3AJ: เชียงคาน
+    ADL: แอดิเลด
+    ALA: 'Almaty Airport'
+    AM1: อำนาจเจริญ
+    AOR: 'อลอร์ สตาร์'
+    BDO: บันดุง
+    BEY: 'Beirut International Airport'
+    BFV: บุรีรัมย์
+    BGW: 'Baghdad International Airport'
+    BKI: โคตาคินาบาลู
+    BKK: กรุงเทพฯ
+    BLR: เบงกาลูรู
+    BOM: มุมไบ
+    BPN: 'เซปิงกัน '
+    BTJ: 'บันดา อาเจะห์ '
+    BTU: 'บินตูลู '
+    BWN: บรูไน
+    CAN: กวางโจว
+    CCU: โกลกาตา
+    CEB: เซบู
+    CEI: เชียงราย
+    CGK: จาการ์ตา
+    CGO: 'Zhengzhou Airport'
+    CGY: คากายันเดอโอโร่
+    CH1: 'เชียงราย (เชียงของ)'
+    CHC: 'ไครสต์เชิร์ช '
+    CJM: ชุมพร
+    CJU: 'Jeju (Charter)'
+    CKG: ฉงชิ่ง
+    CMB: โคลัมโบ
+    CNX: เชียงใหม่
+    COK: โกชิ
+    CRK: คล้าก
+    CSX: ฉางซา
+    CTS: 'ซัปโปโร - ชินชิโตะเซะ'
+    CTU: เฉิงตู
+    DAC: ธากา
+    DAD: ดานัง
+    DEL: นิวเดลี
+    DKR: 'Yoff Airport'
+    DLC: 'Dalian Airport'
+    DMK: 'กรุงเทพฯ - ดอนเมือง'
+    DPS: บาหลี
+    DRW: ดาร์วิน
+    DVO: ดาเวา
+    DXB: 'Dubai Airport'
+    GAU: กูวาฮาติ
+    GAY: 'Gaya Airport'
+    GES: 'General Santos'
+    GOI: โคอา
+    HAN: ฮานอย
+    HDY: หาดใหญ่
+    HFE: 'Hefei (Charter)'
+    HGH: หางโจว
+    HHQ: 'Hua Hin Airport'
+    HKG: ฮ่องกง
+    HKT: 'ภูเก็ต'
+    HND: โตเกียว
+    HRB: 'Harbin Airport'
+    HYD: ไฮเดอราบัด
+    ICN: 'โซล – อินชอน'
+    IKA: 'เตหะราน – อิหม่ามโคไมนี'
+    IMF: อิมฟาล
+    IXC: จัณฑีครห์
+    JAI: ชัยปุระ
+    JED: เจดดาห์
+    JHB: 'ยะโฮร์ บาห์รู '
+    JJN: จินเจียง
+    JOG: ย็อกยาการ์ตา
+    KB1: 'กระบี่ (อ่าวนาง)'
+    KBR: โคตาบาห์รู
+    KBV: 'กระบี่ '
+    KCH: กูชิง
+    KD0: เกาะกระดาน
+    KHH: เกาสง
+    KIX: 'โอซาก้า – คันไซ'
+    KKC: ขอนแก่น
+    KL1: 'พังงา (เขาหลัก)'
+    KLO: 'คาลิโบ - โบราเคย์'
+    KMG: คุนหมิง
+    KN1: 'นครศรีธรรมราช (ขนอม)'
+    KNO: 'เมดาน – กัวลานามู'
+    KOP: นครพนม
+    KS1: 'สุราษฎร์ธานี (เขาสก)'
+    KTM: กาฐมาณฑุ
+    KUA: Kuantan
+    KUL: กัวลาลัมเปอร์
+    KWE: 'กุ้ยหยาง (ชาร์เตอร์)'
+    KWL: กุ้ยหลิน
+    L1A: 'Donsak Pier'
+    L1B: 'Rassada Pier'
+    L1C: 'Nopparatthara Pier'
+    L1D: 'Pakbara Pier'
+    L1E: 'Pakmeng Pier'
+    L1F: 'Nopparattara Pier'
+    L1G: 'Hua Hin Pier'
+    LBU: 'ลาบวน '
+    LGK: 'ลังกาวี '
+    LGW: กรุงลอนดอน
+    LOE: เลย
+    LOP: ลอมบอก
+    LP0: เกาะหลีเป๊ะ
+    LPT: ลำปาง
+    LT0: 'เกาะลันตา (ศาลาด่าน)'
+    MAA: เชนไน
+    MAQ: แม่สอด
+    MDL: 'มัณฑะเลย์ '
+    MED: 'Mohammad Bin Abdulaziz Airport'
+    MEL: เมลเบิร์น
+    MFM: มาเก๊า
+    MH1: มุกดาหาร
+    MK0: เกาะมุก
+    MKZ: 'Batu Berendum Airport'
+    MLE: มาเล
+    MNL: มะนิลา
+    MS1: มหาสารคาม
+    MWX: 'Muan (Charter)'
+    MYY: มิริ
+    NAW: นราธิวาส
+    NG0: เกาะไหง
+    NGB: 'Ningbo (Charter)'
+    NGO: 'นาโกย่า – ชูบุ'
+    NKG: 'หนานจิง (ชาร์เตอร์)'
+    NNG: หนานหนิง
+    NNT: น่าน
+    NRT: 'โตเกียว – นาริตะ'
+    NST: นครศรีธรรมราช
+    NY0: เกาะนางยวน
+    OOL: โกล์ดโคสต์
+    PDG: ปาดัง
+    PEK: ปักกิ่ง
+    PEN: 'ปีนัง '
+    PER: เพิร์ธ
+    PG1: พังงา
+    PHS: พิษณุโลก
+    PKU: ปีกันบารู
+    PLM: 'ปาเล็มบัง '
+    PNH: พนมเปญ
+    PNK: ปนตีอานัก
+    PNQ: ปูเน่
+    PP0: เกาะพีพี
+    PPS: 'แปร์โตปรินเซซา - ปาลาวัน'
+    PRH: แพร่
+    PS1: ปากเซ
+    PUS: ปูซาน
+    PVG: เซี่ยงไฮ้
+    REP: เสียมราฐ
+    RGN: ย่างกุ้ง
+    ROI: ร้อยเอ็ด
+    ROR: 'Airai Airport'
+    RP1: 'สุราษฎร์ธานี (เขื่อนรัชชประภา)'
+    SBW: ซิบู
+    SDK: ซานดากัน
+    SGN: 'โฮจิมินห์ '
+    SHA: Shanghai
+    SHJ: 'Sharjah Airport'
+    SIN: สิงคโปร์
+    SNO: สกลนคร
+    SOC: 'โซโล '
+    SR1: สุรินทร์
+    SRG: เซมารัง
+    ST1: สุโขทัย
+    SU1: สตูล
+    SUB: สุราบายา
+    SW1: 'สกลนคร (สว่างแดนดิน)'
+    SYD: ซิดนีย์
+    SZB: 'Sultan Abdul Aziz Shah Airport'
+    SZX: เซินเจิน
+    TA0: เกาะเต่า
+    TAC: ทาโคลบาน
+    TAG: แทกบิลารัน
+    TAO: 'Qingdao (Charter)'
+    TGG: กัวลาตรังกานู
+    TLS: 'Blagnac Airport'
+    TP1: 'สตูล (ท่าเรือตำมะลัง)'
+    TPE: ไทเป
+    TRZ: ติรุจิรัปปัลลิ
+    TSP: 'เกาะพะงัน (ท้องศาลา)'
+    TST: ตรัง
+    TUN: 'Carthage Airport'
+    TWU: ตาวาอู
+    UBP: อุบลราชธานี
+    UD1: อุตรดิตถ์
+    UNN: ระนอง
+    UPG: 'มากัสซาร์ อูจุง ปาดัง'
+    URT: สุราษฎร์ธานี
+    USM: 'เกาะสมุย (หน้าทอน)'
+    UTH: อุดรธานี
+    UTP: พัทยา
+    VT1: เวียงจันทน์
+    VTE: 'เวียงจันทน์ '
+    VTZ: วิชาคาปัทนัม
+    WNZ: 'Wenzhou (Charter)'
+    WUH: 'อู่ฮั่น '
+    WUX: 'Wuxi Airport'
+    XCH: 'Christmas Island (Charter)'
+    XIY: ซีอาน

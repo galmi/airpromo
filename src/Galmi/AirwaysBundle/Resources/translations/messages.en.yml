@@ -1,7 +1,224 @@
-"Domestic flights": "Domestic flights"
-International flights: 'International flights'
-Hotels: 'Hotels'
-Origin: 'Origin'
-Destination: 'Destination'
-Departure date: 'Departure date'
-Find: 'Find'
+txt:
+  domestic_flight: "Domestic flights"
+  international_flights: 'International flights'
+  hotels: 'Hotels'
+  origin: 'Origin'
+  destination: 'Destination'
+  departure_date: 'Departure date'
+  find: 'Find'
+  book_now: 'BOOK NOW'
+  THB: 'THB'
+airports:
+    1AA: 'Samui (Lipa Noi Pier)'
+    1AB: 'Phangan (Thong Sala Pier)'
+    1AC: 'Phi Phi (Phi Phi Pier)'
+    1AD: 'Lanta (Saladan Pier)'
+    1AE: 'Lipe (Sunrise Beach)'
+    1AF: 'Ngai (KohNgai Villa) '
+    1AG: 'Yao Noi (Manoh pier)'
+    1AH: 'Tao Island (Seatran pier)'
+    3AA: 'Pai (Pai Bus Station)'
+    3AB: 'Sukhothai (Historical Park)'
+    3AC: 'Mukdahan (Indochina Market)'
+    3AD: 'Kalasin (Kud Nam Kin Park)'
+    3AE: 'Mahasarakham (Sermthai Complex)'
+    3AG: Khanom
+    3AH: Khaolak
+    3AI: 'Surin (The Chang Knowledge Park)'
+    3AJ: 'Chiang Khan'
+    ADL: Adelaide
+    ALA: 'Almaty Airport'
+    AM1: 'Amnat Charoen'
+    AOR: 'Alor Setar'
+    BDO: Bandung
+    BEY: 'Beirut International Airport'
+    BFV: 'Buri Ram'
+    BGW: 'Baghdad International Airport'
+    BKI: 'Kota Kinabalu'
+    BKK: Bangkok
+    BLR: Bengaluru
+    BOM: Mumbai
+    BPN: Balikpapan
+    BTJ: 'Banda Aceh'
+    BTU: Bintulu
+    BWN: Brunei
+    CAN: Guangzhou
+    CCU: Kolkata
+    CEB: Cebu
+    CEI: 'Chiang Rai'
+    CGK: Jakarta
+    CGO: 'Zhengzhou Airport'
+    CGY: 'Cagayan de Oro'
+    CH1: 'Chiang Rai (Chiang Khong)'
+    CHC: Christchurch
+    CJM: Chumphon
+    CJU: 'Jeju (Charter)'
+    CKG: Chongqing
+    CMB: Colombo
+    CNX: 'Chiang Mai'
+    COK: Kochi
+    CRK: Clark
+    CSX: Changsha
+    CTS: 'Sapporo - Shin-Chitose'
+    CTU: Chengdu
+    DAC: Dhaka
+    DAD: 'Da Nang'
+    DEL: 'New Delhi'
+    DKR: 'Yoff Airport'
+    DLC: 'Dalian Airport'
+    DMK: 'Bangkok (Don Mueang)'
+    DPS: Bali
+    DRW: Darwin
+    DVO: Davao
+    DXB: 'Dubai Airport'
+    GAU: Guwahati
+    GAY: 'Gaya Airport'
+    GES: 'General Santos'
+    GOI: Goa
+    HAN: Hanoi
+    HDY: 'Hat Yai'
+    HFE: 'Hefei Xinqiao, China'
+    HGH: Hangzhou
+    HHQ: 'Hua Hin Airport'
+    HKG: 'Hong Kong'
+    HKT: Phuket
+    HND: 'Tokyo - Haneda'
+    HRB: 'Harbin Airport'
+    HYD: Hyderabad
+    ICN: Seoul
+    IKA: Tehran
+    IMF: Imphal
+    IXC: Chandigarh
+    JAI: Jaipur
+    JED: Jeddah
+    JHB: 'Johor Bahru'
+    JJN: Jinjiang
+    JOG: Yogyakarta
+    KB1: 'Krabi (Ao Nang)'
+    KBR: 'Kota Bharu'
+    KBV: Krabi
+    KCH: Kuching
+    KD0: 'Koh Kradan'
+    KHH: Kaohsiung
+    KIX: 'Osaka - Kansai'
+    KKC: 'Khon Kaen'
+    KL1: 'Phang Nga (Khao Lak)'
+    KLO: 'Kalibo - Boracay'
+    KMG: Kunming
+    KN1: 'Nakhon Si Thammarat (Khanom)'
+    KNO: 'Medan - Kualanamu'
+    KOP: 'Nakhon Phanom'
+    KS1: 'Surat Thani (Khao Sok)'
+    KTM: Kathmandu
+    KUA: Kuantan
+    KUL: 'Kuala Lumpur'
+    KWE: 'Guiyang (Charter)'
+    KWL: Guilin
+    L1A: 'Donsak pier'
+    L1B: 'Rassada pier'
+    L1C: 'Nopparatthara pier'
+    L1D: 'Pakbara pier'
+    L1E: 'Pakmeng pier'
+    L1F: 'Nopparattara pier'
+    L1G: 'Hua Hin pier'
+    LBU: Labuan
+    LGK: Langkawi
+    LGW: London
+    LOE: Loei
+    LOP: Lombok
+    LP0: 'Koh Lipe'
+    LPT: Lampang
+    LT0: 'Koh Lanta (Saladan pier)'
+    MAA: Chennai
+    MAQ: 'Mae Sot'
+    MDL: Mandalay
+    MED: 'Mohammad Bin Abdulaziz Airport'
+    MEL: Melbourne
+    MFM: Macau
+    MH1: Mukdahan
+    MK0: 'Koh Mook'
+    MKZ: 'Batu Berendum Airport'
+    MLE: Male
+    MNL: Manila
+    MS1: 'Maha Sarakham'
+    MWX: 'Muan (Charter)'
+    MYY: Miri
+    NAW: Narathiwat
+    NG0: 'Koh Ngai'
+    NGB: 'Ningbo (Charter)'
+    NGO: 'Nagoya - Chubu'
+    NKG: 'Nanjing (Charter)'
+    NNG: Nanning
+    NNT: Nan
+    NRT: 'Tokyo - Narita'
+    NST: 'Nakhon Si Thammarat'
+    NY0: 'Koh Nangyuan'
+    OOL: 'Gold Coast'
+    PDG: Padang
+    PEK: Beijing
+    PEN: Penang
+    PER: Perth
+    PG1: 'Phang Nga'
+    PHS: Phitsanulok
+    PKU: Pekanbaru
+    PLM: Palembang
+    PNH: 'Phnom Penh'
+    PNK: Pontianak
+    PNQ: Pune
+    PP0: 'Koh Phi Phi'
+    PPS: 'Puerto Princesa - Palawan'
+    PRH: Phrae
+    PS1: Pakse
+    PUS: Busan
+    PVG: Shanghai
+    REP: 'Siem Reap'
+    RGN: Yangon
+    ROI: 'Roi Et'
+    ROR: 'Airai Airport'
+    RP1: 'Surat Thani (Ratchaprapa Dam)'
+    SBW: Sibu
+    SDK: Sandakan
+    SGN: 'Ho Chi Minh'
+    SHA: Shanghai
+    SHJ: 'Sharjah Airport'
+    SIN: Singapore
+    SNO: 'Sakon Nakhon'
+    SOC: Solo
+    SR1: Surin
+    SRG: Semarang
+    ST1: Sukhothai
+    SU1: Satun
+    SUB: Surabaya
+    SW1: 'Sakon Nakhon (Sawang Daen Din)'
+    SYD: Sydney
+    SZB: 'Sultan Abdul Aziz Shah Airport'
+    SZX: Shenzhen
+    TA0: 'Koh Tao'
+    TAC: Tacloban
+    TAG: Tagbilaran
+    TAO: 'Tao Island (Seatran pier)'
+    TGG: 'Kuala Terengganu'
+    TLS: 'Blagnac Airport'
+    TP1: 'Satun (Tammalang Port)'
+    TPE: Taipei
+    TRZ: Tiruchirappalli
+    TSP: 'Koh Phangan (Tong Sala Pier)'
+    TST: Trang
+    TUN: 'Carthage Airport'
+    TWU: Tawau
+    UBP: 'Ubon Ratchathani'
+    UD1: Uttaradit
+    UNN: Ranong
+    UPG: Makassar
+    URT: 'Surat Thani'
+    USM: 'Koh Samui (Nar Ton Pier)'
+    UTH: 'Udon Thani'
+    UTP: Pattaya
+    VT1: Vientiane
+    VTE: Vientiane
+    VTZ: Visakhapatnam
+    WNZ: 'Wenzhou (Charter)'
+    WUH: Wuhan
+    WUX: 'Wuxi Airport'
+    XCH: 'Christmas Island (Charter)'
+    XIY: 'Xi''an'

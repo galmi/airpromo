@@ -29,16 +29,17 @@ $(document).ready(function () {
         },
         initOrigin: function () {
             this.originEl.find('option').remove();
-            this.originEl.append('<option value="" disabled selected>Choose your option</option>');
+            //this.originEl.append('<option value=""  selected></option>');
             for (var key in this.airports) {
                 this.originEl.append('<option value=' + key + '>' + this.airports[key].name + '</option>');
             }
-            this.originEl.find('option').sort(NASort).appendTo(this.originEl);
+            //this.originEl.find('option').sort(NASort).appendTo(this.originEl);
             this.originEl.material_select();
 
             this.originEl.on('change', function () {
                 Router.updateDestination();
             });
+            Router.updateDestination();
         },
         initSubmit: function () {
             this.submit.on('click', $.proxy(function () {
@@ -78,16 +79,18 @@ $(document).ready(function () {
             this.destinationEl.find('option').remove();
             var originCode = this.originEl.val();
             var route = this.routes[originCode];
-            for (var i in route) {
-                var row = route[i];
-                var airport = this.airports[row['code']];
-                this.destinationEl.append('<option value=' + airport.code + '>' + airport.name + '</option>');
+            if (typeof route != 'undefined') {
+                for (var i in route) {
+                    var row = route[i];
+                    var airport = this.airports[row['code']];
+                    this.destinationEl.append('<option value=' + airport.code + '>' + airport.name + '</option>');
+                }
+                //this.destinationEl.find('option').sort(NASort).appendTo(this.destinationEl);
+                this.destinationEl.material_select();
             }
-            this.destinationEl.find('option').sort(NASort).appendTo(this.destinationEl);
-            this.destinationEl.material_select();
         },
         updateResults: function (data) {
-            var rowTemplate = '<div class="card-panel row result-row"><div class="center col s3"><h5><span class="price">{price}</span> THB</h5><button type="button" class="btn btn-large waves-effect waves-light orange">BOOK NOW</button></div> <div class="col s7"><div class="col s12"><div class="col s6"><h6>{origin_name}</h6></div><div class="col s6"><h6>{destination_name}</h6></div></div><div class="col s12"><div class="col s6"><h5 class="departTime">{departTime}</h5>{date}</div> <div class="col s6"><h5>{arrivalTime}</h5>{date}</div> </div></div><div class="col s2"><img src="/images/airlines/{source}.png"></div> </div>';
+            var rowTemplate = $("#result-row").html();
 
             for (var i in data) {
                 var row = data[i];
@@ -135,12 +138,13 @@ $(document).ready(function () {
             }
         }
     };
-    $.getJSON('/bundles/galmiairways/js/airports.json', function (data) {
+    $.getJSON('/bundles/galmiairways/js/airports_'+LOCALE+'.json', function (data) {
         Router.airports = data;
         Router.init($("#origin"), $("#destination"));
     });
     $.getJSON('/bundles/galmiairways/js/routes.json', function (data) {
         Router.routes = data;
+        Router.updateDestination();
     });
 });
 /**

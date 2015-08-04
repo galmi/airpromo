@@ -2,49 +2,53 @@
 
 {% block javascripts %}
     <script src="{{ asset('bundles/galmiairways/js/index.js') }}"></script>
+    <script type="application/javascript">
+        var LOCALE = "{{ app.request.locale }}";
+    </script>
 {% endblock %}
 
 {% block body %}
     <div class="row white">
         <ul class="tabs">
             <li class="tab col s4">
-                <a href="#domestic">{{ "Domestic flights" | trans }}</a>
+                <a href="#domestic">{{ "txt.domestic_flight" | trans }}</a>
             </li>
             <li class="tab col s4">
-                <a href="#international">{{ "International flights" | trans }}</a>
+                <a href="#international">{{ "txt.international_flights" | trans }}</a>
             </li>
             <li class="tab col s4">
-                <a href="#hotel">{{ "Hotels" | trans }}</a>
+                <a href="#hotel">{{ "txt.hotels" | trans }}</a>
             </li>
         </ul>
     </div>
     <div id="domestic" class="col s12">
         <div class="row white section">
-            <form id="searchForm" >
+            <form id="searchForm">
                 <div class="input-field col s1"></div>
                 <div class="input-field col s3">
                     <select id="origin" name="origin">
                     </select>
-                    <label for="origin">{{ "Origin" | trans }}</label>
+                    <label for="origin">{{ "txt.origin" | trans }}</label>
                 </div>
                 <div class="input-field col s3">
                     <select id="destination" name="destination">
                     </select>
-                    <label for="destination">{{ "Destination" | trans }}</label>
+                    <label for="destination">{{ "txt.destination" | trans }}</label>
                 </div>
                 <div class="input-field col s3 center">
                     <input type="date" class="datepicker" id="departureDate" name="departureDate">
-                    <label for="departureDate">{{ "Departure date" | trans }}</label>
+                    <label for="departureDate">{{ "txt.departure_date" | trans }}</label>
                 </div>
                 <div class="input-field col s2 center">
-                    <button type="button" class="btn-large waves-effect waves-light orange" id="submit">{{ "Find" | trans }}</button>
+                    <button type="button" class="btn-large waves-effect waves-light orange"
+                            id="submit">{{ "txt.find" | trans }}</button>
                 </div>
             </form>
         </div>
         <div class="progress hide" id="loader">
             <div class="indeterminate"></div>
         </div>
-        <div  id="results">
+        <div id="results">
 
         </div>
     </div>
@@ -57,5 +61,26 @@
         <script charset="utf-8"
                 src="//www.travelpayouts.com/widgets/0a4ef006ece369f2a7ed2a01b0fa3587.js?v=492"
                 async></script>
+    </div>
+
+    <div id="templates" class="hide">
+        <div id="result-row">
+            <div class="card-panel row">
+                <div class="center col s3"><h5><span class="price">{price}</span> {{ "txt.THB" | trans }}</h5>
+                    <button type="button" class="btn btn-large waves-effect waves-light orange">{{ "txt.book_now" | trans }}</button>
+                </div>
+                <div class="col s7">
+                    <div class="col s12">
+                        <div class="col s6"><h6>{origin_name}</h6></div>
+                        <div class="col s6"><h6>{destination_name}</h6></div>
+                    </div>
+                    <div class="col s12">
+                        <div class="col s6"><h5 class="departTime">{departTime}</h5>{date}</div>
+                        <div class="col s6"><h5>{arrivalTime}</h5>{date}</div>
+                    </div>
+                </div>
+                <div class="col s2"><img src="/images/airlines/{source}.png"></div>
+            </div>
+        </div>
     </div>
 {% endblock %}
