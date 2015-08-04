@@ -34,8 +34,8 @@ $(document).ready(function () {
                 this.originEl.append('<option value=' + key + '>' + this.airports[key].name + '</option>');
             }
             //this.originEl.find('option').sort(NASort).appendTo(this.originEl);
+            this.originEl.val('DMK');
             this.originEl.material_select();
-
             this.originEl.on('change', function () {
                 Router.updateDestination();
             });
