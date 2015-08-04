@@ -3,6 +3,10 @@
     "code": "AM1",
     "name": "Amnat Charoen"
   },
+  "BKK": {
+    "code": "BKK",
+    "name": "Bangkok"
+  },
   "DMK": {
     "code": "DMK",
     "name": "Bangkok (Don Mueang)"
@@ -10,6 +14,10 @@
   "BFV": {
     "code": "BFV",
     "name": "Buri Ram"
+  },
+  "3AJ": {
+    "code": "3AJ",
+    "name": "Chiang Khan"
   },
   "CNX": {
     "code": "CNX",
@@ -31,133 +39,29 @@
     "code": "HDY",
     "name": "Hat Yai"
   },
+  "HHQ": {
+    "code": "HHQ",
+    "name": "Hua Hin Airport"
+  },
+  "L1G": {
+    "code": "L1G",
+    "name": "Hua Hin pier"
+  },
+  "3AD": {
+    "code": "3AD",
+    "name": "Kalasin (Kud Nam Kin Park)"
+  },
+  "3AG": {
+    "code": "3AG",
+    "name": "Khanom"
+  },
+  "3AH": {
+    "code": "3AH",
+    "name": "Khaolak"
+  },
   "KKC": {
     "code": "KKC",
     "name": "Khon Kaen"
-  },
-  "KBV": {
-    "code": "KBV",
-    "name": "Krabi"
-  },
-  "KB1": {
-    "code": "KB1",
-    "name": "Krabi (Ao Nang)"
-  },
-  "LPT": {
-    "code": "LPT",
-    "name": "Lampang"
-  },
-  "LOE": {
-    "code": "LOE",
-    "name": "Loei"
-  },
-  "MAQ": {
-    "code": "MAQ",
-    "name": "Mae Sot"
-  },
-  "MS1": {
-    "code": "MS1",
-    "name": "Maha Sarakham"
-  },
-  "MH1": {
-    "code": "MH1",
-    "name": "Mukdahan"
-  },
-  "KOP": {
-    "code": "KOP",
-    "name": "Nakhon Phanom"
-  },
-  "NST": {
-    "code": "NST",
-    "name": "Nakhon Si Thammarat"
-  },
-  "KN1": {
-    "code": "KN1",
-    "name": "Nakhon Si Thammarat (Khanom)"
-  },
-  "NNT": {
-    "code": "NNT",
-    "name": "Nan"
-  },
-  "PHS": {
-    "code": "PHS",
-    "name": "Phitsanulok"
-  },
-  "PRH": {
-    "code": "PRH",
-    "name": "Phrae"
-  },
-  "HKT": {
-    "code": "HKT",
-    "name": "Phuket"
-  },
-  "PG1": {
-    "code": "PG1",
-    "name": "Phang Nga"
-  },
-  "KL1": {
-    "code": "KL1",
-    "name": "Phang Nga (Khao Lak)"
-  },
-  "SW1": {
-    "code": "SW1",
-    "name": "Sakon Nakhon (Sawang Daen Din)"
-  },
-  "UNN": {
-    "code": "UNN",
-    "name": "Ranong"
-  },
-  "ROI": {
-    "code": "ROI",
-    "name": "Roi Et"
-  },
-  "SNO": {
-    "code": "SNO",
-    "name": "Sakon Nakhon"
-  },
-  "SU1": {
-    "code": "SU1",
-    "name": "Satun"
-  },
-  "TP1": {
-    "code": "TP1",
-    "name": "Satun (Tammalang Port)"
-  },
-  "URT": {
-    "code": "URT",
-    "name": "Surat Thani"
-  },
-  "ST1": {
-    "code": "ST1",
-    "name": "Sukhothai"
-  },
-  "KS1": {
-    "code": "KS1",
-    "name": "Surat Thani (Khao Sok)"
-  },
-  "RP1": {
-    "code": "RP1",
-    "name": "Surat Thani (Ratchaprapa Dam)"
-  },
-  "SR1": {
-    "code": "SR1",
-    "name": "Surin"
-  },
-  "TST": {
-    "code": "TST",
-    "name": "Trang"
-  },
-  "UBP": {
-    "code": "UBP",
-    "name": "Ubon Ratchathani"
-  },
-  "UTH": {
-    "code": "UTH",
-    "name": "Udon Thani"
-  },
-  "UD1": {
-    "code": "UD1",
-    "name": "Uttaradit"
   },
   "KD0": {
     "code": "KD0",
@@ -199,73 +103,97 @@
     "code": "TA0",
     "name": "Koh Tao"
   },
-  "BKK": {
-    "code": "BKK",
-    "name": "Bangkok"
+  "KBV": {
+    "code": "KBV",
+    "name": "Krabi"
+  },
+  "KB1": {
+    "code": "KB1",
+    "name": "Krabi (Ao Nang)"
+  },
+  "LPT": {
+    "code": "LPT",
+    "name": "Lampang"
+  },
+  "1AD": {
+    "code": "1AD",
+    "name": "Lanta (Saladan Pier)"
   },
   "1AE": {
     "code": "1AE",
     "name": "Lipe (Sunrise Beach)"
   },
-  "1AF": {
-    "code": "1AF",
-    "name": "Ngai (KohNgai Villa) "
+  "LOE": {
+    "code": "LOE",
+    "name": "Loei"
   },
-  "NAW": {
-    "code": "NAW",
-    "name": "Narathiwat"
+  "MAQ": {
+    "code": "MAQ",
+    "name": "Mae Sot"
   },
-  "1AH": {
-    "code": "1AH",
-    "name": "Tao Island (Seatran pier)"
-  },
-  "3AA": {
-    "code": "3AA",
-    "name": "Pai (Pai Bus Station)"
-  },
-  "3AB": {
-    "code": "3AB",
-    "name": "Sukhothai (Historical Park)"
-  },
-  "3AC": {
-    "code": "3AC",
-    "name": "Mukdahan (Indochina Market)"
-  },
-  "3AD": {
-    "code": "3AD",
-    "name": "Kalasin (Kud Nam Kin Park)"
+  "MS1": {
+    "code": "MS1",
+    "name": "Maha Sarakham"
   },
   "3AE": {
     "code": "3AE",
     "name": "Mahasarakham (Sermthai Complex)"
   },
-  "1AG": {
-    "code": "1AG",
-    "name": "Yao Noi (Manoh pier)"
+  "MH1": {
+    "code": "MH1",
+    "name": "Mukdahan"
   },
-  "3AG": {
-    "code": "3AG",
-    "name": "Khanom"
+  "3AC": {
+    "code": "3AC",
+    "name": "Mukdahan (Indochina Market)"
   },
-  "3AH": {
-    "code": "3AH",
-    "name": "Khaolak"
+  "KOP": {
+    "code": "KOP",
+    "name": "Nakhon Phanom"
   },
-  "L1E": {
-    "code": "L1E",
-    "name": "Pakmeng pier"
+  "NST": {
+    "code": "NST",
+    "name": "Nakhon Si Thammarat"
+  },
+  "KN1": {
+    "code": "KN1",
+    "name": "Nakhon Si Thammarat (Khanom)"
+  },
+  "NNT": {
+    "code": "NNT",
+    "name": "Nan"
+  },
+  "NAW": {
+    "code": "NAW",
+    "name": "Narathiwat"
+  },
+  "1AF": {
+    "code": "1AF",
+    "name": "Ngai (KohNgai Villa) "
   },
   "L1F": {
     "code": "L1F",
     "name": "Nopparattara pier"
   },
-  "L1G": {
-    "code": "L1G",
-    "name": "Hua Hin pier"
+  "3AA": {
+    "code": "3AA",
+    "name": "Pai (Pai Bus Station)"
   },
-  "1AA": {
-    "code": "1AA",
-    "name": "Samui (Lipa Noi Pier)"
+  "L1E": {
+    "code": "L1E",
+    "name": "Pakmeng pier"
+  },
+  "UTP": {
+    "code": "UTP",
+    "name": "Pattaya"
+  },
+  "PG1": {
+    "code": "PG1",
+    "name": "Phang Nga"
+  },
+  "KL1": {
+    "code": "KL1",
+    "name": "Phang Nga (Khao Lak)"
   },
   "1AB": {
     "code": "1AB",
@@ -275,24 +203,96 @@
     "code": "1AC",
     "name": "Phi Phi (Phi Phi Pier)"
   },
-  "1AD": {
-    "code": "1AD",
-    "name": "Lanta (Saladan Pier)"
+  "PHS": {
+    "code": "PHS",
+    "name": "Phitsanulok"
   },
-  "HHQ": {
-    "code": "HHQ",
-    "name": "Hua Hin Airport"
+  "PRH": {
+    "code": "PRH",
+    "name": "Phrae"
+  },
+  "HKT": {
+    "code": "HKT",
+    "name": "Phuket"
+  },
+  "UNN": {
+    "code": "UNN",
+    "name": "Ranong"
+  },
+  "ROI": {
+    "code": "ROI",
+    "name": "Roi Et"
+  },
+  "SNO": {
+    "code": "SNO",
+    "name": "Sakon Nakhon"
+  },
+  "SW1": {
+    "code": "SW1",
+    "name": "Sakon Nakhon (Sawang Daen Din)"
+  },
+  "1AA": {
+    "code": "1AA",
+    "name": "Samui (Lipa Noi Pier)"
+  },
+  "SU1": {
+    "code": "SU1",
+    "name": "Satun"
+  },
+  "TP1": {
+    "code": "TP1",
+    "name": "Satun (Tammalang Port)"
+  },
+  "ST1": {
+    "code": "ST1",
+    "name": "Sukhothai"
+  },
+  "3AB": {
+    "code": "3AB",
+    "name": "Sukhothai (Historical Park)"
+  },
+  "URT": {
+    "code": "URT",
+    "name": "Surat Thani"
+  },
+  "KS1": {
+    "code": "KS1",
+    "name": "Surat Thani (Khao Sok)"
+  },
+  "RP1": {
+    "code": "RP1",
+    "name": "Surat Thani (Ratchaprapa Dam)"
+  },
+  "SR1": {
+    "code": "SR1",
+    "name": "Surin"
   },
   "3AI": {
     "code": "3AI",
     "name": "Surin (The Chang Knowledge Park)"
   },
-  "UTP": {
-    "code": "UTP",
-    "name": "Pattaya"
+  "1AH": {
+    "code": "1AH",
+    "name": "Tao Island (Seatran pier)"
   },
-  "3AJ": {
-    "code": "3AJ",
-    "name": "Chiang Khan"
+  "TST": {
+    "code": "TST",
+    "name": "Trang"
+  },
+  "UBP": {
+    "code": "UBP",
+    "name": "Ubon Ratchathani"
+  },
+  "UTH": {
+    "code": "UTH",
+    "name": "Udon Thani"
+  },
+  "UD1": {
+    "code": "UD1",
+    "name": "Uttaradit"
+  },
+  "1AG": {
+    "code": "1AG",
+    "name": "Yao Noi (Manoh pier)"
   }
 }
