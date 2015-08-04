@@ -43,7 +43,7 @@ class LocaleListener implements EventSubscriberInterface
         $request = $event->getRequest();
         $requestLocale = $request->getLocale();
         if ($requestLocale != $request->cookies->get('locale')) {
-            $response->headers->setCookie(new Cookie('locale', $request->getLocale()));
+            $response->headers->setCookie(new Cookie('locale', $request->getLocale(), 0, '/', null, false, false));
         }
     }
 
