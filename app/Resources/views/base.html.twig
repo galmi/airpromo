@@ -42,6 +42,10 @@
         $('.locale').on('click', function() {
             var locale = $(this).data('locale');
             $.cookie('locale', locale, {"path":"/"});
+            try {
+                ga('send', 'event', 'locale', locale);
+            } catch (e) {
+            }
             document.location.reload();
         })
     });

@@ -48,10 +48,10 @@ $(document).ready(function () {
                 $.each(data, function (_, kv) {
                     dataObj[kv.name] = kv.value;
                 });
-
+                var i;
                 var routeOrigin = this.routes[dataObj['origin']];
                 var routeDestination = null;
-                for (var i in routeOrigin) {
+                for (i in routeOrigin) {
                     if (routeOrigin[i].code == dataObj['destination']) {
                         routeDestination = routeOrigin[i];
                         break;
@@ -59,14 +59,16 @@ $(document).ready(function () {
                 }
 
                 this.clearResults();
-
+                try {
+                    ga('send', 'event', 'search', dataObj.origin + dataObj.destination, dataObj.departureDate);
+                } catch (e) {
+                }
                 var urlTpl = "search/origin/{origin}/destination/{destination}/departureDate/{departureDate}?sourceId={sourceId}";
                 if (routeDestination && routeDestination.sources.length > 0) {
                     this.loaderShow(true);
-                    for (var i in routeDestination.sources) {
+                    for (i in routeDestination.sources) {
                         this.requests++;
-                        var source = routeDestination.sources[i];
-                        dataObj['sourceId'] = source;
+                        dataObj['sourceId'] = routeDestination.sources[i];
                         $.get(urlTpl.apply(dataObj), function (data) {
                             this.updateResults(data);
                         }.bind(this)).always(this.cameResponse);
@@ -105,6 +107,11 @@ $(document).ready(function () {
         },
         initBookSubmit: function($div, submitData) {
             $div.find('button').on('click', function() {
+                try {
+                    ga('send', 'event', 'booknow', submitData.origin + submitData.destination, submitData.departureDate);
+                } catch (e) {
+                }
+
                 var newForm = jQuery('<form>', {
                     'action': submitData.sourceSubmit.uri,
                     'method': submitData.sourceSubmit.method,
