@@ -44,6 +44,10 @@ $(document).ready(function () {
         },
         initSubmit: function () {
             this.submit.on('click', $.proxy(function () {
+                if (this.submit.hasClass('disabled')) {
+                    return;
+                }
+                this.submit.addClass('disabled');
                 var data = this.searchForm.serializeArray();
                 var dataObj = {};
                 $.each(data, function (_, kv) {
@@ -163,6 +167,7 @@ $(document).ready(function () {
             if (Router.requests <= 0) {
                 Router.loaderShow(false);
                 Router.requests = 0;
+                Router.submit.removeClass('disabled');
             }
         }
     };
