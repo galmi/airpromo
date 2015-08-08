@@ -68,10 +68,13 @@
     <div id="templates" class="hide">
         <div id="result-row">
             <div class="card-panel row result-row pin-top">
-                <div class="center col s3"><h5><span class="price">{price}</span> {{ "txt.THB" | trans }}</h5>
+                <div class="center col s3">
+                    <h5><span class="price">{price}</span></h5>
+                    <h5>{{ "txt.THB" | trans }}</h5>
                     <button type="button" class="btn btn-large waves-effect waves-light orange">{{ "txt.book_now" | trans }}</button>
                 </div>
                 <div class="col s7">
+                    <div class="row"></div>
                     <div class="col s12">
                         <div class="col s6"><h6>{origin_name}</h6></div>
                         <div class="col s6"><h6>{destination_name}</h6></div>
