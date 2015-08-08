@@ -12,6 +12,7 @@ $(document).ready(function () {
         submit: $("#submit"),
         results: $("#results"),
         loader: $("#loader"),
+        adsense: $("#adsense"),
         requests: 0,
 
         init: function (origin, destination) {
@@ -66,6 +67,10 @@ $(document).ready(function () {
                 var urlTpl = "search/origin/{origin}/destination/{destination}/departureDate/{departureDate}?sourceId={sourceId}";
                 if (routeDestination && routeDestination.sources.length > 0) {
                     this.loaderShow(true);
+                    this.adsenseShow();
+                    $('html, body').animate({
+                        scrollTop: this.loader.offset().top
+                    }, 'slow');
                     for (i in routeDestination.sources) {
                         this.requests++;
                         dataObj['sourceId'] = routeDestination.sources[i];
@@ -93,17 +98,23 @@ $(document).ready(function () {
         },
         updateResults: function (data) {
             var rowTemplate = $("#result-row").html();
-
+            var rowsCount = this.results.find('.result-row').length;
             for (var i in data) {
                 var row = data[i];
                 row['origin_name'] = Router.airports[row.origin].name;
                 row['destination_name'] = Router.airports[row.destination].name;
-                var div = $(rowTemplate.apply(row));
+                var div = $(rowTemplate.apply(row)).hide();
                 this.initBookSubmit(div, row);
                 this.results.append(div);
+                div.fadeIn('slow');
             }
 
             this.results.find('.result-row').sort(ResultSort).appendTo(this.results);
+            if (rowsCount == 0) {
+                $('html, body').animate({
+                    scrollTop: this.loader.offset().top
+                }, 'slow');
+            }
         },
         initBookSubmit: function($div, submitData) {
             $div.find('button').on('click', function() {
@@ -136,6 +147,16 @@ $(document).ready(function () {
             } else {
                 this.loader.addClass('hide');
             }
+        },
+        adsenseShow: function (value) {
+            this.adsense.html(' <ins class="adsbygoogle"'+
+            'style="display:block"'+
+            'data-ad-client="ca-pub-7013266992778346"'+
+            'data-ad-slot="7332479294"'+
+            'data-ad-format="auto"></ins>'+
+            '    <script>'+
+            '    (adsbygoogle = window.adsbygoogle || []).push({});'+
+            '</script>');
         },
         cameResponse: function () {
             Router.requests--;

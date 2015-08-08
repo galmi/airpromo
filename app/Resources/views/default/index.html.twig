@@ -5,6 +5,7 @@
     <script type="application/javascript">
         var LOCALE = "{{ app.request.locale }}";
     </script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -46,8 +47,12 @@
                 </div>
             </form>
         </div>
-        <div class="progress hide" id="loader">
-            <div class="indeterminate"></div>
+        <div class="row hide" id="loader">
+            <div class="progress orange lighten-5" style="height:8px;">
+                <div class="indeterminate orange"></div>
+            </div>
+        </div>
+        <div id="adsense" class="row">
         </div>
         <div id="results">
 
