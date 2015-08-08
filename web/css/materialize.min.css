@@ -44,3 +44,4 @@ footer {
         width: 100%;
     }
 }
+#results .bordered td {padding:0;}
