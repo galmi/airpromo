@@ -180,7 +180,7 @@ $(document).ready(function () {
             400:  '<iframe scrolling="no" width="300" height="432" frameborder="0" src="//www.travelpayouts.com/widgets/bc2ca9e0134622364d9249f4f70affa9.html?v=494"></iframe>'
         }
     };
-    $(window).resize(function () {
+    function updateAffiliate() {
         var elFlights = $("#international");
         var elHotels = $("#hotel");
         var winWidth = $(window).width();
@@ -196,8 +196,11 @@ $(document).ready(function () {
             elFlights.html(flights[LOCALE][lastWidth]);
             elHotels.html(hotels[LOCALE][lastWidth]);
         }
+    };
+    $(window).resize(function () {
+        updateAffiliate();
     });
-    $(window).trigger('resize');
+    updateAffiliate();
 });
 /**
  * @return {number}
