@@ -68,36 +68,26 @@
     <div id="templates" class="hide">
         <div id="result-row">
             <div class="card-panel row result-row pin-top">
-                <div class="row">
+                <div class="col s12">
                     <table class="bordered">
                         <tbody>
                         <tr>
                             <td>
-                                <h5><span class="price">{price}</span>{{ "txt.THB" | trans }}</h5>
+                                <h5 class="orange-text"><span class="price">{price}</span>&nbsp;{{ "txt.THB" | trans }}</h5>
                                 <img src="/images/airlines/{source}.png" style="position:absolute;top:25px;right:0;">
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
+                <div class="col s12 media-middle">
+                    <h6 class="left">{origin_name} – {destination_name}</h6>
+                    <h5 class="right">{departTime} – {arrivalTime}</h5>
+                </div>
                 <div class="col s12">
-                    <div class=" col s4">
-                        <button type="button" class="btn btn-large waves-effect waves-light orange">{{ "txt.book_now" | trans }}</button>
-                    </div>
-                    <div class="col s8">
-                        <table class="bordered">
-                            <tbody>
-                            <tr>
-                                <td><h6>{origin_name}</h6></td>
-                                <td><h6 class="departTime">{departTime}</h6></td>
-                            </tr>
-                            <tr>
-                                <td><h6>{destination_name}</h6></td>
-                                <td><h6>{arrivalTime}</h6></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                </div>
+                <div class="col s12 center">
+                    <button type="button" class="btn btn-large orange">{{ "txt.book_now" | trans }}</button>
                 </div>
             </div>
         </div>
