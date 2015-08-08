@@ -184,7 +184,7 @@ $(document).ready(function () {
         var elFlights = $("#international");
         var elHotels = $("#hotel");
         var winWidth = $(window).width();
-        var lastWidth = 300;
+        var lastWidth = 400;
         for (var i in sizes) {
             if (winWidth >= sizes[i]) {
                 lastWidth = sizes[i];
