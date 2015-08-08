@@ -1,7 +1,8 @@
 galmi_airways:
-    resource: "@GalmiAirwaysBundle/Controller/"
-    type:     annotation
+    resource: "@GalmiAirwaysBundle/Resources/config/routing.yml"
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+homepage:
+  path: /
+  host: "%base_domain%"
+  defaults:
+    _controller: AppBundle:Default:index

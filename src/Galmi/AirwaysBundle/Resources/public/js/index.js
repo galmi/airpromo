@@ -68,7 +68,7 @@ $(document).ready(function () {
                     ga('send', 'event', 'search', dataObj.origin + dataObj.destination, dataObj.departureDate);
                 } catch (e) {
                 }
-                var urlTpl = "search/origin/{origin}/destination/{destination}/departureDate/{departureDate}?sourceId={sourceId}";
+                var urlTpl = "//{sourceId}." + document.location.host + document.location.pathname + "search/origin/{origin}/destination/{destination}/departureDate/{departureDate}";
                 if (routeDestination && routeDestination.sources.length > 0) {
                     this.loaderShow(true);
                     this.adsenseShow();
@@ -78,9 +78,16 @@ $(document).ready(function () {
                     for (i in routeDestination.sources) {
                         this.requests++;
                         dataObj['sourceId'] = routeDestination.sources[i];
-                        $.get(urlTpl.apply(dataObj), function (data) {
-                            this.updateResults(data);
-                        }.bind(this)).always(this.cameResponse);
+                        $.ajax({
+                            url: urlTpl.apply(dataObj),
+                            dataType: 'jsonp',
+                            jsonp: 'callback',
+                            type: 'GET',
+                            success: function (data) {
+                                this.updateResults(data);
+                            }.bind(this)
+                        }).always(this.cameResponse);
+                        //$.get(urlTpl.apply(dataObj), ).always(this.cameResponse);
                     }
                 }
             }, this));
