@@ -33,4 +33,14 @@ footer {
     height: 70px;
 }
 
-
+@media (max-width: 620px) {
+    .tabs {
+        white-space: normal;
+    }
+    .tabs .tab {
+        line-height: 1.5;
+    }
+    .row .input-field.col {
+        width: 100%;
+    }
+}

@@ -153,6 +153,51 @@ $(document).ready(function () {
         Router.routes = data;
         Router.updateDestination();
     });
+
+    //Изменяем iframe при смене размера окна
+    var sizes = [1300, 700, 400];
+    var flights = {
+        'en': {
+            1300: '<iframe scrolling="no" width="900" height="204" frameborder="0" src="//www.travelpayouts.com/widgets/6a56d09ef7adde499da00a5745eebb66.html?v=494"></iframe>',
+            700: '<iframe scrolling="no" width="600" height="287" frameborder="0" src="//www.travelpayouts.com/widgets/42b73d7ec09bdddfa2ec07fb8fd34482.html?v=494"></iframe>',
+            400: '<iframe scrolling="no" width="300" height="459" frameborder="0" src="//www.travelpayouts.com/widgets/e7ef9ae55f81f41934c4db18c76a0ae3.html?v=494"></iframe>'
+        },
+        'th': {
+            1300: '<iframe scrolling="no" width="900" height="212" frameborder="0" src="//www.travelpayouts.com/widgets/2d106cdf67aab82f1fb3faaed0f5faa2.html?v=494"></iframe>',
+            700: '<iframe scrolling="no" width="600" height="287" frameborder="0" src="//www.travelpayouts.com/widgets/9503a0976b660a895c64101b9830310b.html?v=494"></iframe>',
+            400: '<iframe scrolling="no" width="300" height="459" frameborder="0" src="//www.travelpayouts.com/widgets/c75148021d5638a07f8cbb536469fc0a.html?v=494"></iframe>'
+        }
+    };
+    var hotels = {
+        'en': {
+            1300: '<iframe scrolling="no" width="900" height="212" frameborder="0" src="//www.travelpayouts.com/widgets/0a4ef006ece369f2a7ed2a01b0fa3587.html?v=494"></iframe>',
+            700:  '<iframe scrolling="no" width="600" height="287" frameborder="0" src="//www.travelpayouts.com/widgets/0620d8a83157058447705f3c82619e89.html?v=494"></iframe>',
+            400:  '<iframe scrolling="no" width="300" height="432" frameborder="0" src="//www.travelpayouts.com/widgets/9688ec5a88ba662def75540434d3919d.html?v=494"></iframe>'
+        },
+        'th': {
+            1300: '<iframe scrolling="no" width="900" height="212" frameborder="0" src="//www.travelpayouts.com/widgets/be684bdb94d66eceb3beca7214979c53.html?v=494"></iframe>',
+            700:  '<iframe scrolling="no" width="600" height="287" frameborder="0" src="//www.travelpayouts.com/widgets/c30789cb3b8b8eb255ef8028005eb899.html?v=494"></iframe>',
+            400:  '<iframe scrolling="no" width="300" height="432" frameborder="0" src="//www.travelpayouts.com/widgets/bc2ca9e0134622364d9249f4f70affa9.html?v=494"></iframe>'
+        }
+    };
+    $(window).resize(function () {
+        var elFlights = $("#international");
+        var elHotels = $("#hotel");
+        var winWidth = $(window).width();
+        var lastWidth = 300;
+        for (var i in sizes) {
+            if (winWidth >= sizes[i]) {
+                lastWidth = sizes[i];
+                break;
+            }
+        }
+        if (elFlights.data('lastWidth') != lastWidth) {
+            elFlights.data('lastWidth', lastWidth);
+            elFlights.html(flights[LOCALE][lastWidth]);
+            elHotels.html(hotels[LOCALE][lastWidth]);
+        }
+    });
+    $(window).trigger('resize');
 });
 /**
  * @return {number}
