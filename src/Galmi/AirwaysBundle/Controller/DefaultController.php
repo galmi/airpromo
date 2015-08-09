@@ -4,8 +4,8 @@ namespace Galmi\AirwaysBundle\Controller;
 
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class DefaultController extends Controller
 {
@@ -15,9 +15,6 @@ class DefaultController extends Controller
      */
     public function searchAction(Request $request)
     {
-        if (!$request->get('callback', false)) {
-            throw new BadRequestHttpException();
-        }
         $params = new Params();
         $departDate = new \DateTime($request->get('departureDate'));
         $params
@@ -30,9 +27,10 @@ class DefaultController extends Controller
         foreach ($results as &$result) {
             $result = $result->toArray();
         }
-        return $this->render('GalmiAirwaysBundle:Default:search.html.twig', array(
-            'callback' => $request->get('callback'),
-            'result' => $results
+        $response = new JsonResponse($results);
+        $response->headers->add(array(
+            'Access-Control-Allow-Origin' => $request->isSecure()?'https':'http' . '://' . $this->getParameter('base_domain')
         ));
+        return $response;
     }
 }

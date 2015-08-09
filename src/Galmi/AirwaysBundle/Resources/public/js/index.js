@@ -78,16 +78,9 @@ $(document).ready(function () {
                     for (i in routeDestination.sources) {
                         this.requests++;
                         dataObj['sourceId'] = routeDestination.sources[i];
-                        $.ajax({
-                            url: urlTpl.apply(dataObj),
-                            dataType: 'jsonp',
-                            jsonp: 'callback',
-                            type: 'GET',
-                            success: function (data) {
-                                this.updateResults(data);
-                            }.bind(this)
-                        }).always(this.cameResponse);
-                        //$.get(urlTpl.apply(dataObj), ).always(this.cameResponse);
+                        $.get(urlTpl.apply(dataObj), function (data) {
+                            this.updateResults(data);
+                        }.bind(this)).always(this.cameResponse);
                     }
                 }
             }, this));
