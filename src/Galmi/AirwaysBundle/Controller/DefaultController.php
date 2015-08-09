@@ -31,10 +31,6 @@ class DefaultController extends Controller
         $response->headers->add(array(
             'Access-Control-Allow-Origin' => $request->isSecure()?'https':'http' . '://' . $this->getParameter('base_domain')
         ));
-        $response->setPublic();
-        $response->setMaxAge(60*60);
-        $response->setSharedMaxAge(60*60);
-        $response->headers->addCacheControlDirective('must-revalidate', false);
 
         return $response;
     }
