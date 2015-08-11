@@ -1,5 +1,7 @@
 Search the cheapest flights in Thailand: Search the best airfares in Thailand
 txt:
+  title: AviaThai search and compare airfare of Thailand airways
+  description: AviaThai.com search and compare airfares of domestic flights in Thailand. We will find best fare for you.
   domestic_flight: "Domestic flights"
   international_flights: 'International flights'
   hotels: 'Hotels'

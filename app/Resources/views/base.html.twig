@@ -4,6 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="app:siteurl" content="http://www.aviathai.com/"/>
+    <meta name="author" content="AviaThai.com">
+    <meta property="og:title" content="{{ "txt.title" | trans }}" />
+    <meta property="og:type" content="Website" />
+    <meta property="og:image" content="{{ asset('images/logo.png') }}" />
+    <meta property="og:url" content="http://www.aviathai.com/" />
+    <meta property="og:description" content="{{ "txt.description" | trans }}" />
+
+    <meta property="twitter:title" content="{{ "txt.title" | trans }}" />
+    <meta property="twitter:image:src" content="{{ asset('images/logo.png') }}" />
+    <meta property="twitter:url" content="https://www.aviathai.com/" />
+    <meta property="twitter:description" content="{{ "txt.description" | trans }}" />
+
+    <meta property="name" content="{{ "txt.title" | trans }}" />
+    <meta property="image" content="{{ asset('images/logo.png') }}" />
+    <meta property="description" content="{{ "txt.description" | trans }}" />
+
+    {#<meta property="fb:app_id" content="706570819441922"/>#}
+
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{% block title %}{{ "Search the cheapest flights in Thailand" | trans }}{% endblock %}</title>
 
