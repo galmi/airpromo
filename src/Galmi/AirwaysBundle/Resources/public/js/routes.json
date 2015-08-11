@@ -32,7 +32,8 @@
       "sources": [
         "nokair",
         "airasia",
-        "lionairthai"
+        "lionairthai",
+        "thaismile"
       ]
     },
     {
@@ -91,7 +92,8 @@
       "code": "KKC",
       "sources": [
         "nokair",
-        "airasia"
+        "airasia",
+        "thaismile"
       ]
     },
     {
@@ -310,7 +312,8 @@
       "sources": [
         "nokair",
         "airasia",
-        "lionairthai"
+        "lionairthai",
+        "thaismile"
       ]
     },
     {
@@ -458,7 +461,8 @@
       "sources": [
         "nokair",
         "airasia",
-        "lionairthai"
+        "lionairthai",
+        "thaismile"
       ]
     },
     {
@@ -488,7 +492,8 @@
     {
       "code": "HKT",
       "sources": [
-        "airasia"
+        "airasia",
+        "thaismile"
       ]
     },
     {
@@ -508,6 +513,12 @@
       "sources": [
         "nokair"
       ]
+    },
+    {
+      "code": "BKK",
+      "sources": [
+        "thaismile"
+      ]
     }
   ],
   "CEI": [
@@ -517,6 +528,18 @@
         "nokair",
         "airasia",
         "lionairthai"
+      ]
+    },
+    {
+      "code": "BKK",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "MFM",
+      "sources": [
+        "thaismile"
       ]
     }
   ],
@@ -556,6 +579,12 @@
       "sources": [
         "lionairthai"
       ]
+    },
+    {
+      "code": "BKK",
+      "sources": [
+        "thaismile"
+      ]
     }
   ],
   "KKC": [
@@ -563,7 +592,14 @@
       "code": "DMK",
       "sources": [
         "nokair",
-        "airasia"
+        "airasia",
+        "thaismile"
+      ]
+    },
+    {
+      "code": "BKK",
+      "sources": [
+        "thaismile"
       ]
     }
   ],
@@ -702,19 +738,27 @@
       "sources": [
         "nokair",
         "airasia",
-        "lionairthai"
+        "lionairthai",
+        "thaismile"
       ]
     },
     {
       "code": "CNX",
       "sources": [
-        "airasia"
+        "airasia",
+        "thaismile"
       ]
     },
     {
       "code": "UTH",
       "sources": [
         "airasia"
+      ]
+    },
+    {
+      "code": "BKK",
+      "sources": [
+        "thaismile"
       ]
     }
   ],
@@ -798,6 +842,12 @@
       "sources": [
         "airasia"
       ]
+    },
+    {
+      "code": "BKK",
+      "sources": [
+        "thaismile"
+      ]
     }
   ],
   "ST1": [
@@ -855,6 +905,12 @@
         "airasia",
         "lionairthai"
       ]
+    },
+    {
+      "code": "BKK",
+      "sources": [
+        "thaismile"
+      ]
     }
   ],
   "UTH": [
@@ -882,6 +938,12 @@
       "code": "HKT",
       "sources": [
         "airasia"
+      ]
+    },
+    {
+      "code": "BKK",
+      "sources": [
+        "thaismile"
       ]
     }
   ],
@@ -963,6 +1025,18 @@
       "sources": [
         "nokair"
       ]
+    },
+    {
+      "code": "BKK",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "DSP",
+      "sources": [
+        "thaismile"
+      ]
     }
   ],
   "TA0": [
@@ -994,6 +1068,12 @@
       "code": "DMK",
       "sources": [
         "airasia"
+      ]
+    },
+    {
+      "code": "BKK",
+      "sources": [
+        "thaismile"
       ]
     }
   ],
@@ -1164,6 +1244,100 @@
       "code": "DMK",
       "sources": [
         "airasia"
+      ]
+    }
+  ],
+  "BKK": [
+    {
+      "code": "CEI",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "CNX",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "HDY",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "HKT",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "KBV",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "KKC",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "MFM",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "NAW",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "UBP",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "UPH",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "URT",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "USM",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "UTH",
+      "sources": [
+        "thaismile"
+      ]
+    }
+  ],
+  "UPH": [
+    {
+      "code": "BKK",
+      "sources": [
+        "thaismile"
+      ]
+    },
+    {
+      "code": "DSP",
+      "sources": [
+        "thaismile"
       ]
     }
   ]

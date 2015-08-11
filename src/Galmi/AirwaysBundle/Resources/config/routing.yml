@@ -8,4 +8,4 @@ search:
     origin: "[A-Z0-9]{3}"
     destination: "[A-Z0-9]{3}"
     departureDate: "\d{4}-\d{2}-\d{2}"
-    sourceId: "airasia|lionairthai|nokair"
+    sourceId: "airasia|lionairthai|nokair|thaismile"

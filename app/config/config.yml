@@ -84,3 +84,4 @@ galmi_airways:
         airasia: "https://booking.airasia.com/Flight/Select"
         nokair: "http://www.nokair.com/nokconnext/Services/AvailabilityServices.aspx?outbound=true"
         lionairthai: "http://search.lionairthai.com/mobile/Search/SearchFlight"
+        thaismile: "https://booking.thaismileair.com/Flight/InternalSelect"

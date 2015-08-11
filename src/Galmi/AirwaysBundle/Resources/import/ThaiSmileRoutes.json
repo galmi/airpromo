@@ -1,0 +1,128 @@
+[
+  {
+    "code": "DMK",
+    "macs": {},
+    "markets": [
+      "CNX",
+      "HKT",
+      "KKC"
+    ],
+    "value": "Bangkok - Don Mueang"
+  },
+  {
+    "code": "BKK",
+    "macs": {},
+    "markets": [
+      "CEI",
+      "CNX",
+      "HDY",
+      "HKT",
+      "KBV",
+      "KKC",
+      "MFM",
+      "NAW",
+      "UBP",
+      "UPH",
+      "URT",
+      "USM",
+      "UTH"
+    ],
+    "value": "Bangkok - Suvarnabhumi"
+  },
+  {
+    "code": "CEI",
+    "macs": {},
+    "markets": [
+      "BKK",
+      "MFM"
+    ],
+    "value": "Chiang Rai"
+  },
+  {
+    "code": "CNX",
+    "macs": {},
+    "markets": [
+      "BKK",
+      "DMK",
+      "HKT"
+    ],
+    "value": "Chiang Mai"
+  },
+  {
+    "code": "HDY",
+    "macs": {},
+    "markets": [
+      "BKK"
+    ],
+    "value": "Hat Yai"
+  },
+  {
+    "code": "HKT",
+    "macs": {},
+    "markets": [
+      "BKK",
+      "CNX",
+      "DMK"
+    ],
+    "value": "Phuket"
+  },
+  {
+    "code": "KKC",
+    "macs": {},
+    "markets": [
+      "BKK",
+      "DMK"
+    ],
+    "value": "Khon Kaen"
+  },
+  {
+    "code": "UBP",
+    "macs": {},
+    "markets": [
+      "BKK"
+    ],
+    "value": "Ubon Ratchathani"
+  },
+  {
+    "code": "URT",
+    "macs": {},
+    "markets": [
+      "BKK"
+    ],
+    "value": "Surat Thani"
+  },
+  {
+    "code": "UTH",
+    "macs": {},
+    "markets": [
+      "BKK"
+    ],
+    "value": "Udon Thani"
+  },
+  {
+    "code": "NAW",
+    "macs": {},
+    "markets": [
+      "BKK"
+    ],
+    "value": "Narathiwat"
+  },
+  {
+    "code": "USM",
+    "macs": {},
+    "markets": [
+      "BKK",
+      "DSP"
+    ],
+    "value": "Koh Samui"
+  },
+  {
+    "code": "UPH",
+    "macs": {},
+    "markets": [
+      "BKK",
+      "DSP"
+    ],
+    "value": "Koh Phangan"
+  }
+]
