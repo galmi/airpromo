@@ -153,6 +153,7 @@ $(document).ready(function () {
                 row['destination_name'] = Router.airports[row.destination].name;
                 var div = $(rowTemplate.apply(row)).hide();
                 this.initBookSubmit(div, row);
+                this.initHotelLink(div, Router.airports[row.destination].city_id);
                 this.results.append(div);
                 div.fadeIn('slow');
             }
@@ -162,6 +163,15 @@ $(document).ready(function () {
                 $('html, body').animate({
                     scrollTop: this.loader.offset().top
                 }, 'slow');
+            }
+        },
+        initHotelLink: function($div, id) {
+            var hotelUrl = 'http://hotellook.com/search/?searchType=city&searchId={city_id}&marker=44648';
+            if (LOCALE == 'th') {
+                hotelUrl = 'http://th.hotellook.com/search/?searchType=city&searchId={city_id}&marker=44648';
+            }
+            if (id) {
+                $div.find('a.hotel').attr('href', hotelUrl.apply({city_id: id})).removeClass('hide');
             }
         },
         initBookSubmit: function($div, submitData) {

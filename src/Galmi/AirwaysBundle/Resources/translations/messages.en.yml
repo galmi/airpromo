@@ -10,6 +10,7 @@ txt:
   departure_date: 'Departure date'
   find: 'Find'
   book_now: 'BOOK NOW'
+  book_hotel: 'FIND HOTEL'
   THB: 'THB'
 airports:
     1AA: 'Samui (Lipa Noi Pier)'

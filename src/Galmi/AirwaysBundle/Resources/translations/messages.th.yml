@@ -9,8 +9,9 @@ txt:
   destination: ปลายทาง
   departure_date: วันออกเดินทาง
   find: ค้นหา
-  THB: บาท
   book_now: จองตอนนี้
+  book_hotel: หาโรงแรม
+  THB: บาท
 airports:
     1AA: 'สมุย (ท่าเรือลิปะน้อย)'
     1AB: 'พงัน (ท่าเรือท้องศาลา)'
