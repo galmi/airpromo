@@ -5,6 +5,7 @@ $(document).ready(function () {
     var Router = {
         airports: [],
         routes: [],
+        links: [],
         originEl: null,
         destinationEl: null,
         searchForm: $("#searchForm"),
@@ -53,34 +54,77 @@ $(document).ready(function () {
                 $.each(data, function (_, kv) {
                     dataObj[kv.name] = kv.value;
                 });
-                var i;
-                var routeOrigin = this.routes[dataObj['origin']];
-                var routeDestination = null;
+                var i, k;
+                var routeOrigin = $.extend({}, this.routes[dataObj['origin']]);
+                var routeDestination = [];
                 for (i in routeOrigin) {
                     if (routeOrigin[i].code == dataObj['destination']) {
-                        routeDestination = routeOrigin[i];
+                        //routeOrigin[i]['origin'] = dataObj['origin'];
+                        routeDestination.push($.extend({}, routeOrigin[i], {
+                            origin: dataObj['origin']
+                        }));
                         break;
                     }
                 }
+                var linkedAirportsOrigin = this.links[dataObj['origin']];
+                if (linkedAirportsOrigin) {
+                    for (i in linkedAirportsOrigin) {
+                        var routeLinkedOrigin = $.extend({}, this.routes[linkedAirportsOrigin[i]]);
+                        for (var k in routeLinkedOrigin) {
+                            if (routeLinkedOrigin[k].code == dataObj['destination']) {
+                                //routeLinkedOrigin[k]['origin'] = linkedAirportsOrigin[i];
+                                routeDestination.push($.extend({}, routeLinkedOrigin[k], {
+                                    origin: linkedAirportsOrigin[i]
+                                }));
+                                break;
+                            }
+                        }
+                    }
+                }
 
+                var linkedAirportsDestination = this.links[dataObj['destination']];
+                if (linkedAirportsDestination) {
+                    for (i in linkedAirportsDestination) {
+                        var routeLinkedDestination = $.extend({}, this.routes[linkedAirportsDestination[i]]);
+                        for (k in routeLinkedDestination) {
+                            if (routeLinkedDestination[k].code == dataObj['origin']) {
+                                //routeLinkedDestination[k]['origin'] = dataObj['origin'];
+                                //routeLinkedDestination[k]['code'] = linkedAirportsDestination[i];
+                                routeDestination.push($.extend({}, routeLinkedDestination[k], {
+                                    origin: dataObj['origin'],
+                                    code: linkedAirportsDestination[i]
+                                }));
+                                break;
+                            }
+                        }
+                    }
+                }
                 this.clearResults();
                 try {
                     ga('send', 'event', 'search', dataObj.origin + dataObj.destination, dataObj.departureDate);
                 } catch (e) {
                 }
-                var urlTpl = "//{sourceId}." + document.location.host + document.location.pathname + "search/origin/{origin}/destination/{destination}/departureDate/{departureDate}";
-                if (routeDestination && routeDestination.sources.length > 0) {
-                    this.loaderShow(true);
-                    this.adsenseShow();
-                    $('html, body').animate({
-                        scrollTop: this.loader.offset().top
-                    }, 'slow');
-                    for (i in routeDestination.sources) {
-                        this.requests++;
-                        dataObj['sourceId'] = routeDestination.sources[i];
-                        $.get(urlTpl.apply(dataObj), function (data) {
-                            this.updateResults(data);
-                        }.bind(this)).always(this.cameResponse);
+                var pathname = document.location.pathname;
+                if (pathname.slice(-1) != '/') {
+                    pathname += '/';
+                }
+                var urlTpl = "//{sourceId}." + document.location.host + pathname + "search/origin/{origin}/destination/{destination}/departureDate/{departureDate}";
+                for (i in routeDestination) {
+                    if (routeDestination[i].sources.length > 0) {
+                        this.loaderShow(true);
+                        this.adsenseShow();
+                        $('html, body').animate({
+                            scrollTop: this.loader.offset().top
+                        }, 'slow');
+                        for (k in routeDestination[i].sources) {
+                            this.requests++;
+                            dataObj['origin'] = routeDestination[i]['origin'];
+                            dataObj['destination'] = routeDestination[i]['code'];
+                            dataObj['sourceId'] = routeDestination[i].sources[k];
+                            $.get(urlTpl.apply(dataObj), function (data) {
+                                this.updateResults(data);
+                            }.bind(this)).always(this.cameResponse);
+                        }
                     }
                 }
             }, this));
@@ -178,6 +222,9 @@ $(document).ready(function () {
     $.getJSON('/bundles/galmiairways/js/routes.json', function (data) {
         Router.routes = data;
         Router.updateDestination();
+    });
+    $.getJSON('/bundles/galmiairways/js/links.json', function (data) {
+        Router.links = data;
     });
 
     //Изменяем iframe при смене размера окна

@@ -535,12 +535,6 @@
       "sources": [
         "thaismile"
       ]
-    },
-    {
-      "code": "MFM",
-      "sources": [
-        "thaismile"
-      ]
     }
   ],
   "CH1": [
@@ -1031,12 +1025,6 @@
       "sources": [
         "thaismile"
       ]
-    },
-    {
-      "code": "DSP",
-      "sources": [
-        "thaismile"
-      ]
     }
   ],
   "TA0": [
@@ -1285,12 +1273,6 @@
       ]
     },
     {
-      "code": "MFM",
-      "sources": [
-        "thaismile"
-      ]
-    },
-    {
       "code": "NAW",
       "sources": [
         "thaismile"
@@ -1330,12 +1312,6 @@
   "UPH": [
     {
       "code": "BKK",
-      "sources": [
-        "thaismile"
-      ]
-    },
-    {
-      "code": "DSP",
       "sources": [
         "thaismile"
       ]

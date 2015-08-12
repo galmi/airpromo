@@ -74,7 +74,7 @@ class AirAsia extends ParserAbstract
                 $result = new Result();
                 $result->setDepartureTime($node->filter('.avail-table-detail-table')->eq(0)->filter('.avail-table-detail .text-center div')->eq(0)->text());
                 $result->setOrigin($params->getOrigin());
-                $result->setArrivalTime($node->filter('.avail-table-detail-table')->eq(0)->filter('.avail-table-detail')->eq(1)->filter('.text-center div')->eq(0)->text());
+                $result->setArrivalTime($node->filter('.avail-table-detail-table tr')->last()->filter('.avail-table-detail')->eq(1)->filter('.text-center div')->eq(0)->text());
                 $result->setDestination($params->getDestination());
                 $promoNode = $node->filter('.LF .promo-discount-amount');
                 $price = null;
