@@ -171,7 +171,14 @@ $(document).ready(function () {
                 hotelUrl = 'http://th.hotellook.com/search/?searchType=city&searchId={city_id}&marker=44648';
             }
             if (id) {
-                $div.find('a.hotel').attr('href', hotelUrl.apply({city_id: id})).removeClass('hide');
+                var a = $div.find('a.hotel');
+                a.attr('href', hotelUrl.apply({city_id: id})).removeClass('hide');
+                a.on('click', function() {
+                    try {
+                        ga('send', 'event', 'bookhotel', submitData.destination);
+                    } catch (e) {
+                    }
+                });
             }
         },
         initBookSubmit: function($div, submitData) {
