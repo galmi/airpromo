@@ -175,7 +175,7 @@ $(document).ready(function () {
                 a.attr('href', hotelUrl.apply({city_id: id})).removeClass('hide');
                 a.on('click', function() {
                     try {
-                        ga('send', 'event', 'bookhotel', submitData.destination);
+                        ga('send', 'event', 'bookhotel', id);
                     } catch (e) {
                     }
                 });
