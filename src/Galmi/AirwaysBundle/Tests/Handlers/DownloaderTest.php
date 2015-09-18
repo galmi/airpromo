@@ -9,9 +9,8 @@
 namespace Galmi\AirwaysBundle\Tests\Handlers;
 
 use Galmi\AirwaysBundle\Handlers\Downloader;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DownloaderTest extends WebTestCase
+class DownloaderTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @coverage Galmi\AirwaysBundle\Handlers\Downloader::get

@@ -11,11 +11,9 @@ namespace Galmi\AirwaysBundle\Tests\Handlers\Parsers;
 use Galmi\AirwaysBundle\Handlers\Downloader;
 use Galmi\AirwaysBundle\Handlers\Sources\LionAirThai;
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
-use Galmi\AirwaysBundle\Handlers\Parsers\Result;
 use ReflectionClass;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class LionAirThaiSourceTest extends WebTestCase
+class LionAirThaiSourceTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetParamsAsDataOneWay()
     {

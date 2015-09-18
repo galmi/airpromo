@@ -8,14 +8,11 @@
 
 namespace Galmi\AirwaysBundle\Tests\Handlers\Parsers;
 
-use Galmi\AirwaysBundle\Handlers\Downloader;
 use Galmi\AirwaysBundle\Handlers\Parsers\ThaiSmile;
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
 use Galmi\AirwaysBundle\Handlers\Parsers\Result;
-use ReflectionClass;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class ThaiSmileTest extends WebTestCase
+class ThaiSmileTest extends \PHPUnit_Framework_TestCase
 {
     public function testParseResults()
     {

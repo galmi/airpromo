@@ -8,14 +8,11 @@
 
 namespace Galmi\AirwaysBundle\Tests\Handlers\Parsers;
 
-use Galmi\AirwaysBundle\Handlers\Downloader;
 use Galmi\AirwaysBundle\Handlers\Parsers\LionAirThai;
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
 use Galmi\AirwaysBundle\Handlers\Parsers\Result;
-use ReflectionClass;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class LionAirThaiTest extends WebTestCase
+class LionAirThaiTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testParseResults()

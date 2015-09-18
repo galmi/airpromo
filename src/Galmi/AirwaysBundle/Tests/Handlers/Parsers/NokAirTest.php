@@ -8,14 +8,11 @@
 
 namespace Galmi\AirwaysBundle\Tests\Handlers\Parsers;
 
-use Galmi\AirwaysBundle\Handlers\Downloader;
 use Galmi\AirwaysBundle\Handlers\Parsers\NokAir;
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
 use Galmi\AirwaysBundle\Handlers\Parsers\Result;
-use ReflectionClass;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class NokAirTest extends WebTestCase
+class NokAirTest extends \PHPUnit_Framework_TestCase
 {
     public function testParseResults()
     {
