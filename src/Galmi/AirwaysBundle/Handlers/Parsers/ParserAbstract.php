@@ -8,10 +8,7 @@
 
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 
-
-use Galmi\AirwaysBundle\Handlers\Downloader;
-
-abstract class ParserAbstract
+abstract class ParserAbstract implements ParserInterface
 {
     /**
      * @param string $html

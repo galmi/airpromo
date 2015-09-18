@@ -14,7 +14,7 @@ use Galmi\AirwaysBundle\Handlers\Parsers\Params;
 use Galmi\AirwaysBundle\Handlers\Parsers\ParserAbstract;
 use Galmi\AirwaysBundle\Handlers\Parsers\Result;
 
-abstract class SourceAbstract
+abstract class SourceAbstract implements SourceInterface
 {
     /** @var string */
     protected $uri;
