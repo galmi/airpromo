@@ -9,8 +9,7 @@
 namespace Galmi\AirwaysBundle\Handlers;
 
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
-use Galmi\AirwaysBundle\Handlers\Parsers\ParserAbstract;
-use Galmi\AirwaysBundle\Handlers\Parsers\Result;
+use Galmi\AirwaysBundle\Handlers\Sources\SourceAbstract;
 
 class Searcher
 {
@@ -18,15 +17,15 @@ class Searcher
     private $sources = [];
 
     /**
-     * @param ParserAbstract $parser
+     * @param SourceAbstract $source
      */
-    public function addSource(ParserAbstract $parser)
+    public function addSource(SourceAbstract $source)
     {
-        $this->sources[$parser->getSourceName()] = $parser;
+        $this->sources[$source->getSourceName()] = $source;
     }
 
     /**
-     * @return ParserAbstract[]
+     * @return SourceAbstract[]
      */
     public function getSources()
     {

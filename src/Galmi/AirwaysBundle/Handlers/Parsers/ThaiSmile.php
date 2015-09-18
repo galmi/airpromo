@@ -8,35 +8,15 @@
 
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 
-
 use Symfony\Component\DomCrawler\Crawler;
 
 class ThaiSmile extends ParserAbstract
 {
-    /*
-     * https://booking.thaismileair.com/Flight/InternalSelect?o1=DMK&d1=CNX&dd1=2015-08-25&ADT=1&s=true&mon=true
-     */
-    /** @var string */
-    protected $uri = 'https://booking.thaismileair.com/Flight/InternalSelect';
-    /** @var string */
-    protected $sourceName = 'thaismile';
-
-    /**
-     * @param Params $params
-     * @return Result[]
-     */
-    public function getResults(Params $params)
-    {
-        $uri = $this->uri . '?' . $this->getParamsString($params);
-        $html = $this->downloader->get($uri);
-        return $this->parseResults($html, $params);
-    }
-
     /**
      * @param string $html
      * @return Result[]
      */
-    protected function parseResults($html, Params $params)
+    public function parse($html, Params $params)
     {
         $results = [];
         $crawler = new Crawler($html);
@@ -63,13 +43,13 @@ class ThaiSmile extends ParserAbstract
                 $price = number_format($price, 2, '.', '');
                 $result = new Result();
                 $result
-                    ->setDepartureTime(trim($node->filter('.departure .time')->first()->text()))
+                    ->setDepartureTime(trim($node->filter('.flight-detail-default .flight-time')->first()->text()))
                     ->setOrigin($params->getOrigin())
-                    ->setArrivalTime(trim($node->filter('.arrival .time')->first()->text()))
+                    ->setArrivalTime(trim($node->filter('.flight-detail-default .flight-time')->last()->text()))
                     ->setDestination($params->getDestination())
                     ->setPrice($price)
                     ->setDate($params->getDepartDate())
-                    ->setSourceSubmit($this->getSourceData($params))
+                    ->setSourceSubmit($this->getRedirectData($params))
                     ->setSource('thaismile');
 
                 $results[] = $result;
@@ -81,10 +61,10 @@ class ThaiSmile extends ParserAbstract
      * @param Params $params
      * @return array
      */
-    protected function getSourceData(Params $params)
+    protected function getRedirectData(Params $params)
     {
         return [
-            'uri' => $this->uri,
+            'uri' => 'https://booking.thaismileair.com/Flight/InternalSelect',
             'method' => 'GET',
             'data' => [
                 'dd1' => $params->getDepartDate()->format('Y-m-d'),
@@ -96,26 +76,4 @@ class ThaiSmile extends ParserAbstract
             ]
         ];
     }
-
-    /**
-     * @param Params $params
-     * @return string
-     */
-    private function getParamsString(Params $params)
-    {
-        $data = [
-            'o1' => $params->getOrigin(),
-            'd1' => $params->getDestination(),
-            'dd1' => $params->getDepartDate() ? $params->getDepartDate()->format('Y-m-d') : null,
-            'ADT' => 1,
-            's' => 'true',
-            'mon' => 'true'
-        ];
-        if (!empty($params->getReturnDate())) {
-            $data['dd2'] = $params->getReturnDate()->format('Y-m-d');
-            $data['r'] = 'true';
-        }
-        return http_build_query($data);
-    }
-
 }

@@ -8,85 +8,11 @@
 
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 
-
-use Galmi\AirwaysBundle\Handlers\Downloader;
 use Symfony\Component\DomCrawler\Crawler;
 
 class NokAir extends ParserAbstract
 {
-
-    /*
-     * formData
-     * 
-     * {
-     *  "RequestType":"NewFlight",
-     *  "SegmentSellKey":"",
-     *  "Criteria":{
-     *      "From":"DMK",
-     *      "To":"URT",
-     *      "RoundTrip":"1",
-     *      "Adult":1,
-     *      "Child":0,
-     *      "Infant":null,
-     *      "Departure":"2015/08/19",
-     *      "Arrival":"2015/08/19",
-     *      "ProductClass":"",
-     *      "FareClass":"",
-     *      "BookingNo":"",
-     *      "IsBulk":0,
-     *      "PromotionCode":""
-     *  },
-     *  "Currency":"THB"
-     * }
-     */
-
-    /** @var string */
-    protected $uri = 'http://www.nokair.com/nokconnext/Services/AvailabilityServices.aspx?outbound=true';
-    /** @var string */
-    protected $sourceName = 'nokair';
-
-    /**
-     * @param Params $params
-     * @return Result[]
-     */
-    public function getResults(Params $params)
-    {
-        $uri = $this->uri;
-        $data = $this->getParamsData($params);
-        $html = $this->downloader->submit($uri, $data);
-        return $this->parseResults($html, $params);
-    }
-
-    /**
-     * @param $params
-     * @return string
-     */
-    private function getParamsData(Params $params)
-    {
-        $data = [
-            "RequestType" => "NewFlight",
-            "SegmentSellKey" => "",
-            "Criteria" => [
-                "From" => $params->getOrigin(),
-                "To" => $params->getDestination(),
-                "RoundTrip" => $params->getReturnDate() ? "1" : "0",
-                "Adult" => "1",
-                "Child" => "0",
-                "Infant" => "0",
-                "Departure" => $params->getDepartDate() ? $params->getDepartDate()->format('Y/m/d') : "",
-                "Arrival" => $params->getReturnDate() ? $params->getReturnDate()->format('Y/m/d') : "",
-                "ProductClass" => "",
-                "FareClass" => "",
-                "BookingNo" => "",
-                "IsBulk" => "0",
-                "PromotionCode" => ""
-            ],
-            "Currency" => "THB"
-        ];
-        return json_encode($data, JSON_UNESCAPED_SLASHES);
-    }
-
-    protected function parseResults($html, Params $params)
+    public function parse($html, Params $params)
     {
         $results = [];
         $crawler = new Crawler($html);
@@ -103,7 +29,7 @@ class NokAir extends ParserAbstract
                         ->setDepartureTime($node->filter('td')->eq(0)->text())
                         ->setArrivalTime($node->filter('td')->eq(1)->text())
                         ->setDate($params->getDepartDate())
-                        ->setSourceSubmit($this->getSourceData($params))
+                        ->setSourceSubmit($this->getRedirectData($params))
                         ->setSource('nokair');
                     $pricePromo = filter_var($node->filter('td')->eq(6)->text(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                     if ($pricePromo) {
@@ -131,22 +57,22 @@ class NokAir extends ParserAbstract
      * @param Params $params
      * @return array
      */
-    protected function getSourceData(Params $params)
+    protected function getRedirectData(Params $params)
     {
         return [
             'uri' => 'http://www.nokair.com/nokconnext/aspx/Availability.aspx',
             'method' => 'POST',
             'data' => [
-                'lstChild'          => 0,
-                'boardDate'         => $params->getDepartDate()->format('m/d/Y'), //'08/03/2015',
-                'ddlCurrency'       => 'THB',
-                'returnDate'        => $params->getDepartDate()->format('m/d/Y'),
-                'lstArrival'        => $params->getDestination(),
+                'lstChild' => 0,
+                'boardDate' => $params->getDepartDate()->format('m/d/Y'), //'08/03/2015',
+                'ddlCurrency' => 'THB',
+                'returnDate' => $params->getDepartDate()->format('m/d/Y'),
+                'lstArrival' => $params->getDestination(),
                 'lstDepartureMonth' => $params->getDepartDate()->format('m/Y'), //'08/2015',
-                'lstDepartureDate'  => $params->getDepartDate()->format('d'),
-                'lstAdult'          => 1,
-                'lstDeparture'      => $params->getOrigin(),
-                'roundtripFlag'     => '0'
+                'lstDepartureDate' => $params->getDepartDate()->format('d'),
+                'lstAdult' => 1,
+                'lstDeparture' => $params->getOrigin(),
+                'roundtripFlag' => '0'
             ]
         ];
     }

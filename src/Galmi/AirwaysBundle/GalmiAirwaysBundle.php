@@ -2,7 +2,7 @@
 
 namespace Galmi\AirwaysBundle;
 
-use Galmi\AirwaysBundle\DependencyInjection\Compiler\Parser;
+use Galmi\AirwaysBundle\DependencyInjection\Compiler\Source;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -12,6 +12,6 @@ class GalmiAirwaysBundle extends Bundle
     {
         parent::build($container);
 
-        $container->addCompilerPass(new Parser());
+        $container->addCompilerPass(new Source());
     }
 }

@@ -8,67 +8,17 @@
 
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 
-
 use Symfony\Component\DomCrawler\Crawler;
 
 class LionAirThai extends ParserAbstract
 {
-
-    /*
-     * pjourney:2
-     * depCity:DMK
-     * arrCity:U*RT
-     * dpd1:20/08/2015
-     * dpd2:30/08/2015
-     * sAdult:1
-     * sChild:0
-     * sInfant:0
-     * currency:THB
-     * cTabID:35
-     */
-    /** @var string */
-    protected $uri = 'http://search.lionairthai.com/mobile/Search/SearchFlight';
-    /** @var string */
-    protected $sourceName = 'lionairthai';
-
-    /**
-     * @param Params $params
-     * @return Result[]
-     */
-    public function getResults(Params $params)
-    {
-        $data = $this->getParamsData($params);
-        $html = $this->downloader->submit($this->uri, $data);
-        return $this->parseResults($html, $params);
-    }
-
-    /**
-     * @param Params $params
-     * @return array
-     */
-    private function getParamsData(Params $params)
-    {
-        $data = [
-            'pjourney' => 2,
-            'depCity' => $params->getOrigin(),
-            'arrCity' => $params->getDestination(),
-            'dpd1' => $params->getDepartDate()->format('d/m/Y'),//'20/08/2015',
-            'dpd2' => $params->getReturnDate() ? $params->getReturnDate()->format('d/m/Y') : '',//'30/08/2015',
-            'sAdult' => 1,
-            'sChild' => 0,
-            'sInfant' => 0,
-            'currency' => 'THB',
-            'cTabID' => 35
-        ];
-        return $data;
-    }
 
     /**
      * @param $html
      * @param Params $params
      * @return Params[]
      */
-    protected function parseResults($html, Params $params)
+    public function parse($html, Params $params)
     {
         $results = [];
         $crawler = new Crawler($html);
@@ -86,7 +36,7 @@ class LionAirThai extends ParserAbstract
                         ->setDestination(trim($node->filter('.date_time .double')->eq(1)->filter('label')->text()))
                         ->setArrivalTime($node->filter('.date_time .double')->eq(1)->filter('large')->text())
                         ->setDate($params->getDepartDate())
-                        ->setSourceSubmit($this->getSourceData($params))
+                        ->setSourceSubmit($this->getRedirectData($params))
                         ->setSource('lionairthai');
                     $results[] = $result;
                 }
@@ -98,7 +48,7 @@ class LionAirThai extends ParserAbstract
      * @param Params $params
      * @return array
      */
-    protected function getSourceData(Params $params)
+    protected function getRedirectData(Params $params)
     {
         /**
          * https://search.lionairthai.com/default.aspx?depCity=DMK&depDate=23%2F08%2F2015&aid=207&St=fa&Jtype=1&infant1=0&currency=THB&arrCity=URT&adult1=1&child1=0

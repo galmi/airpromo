@@ -10,27 +10,39 @@ services:
 
     galmi_airways.parser.airasia:
         class: Galmi\AirwaysBundle\Handlers\Parsers\AirAsia
-        arguments: [@galmi_airways.handlers.downloader, %galmi_airways.sources.airasia%]
-        tags:
-            - {name: "galmi_airways.parser"}
 
     galmi_airways.parser.nokair:
         class: Galmi\AirwaysBundle\Handlers\Parsers\NokAir
-        arguments: [@galmi_airways.handlers.downloader, %galmi_airways.sources.nokair%]
-        tags:
-            - {name: "galmi_airways.parser"}
 
     galmi_airways.parser.lionairthai:
         class: Galmi\AirwaysBundle\Handlers\Parsers\LionAirThai
-        arguments: [@galmi_airways.handlers.downloader, %galmi_airways.sources.lionairthai%]
-        tags:
-            - {name: "galmi_airways.parser"}
 
     galmi_airways.parser.thaismile:
         class: Galmi\AirwaysBundle\Handlers\Parsers\ThaiSmile
-        arguments: [@galmi_airways.handlers.downloader, %galmi_airways.sources.thaismile%]
+
+    galmi_airways.source.airasia:
+        class: Galmi\AirwaysBundle\Handlers\Sources\AirAsia
+        arguments: [@galmi_airways.handlers.downloader, @galmi_airways.parser.airasia, %galmi_airways.sources.airasia%]
         tags:
-            - {name: "galmi_airways.parser"}
+            - {name: "galmi_airways.source"}
+
+    galmi_airways.source.nokair:
+        class: Galmi\AirwaysBundle\Handlers\Sources\NokAir
+        arguments: [@galmi_airways.handlers.downloader, @galmi_airways.parser.nokair, %galmi_airways.sources.nokair%]
+        tags:
+            - {name: "galmi_airways.source"}
+
+    galmi_airways.sources.lionairthai:
+        class: Galmi\AirwaysBundle\Handlers\Sources\LionAirThai
+        arguments: [@galmi_airways.handlers.downloader, @galmi_airways.parser.lionairthai, %galmi_airways.sources.lionairthai%]
+        tags:
+            - {name: "galmi_airways.source"}
+
+    galmi_airways.sources.thaismile:
+        class: Galmi\AirwaysBundle\Handlers\Sources\ThaiSmile
+        arguments: [@galmi_airways.handlers.downloader, @galmi_airways.parser.thaismile, %galmi_airways.sources.thaismile%]
+        tags:
+            - {name: "galmi_airways.source"}
 
     galmi_airways.locale_listener:
         class: Galmi\AirwaysBundle\EventListener\LocaleListener

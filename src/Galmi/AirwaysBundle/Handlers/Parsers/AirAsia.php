@@ -12,55 +12,11 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class AirAsia extends ParserAbstract
 {
-
-    /*
-     * Request URL:https://booking.airasia.com/Flight/InternalSelect?o1=DMK&d1=URT&dd1=2015-08-18&dd2=2015-08-18&r=true&ADT=1&CHD=0&inl=0&s=true&mon=true&cc=THB
-     */
-    /** @var string */
-    protected $uri = 'https://booking.airasia.com/Flight/Select';
-    /** @var string */
-    protected $sourceName = 'airasia';
-
-    /**
-     * @param Params $params
-     * @return Result[]
-     */
-    public function getResults(Params $params)
-    {
-        $uri = $this->uri . '?' . $this->getParamsString($params);
-        $html = $this->downloader->get($uri);
-        return $this->parseResults($html, $params);
-    }
-
-    /**
-     * @param Params $params
-     * @return string
-     */
-    private function getParamsString(Params $params)
-    {
-        $data = [
-            'o1' => $params->getOrigin(),
-            'd1' => $params->getDestination(),
-            'dd1' => $params->getDepartDate() ? $params->getDepartDate()->format('Y-m-d') : null,
-            'ADT' => 1,
-            'CHD' => 0,
-            'inl' => 0,
-            's' => 'true',
-            'mon' => 'true',
-            'cc' => 'THB'
-        ];
-        if (!empty($params->getReturnDate())) {
-            $data['dd2'] = $params->getReturnDate()->format('Y-m-d');
-            $data['r'] = 'true';
-        }
-        return http_build_query($data);
-    }
-
     /**
      * @param $html
      * @return Result[]
      */
-    protected function parseResults($html, Params $params)
+    public function parse($html, Params $params)
     {
         $results = [];
         $crawler = new Crawler($html);
@@ -95,7 +51,7 @@ class AirAsia extends ParserAbstract
                 $price = filter_var($price, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $result->setPrice($price);
                 $result->setDate($params->getDepartDate());
-                $result->setSourceSubmit($this->getSourceData($params));
+                $result->setSourceSubmit($this->getRedirectData($params));
                 $result->setSource('airasia');
 
                 $results[] = $result;
@@ -107,7 +63,7 @@ class AirAsia extends ParserAbstract
      * @param Params $params
      * @return array
      */
-    protected function getSourceData(Params $params)
+    protected function getRedirectData(Params $params)
     {
         /**
          * http://booking.airasia.com/Flight/InternalSelect?dd1=2015-08-23&culture=en-GB&ADT=1&inl=0&o1=DMK&CHD=0&r=false&s=true&d1=URT&mon=true&marker=kxe20w15g

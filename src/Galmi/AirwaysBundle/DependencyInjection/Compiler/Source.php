@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-class Parser implements CompilerPassInterface
+class Source implements CompilerPassInterface
 {
 
     /**
@@ -34,7 +34,7 @@ class Parser implements CompilerPassInterface
         );
 
         $taggedServices = $container->findTaggedServiceIds(
-            'galmi_airways.parser'
+            'galmi_airways.source'
         );
         foreach ($taggedServices as $id => $tags) {
             $definition->addMethodCall(
