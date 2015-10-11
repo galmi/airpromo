@@ -7,7 +7,7 @@ build:
     tests:
         override:
             -
-                command: phpunit --coverage-clover=/tmp/airpromo.xml
+                command: phpunit --coverage-clover=/tmp/airpromo.xml -c app
                 coverage:
                     file: /tmp/airpromo.xml
                     format: php-clover

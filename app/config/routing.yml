@@ -3,6 +3,7 @@ galmi_airways:
 
 homepage:
   path: /
+  methods: ["GET"]
   host: "%base_domain%"
   defaults:
     _controller: AppBundle:Default:index
