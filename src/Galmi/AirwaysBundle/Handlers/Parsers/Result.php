@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ildar
- * Date: 21.07.15
- * Time: 9:47
- */
+     * Created by PhpStorm.
+     * User: ildar
+     * Date: 21.07.15
+     * Time: 9:47
+     */
 
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 
@@ -40,8 +40,8 @@ class Result
      */
     public function __toString()
     {
-        return $this->getDate()->format('d.m.Y').' '.$this->getDepartureTime().' '.$this->getOrigin(
-        ).' '.$this->getArrivalTime().' '.$this->getDestination().' '.$this->getPrice();
+        return $this->getDate()->format('d.m.Y') . ' ' . $this->getDepartureTime() . ' ' . $this->getOrigin(
+        ) . ' ' . $this->getArrivalTime() . ' ' . $this->getDestination() . ' ' . $this->getPrice();
     }
 
     /**

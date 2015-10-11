@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ildar
- * Date: 11.08.15
- * Time: 12:00
- */
+     * Created by PhpStorm.
+     * User: ildar
+     * Date: 11.08.15
+     * Time: 12:00
+     */
 
 namespace Galmi\AirwaysBundle\Handlers\Sources;
 
@@ -28,7 +28,7 @@ class ThaiSmile extends SourceAbstract
      */
     public function getResults(Params $params)
     {
-        $uri = $this->uri.'?'.$this->getParamsString($params);
+        $uri = $this->uri . '?' . $this->getParamsString($params);
         $html = $this->downloader->get($uri);
 
         return $this->parseResults($html, $params);

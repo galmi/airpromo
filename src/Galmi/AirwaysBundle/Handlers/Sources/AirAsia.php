@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ildar
- * Date: 21.07.15
- * Time: 9:45
- */
+     * Created by PhpStorm.
+     * User: ildar
+     * Date: 21.07.15
+     * Time: 9:45
+     */
 
 namespace Galmi\AirwaysBundle\Handlers\Sources;
 
@@ -27,7 +27,7 @@ class AirAsia extends SourceAbstract
      */
     public function getResults(Params $params)
     {
-        $uri = $this->uri.'?'.$this->getParamsString($params);
+        $uri = $this->uri . '?' . $this->getParamsString($params);
         $html = $this->downloader->get($uri);
 
         return $this->parseResults($html, $params);

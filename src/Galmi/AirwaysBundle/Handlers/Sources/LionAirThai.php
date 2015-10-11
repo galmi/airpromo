@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ildar
- * Date: 29.07.15
- * Time: 0:26
- */
+     * Created by PhpStorm.
+     * User: ildar
+     * Date: 29.07.15
+     * Time: 0:26
+     */
 
 namespace Galmi\AirwaysBundle\Handlers\Sources;
 
@@ -54,8 +54,8 @@ class LionAirThai extends SourceAbstract
             'pjourney' => 2,
             'depCity' => $params->getOrigin(),
             'arrCity' => $params->getDestination(),
-            'dpd1' => $params->getDepartDate()->format('d/m/Y'),//'20/08/2015',
-            'dpd2' => $params->getReturnDate() ? $params->getReturnDate()->format('d/m/Y') : '',//'30/08/2015',
+            'dpd1' => $params->getDepartDate()->format('d/m/Y'), //'20/08/2015',
+            'dpd2' => $params->getReturnDate() ? $params->getReturnDate()->format('d/m/Y') : '', //'30/08/2015',
             'sAdult' => 1,
             'sChild' => 0,
             'sInfant' => 0,

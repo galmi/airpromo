@@ -36,8 +36,8 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('locales')
                     ->isRequired()
                     ->beforeNormalization()
-                        ->ifTrue(function ($v) { return !is_array($v); })
-                        ->then(function ($v) { return array($v); })
+                        ->ifTrue(function($v) { return !is_array($v); })
+                        ->then(function($v) { return array($v); })
                     ->end()
                     ->prototype('scalar')
             ->end();

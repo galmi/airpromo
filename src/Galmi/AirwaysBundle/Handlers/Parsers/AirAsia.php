@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ildar
- * Date: 21.07.15
- * Time: 9:45
- */
+     * Created by PhpStorm.
+     * User: ildar
+     * Date: 21.07.15
+     * Time: 9:45
+     */
 
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 
@@ -26,7 +26,7 @@ class AirAsia extends ParserAbstract
         $departure
             ->filter('.fare-light-row, .fare-dark-row')
             ->reduce(
-                function (Crawler $node) use (&$results, $params) {
+                function(Crawler $node) use (&$results, $params) {
                     if ($node->filter('.avail-table-detail-table')->count() == 0) {
                         return;
                     }
@@ -77,7 +77,7 @@ class AirAsia extends ParserAbstract
 
     /**
      * @param Params $params
-     * @return array
+     * @return string
      */
     protected function getRedirectData(Params $params)
     {

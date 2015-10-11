@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ildar
- * Date: 11.08.15
- * Time: 12:00
- */
+     * Created by PhpStorm.
+     * User: ildar
+     * Date: 11.08.15
+     * Time: 12:00
+     */
 
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 
@@ -26,10 +26,10 @@ class ThaiSmile extends ParserAbstract
         $departure
             ->filter('.flight-list')
             ->reduce(
-                function (Crawler $node) use (&$results, $params) {
+                function(Crawler $node) use (&$results, $params) {
                     $price = 0;
                     $node->filter('.fare')->reduce(
-                        function (Crawler $node) use (&$price) {
+                        function(Crawler $node) use (&$price) {
                             if ($price > 0) {
                                 return;
                             }
@@ -65,7 +65,7 @@ class ThaiSmile extends ParserAbstract
 
     /**
      * @param Params $params
-     * @return array
+     * @return string
      */
     protected function getRedirectData(Params $params)
     {
