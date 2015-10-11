@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ildar
- * Date: 21.07.15
- * Time: 2:19
- */
+     * Created by PhpStorm.
+     * User: ildar
+     * Date: 21.07.15
+     * Time: 2:19
+     */
 
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 

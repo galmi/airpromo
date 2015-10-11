@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ildar
- * Date: 27.07.15
- * Time: 12:03
- */
+     * Created by PhpStorm.
+     * User: ildar
+     * Date: 27.07.15
+     * Time: 12:03
+     */
 
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 
@@ -21,11 +21,11 @@ class NokAir extends ParserAbstract
     {
         $results = [];
         $crawler = new Crawler($html);
-        $tableDeparture = $crawler->filter('#Outbound_'.$params->getDepartDate()->format('d-m-Y'));
+        $tableDeparture = $crawler->filter('#Outbound_' . $params->getDepartDate()->format('d-m-Y'));
         $tableDeparture
             ->filter('.Text_body tr')
             ->reduce(
-                function (Crawler $node) use (&$results, $params) {
+                function(Crawler $node) use (&$results, $params) {
                     $row0 = $node->filter('td')->eq(0)->text();
                     if (preg_match("/[0-9]{2}:[0-9]{2}/", $row0)) {
                         $result = new Result();
@@ -75,7 +75,7 @@ class NokAir extends ParserAbstract
 
     /**
      * @param Params $params
-     * @return array
+     * @return string
      */
     protected function getRedirectData(Params $params)
     {

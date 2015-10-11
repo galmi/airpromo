@@ -29,7 +29,7 @@ class DefaultController extends Controller
         }
         $response = new JsonResponse($results);
         $response->headers->add(array(
-            'Access-Control-Allow-Origin' => $request->isSecure()?'https':'http' . '://' . $this->getParameter('base_domain')
+            'Access-Control-Allow-Origin' => $request->isSecure() ? 'https' : 'http' . '://' . $this->getParameter('base_domain')
         ));
 
         return $response;

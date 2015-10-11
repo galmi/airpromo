@@ -43,6 +43,6 @@ class AirAsiaAirportsCommand extends ContainerAwareCommand
                 'name' => $result['airports'][$airport['code']]
             ];
         }
-        file_put_contents($importPath.'out.json', json_encode($airports, JSON_UNESCAPED_UNICODE));
+        file_put_contents($importPath . 'out.json', json_encode($airports, JSON_UNESCAPED_UNICODE));
     }
 }

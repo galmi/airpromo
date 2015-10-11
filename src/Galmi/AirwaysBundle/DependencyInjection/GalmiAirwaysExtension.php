@@ -23,14 +23,14 @@ class GalmiAirwaysExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         foreach ($config['sources'] as $pkey => $pval) {
-            $name = 'galmi_airways.sources.'.$pkey;
+            $name = 'galmi_airways.sources.' . $pkey;
             $container->setParameter($name, $pval);
         }
         if (isset($config['locales'])) {
             $name = 'galmi_airways.locales';
             $container->setParameter($name, $config['locales']);
         }
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
     }
 }

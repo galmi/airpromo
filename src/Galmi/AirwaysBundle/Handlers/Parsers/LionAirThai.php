@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ildar
- * Date: 29.07.15
- * Time: 0:26
- */
+     * Created by PhpStorm.
+     * User: ildar
+     * Date: 29.07.15
+     * Time: 0:26
+     */
 
 namespace Galmi\AirwaysBundle\Handlers\Parsers;
 
@@ -26,7 +26,7 @@ class LionAirThai extends ParserAbstract
         $table
             ->filter('.flight_list')
             ->reduce(
-                function (Crawler $node) use (&$results, $params) {
+                function(Crawler $node) use (&$results, $params) {
                     $price = filter_var(
                         $node->filter('.f_price label')->text(),
                         FILTER_SANITIZE_NUMBER_FLOAT,
@@ -53,7 +53,7 @@ class LionAirThai extends ParserAbstract
 
     /**
      * @param Params $params
-     * @return array
+     * @return string
      */
     protected function getRedirectData(Params $params)
     {
