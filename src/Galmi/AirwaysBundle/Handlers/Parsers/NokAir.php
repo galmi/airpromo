@@ -12,6 +12,11 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class NokAir extends ParserAbstract
 {
+    /**
+     * @param string $html
+     * @param Params $params
+     * @return array
+     */
     public function parse($html, Params $params)
     {
         $results = [];

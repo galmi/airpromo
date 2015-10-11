@@ -12,6 +12,7 @@ abstract class ParserAbstract implements ParserInterface
 {
     /**
      * @param string $html
+     * @param Params $params
      * @return Result[]
      */
     abstract public function parse($html, Params $params);

@@ -35,6 +35,9 @@ class Result
     /** @var  string */
     private $source;
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return $this->getDate()->format('d.m.Y').' '.$this->getDepartureTime().' '.$this->getOrigin(
@@ -155,6 +158,9 @@ class Result
         return $this;
     }
 
+    /**
+     * @return array
+     */
     public function toArray()
     {
         return [

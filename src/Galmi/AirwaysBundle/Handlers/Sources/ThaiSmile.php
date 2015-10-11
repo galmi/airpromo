@@ -11,7 +11,6 @@ namespace Galmi\AirwaysBundle\Handlers\Sources;
 
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
 use Galmi\AirwaysBundle\Handlers\Parsers\Result;
-use Galmi\AirwaysBundle\Handlers\Sources\SourceAbstract;
 
 class ThaiSmile extends SourceAbstract
 {
@@ -49,7 +48,8 @@ class ThaiSmile extends SourceAbstract
             's' => 'true',
             'mon' => 'true',
         ];
-        if (!empty($params->getReturnDate())) {
+        $dateTime = $params->getReturnDate();
+        if (!empty($dateTime)) {
             $data['dd2'] = $params->getReturnDate()->format('Y-m-d');
             $data['r'] = 'true';
         }

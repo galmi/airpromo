@@ -14,6 +14,7 @@ class ThaiSmile extends ParserAbstract
 {
     /**
      * @param string $html
+     * @param Params $params
      * @return Result[]
      */
     public function parse($html, Params $params)

@@ -13,7 +13,8 @@ use Symfony\Component\DomCrawler\Crawler;
 class AirAsia extends ParserAbstract
 {
     /**
-     * @param $html
+     * @param string $html
+     * @param Params $params
      * @return Result[]
      */
     public function parse($html, Params $params)

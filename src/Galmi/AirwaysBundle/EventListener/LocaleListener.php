@@ -20,9 +20,24 @@ class LocaleListener implements EventSubscriberInterface
     /** @var array */
     private $locales;
 
+    /**
+     * @param array $locales
+     */
     public function __construct($locales = ['en'])
     {
         $this->locales = $locales;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getSubscribedEvents()
+    {
+        return array(
+            // must be registered before the default Locale listener
+            KernelEvents::REQUEST => array(array('onKernelRequest', 17)),
+            KernelEvents::RESPONSE => array(array('onKernelResponse', 17)),
+        );
     }
 
     /**
@@ -51,17 +66,5 @@ class LocaleListener implements EventSubscriberInterface
         if ($requestLocale != $request->cookies->get('locale')) {
             $response->headers->setCookie(new Cookie('locale', $request->getLocale(), 0, '/', null, false, false));
         }
-    }
-
-    /**
-     * @return array
-     */
-    public static function getSubscribedEvents()
-    {
-        return array(
-            // must be registered before the default Locale listener
-            KernelEvents::REQUEST => array(array('onKernelRequest', 17)),
-            KernelEvents::RESPONSE => array(array('onKernelResponse', 17))
-        );
     }
 }

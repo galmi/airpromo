@@ -27,6 +27,7 @@ abstract class SourceAbstract implements SourceInterface
 
     /**
      * @param $downloader
+     * @param ParserAbstract $parser
      * @param null|string $uri
      */
     public function __construct($downloader, ParserAbstract $parser, $uri = null)
@@ -54,7 +55,8 @@ abstract class SourceAbstract implements SourceInterface
 
     /**
      * @param string $html
-     * @return Result[]
+     * @param Params $params
+     * @return \Galmi\AirwaysBundle\Handlers\Parsers\Result[]
      */
     protected function parseResults($html, Params $params)
     {
