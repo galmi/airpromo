@@ -17,13 +17,17 @@ use Symfony\Component\HttpKernel\KernelEvents;
 
 class LocaleListener implements EventSubscriberInterface
 {
-    private $locale;
+    /** @var array */
+    private $locales;
 
-    public function __construct($locale = 'en')
+    public function __construct($locales = ['en'])
     {
-        $this->locale = $locale;
+        $this->locales = $locales;
     }
 
+    /**
+     * @param GetResponseEvent $event
+     */
     public function onKernelRequest(GetResponseEvent $event)
     {
         $request = $event->getRequest();
@@ -32,11 +36,13 @@ class LocaleListener implements EventSubscriberInterface
             $request->setLocale($locale);
         } else {
             // if no explicit locale has been set on this request, use one from the session
-            //todo вынести в конфиг
-            $request->setLocale($request->getPreferredLanguage(array('en', 'th')));
+            $request->setLocale($request->getPreferredLanguage($this->locales));
         }
     }
 
+    /**
+     * @param FilterResponseEvent $event
+     */
     public function onKernelResponse(FilterResponseEvent $event)
     {
         $response = $event->getResponse();
@@ -47,6 +53,9 @@ class LocaleListener implements EventSubscriberInterface
         }
     }
 
+    /**
+     * @return array
+     */
     public static function getSubscribedEvents()
     {
         return array(

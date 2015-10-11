@@ -10,7 +10,6 @@ namespace Galmi\AirwaysBundle\Handlers\Sources;
 
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
 use Galmi\AirwaysBundle\Handlers\Parsers\Result;
-use Symfony\Component\DomCrawler\Crawler;
 
 class AirAsia extends SourceAbstract
 {

@@ -12,7 +12,6 @@ namespace Galmi\AirwaysBundle\Handlers\Sources;
 use Galmi\AirwaysBundle\Handlers\Parsers\Params;
 use Galmi\AirwaysBundle\Handlers\Parsers\Result;
 use Galmi\AirwaysBundle\Handlers\Sources\SourceAbstract;
-use Symfony\Component\DomCrawler\Crawler;
 
 class ThaiSmile extends SourceAbstract
 {

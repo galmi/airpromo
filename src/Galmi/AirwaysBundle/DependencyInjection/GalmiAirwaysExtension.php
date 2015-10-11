@@ -22,15 +22,15 @@ class GalmiAirwaysExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        foreach ($config as $key => $row) {
-            if (count($row) > 1) {
-                foreach ($row as $pkey => $pval) {
-                    $name = 'galmi_airways.' . $key . '.' . $pkey;
-                    $container->setParameter($name, $pval);
-                }
-            }
+        foreach ($config['sources'] as $pkey => $pval) {
+            $name = 'galmi_airways.sources.'.$pkey;
+            $container->setParameter($name, $pval);
         }
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        if (isset($config['locales'])) {
+            $name = 'galmi_airways.locales';
+            $container->setParameter($name, $config['locales']);
+        }
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
 }

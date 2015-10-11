@@ -30,7 +30,16 @@ class Configuration implements ConfigurationInterface
                     ->requiresAtLeastOneElement()
                     ->useAttributeAsKey('name')
                     ->prototype('scalar')
-//                ->end()
+                ->end();
+        $rootNode
+            ->children()
+                ->arrayNode('locales')
+                    ->isRequired()
+                    ->beforeNormalization()
+                        ->ifTrue(function ($v) { return !is_array($v); })
+                        ->then(function ($v) { return array($v); })
+                    ->end()
+                    ->prototype('scalar')
             ->end();
         return $treeBuilder;
     }

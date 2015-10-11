@@ -46,6 +46,6 @@ services:
 
     galmi_airways.locale_listener:
         class: Galmi\AirwaysBundle\EventListener\LocaleListener
-        arguments: ["%kernel.default_locale%"]
+        arguments: [%galmi_airways.locales%]
         tags:
             - { name: kernel.event_subscriber }
