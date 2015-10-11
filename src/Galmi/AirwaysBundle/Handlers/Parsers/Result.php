@@ -35,6 +35,12 @@ class Result
     /** @var  string */
     private $source;
 
+    public function __toString()
+    {
+        return $this->getDate()->format('d.m.Y').' '.$this->getDepartureTime().' '.$this->getOrigin(
+        ).' '.$this->getArrivalTime().' '.$this->getDestination().' '.$this->getPrice();
+    }
+
     /**
      * @return \DateTime
      */
@@ -45,46 +51,11 @@ class Result
 
     /**
      * @param \DateTime $date
+     * @return $this
      */
     public function setDate($date)
     {
         $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getOrigin()
-    {
-        return $this->origin;
-    }
-
-    /**
-     * @param string $origin
-     */
-    public function setOrigin($origin)
-    {
-        $this->origin = $origin;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDestination()
-    {
-        return $this->destination;
-    }
-
-    /**
-     * @param string $destination
-     */
-    public function setDestination($destination)
-    {
-        $this->destination = $destination;
 
         return $this;
     }
@@ -99,10 +70,30 @@ class Result
 
     /**
      * @param string $departureTime
+     * @return $this
      */
     public function setDepartureTime($departureTime)
     {
         $this->departureTime = $departureTime;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOrigin()
+    {
+        return $this->origin;
+    }
+
+    /**
+     * @param string $origin
+     * @return $this
+     */
+    public function setOrigin($origin)
+    {
+        $this->origin = $origin;
 
         return $this;
     }
@@ -117,10 +108,30 @@ class Result
 
     /**
      * @param string $arrivalTime
+     * @return $this
      */
     public function setArrivalTime($arrivalTime)
     {
         $this->arrivalTime = $arrivalTime;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDestination()
+    {
+        return $this->destination;
+    }
+
+    /**
+     * @param string $destination
+     * @return $this
+     */
+    public function setDestination($destination)
+    {
+        $this->destination = $destination;
 
         return $this;
     }
@@ -135,34 +146,11 @@ class Result
 
     /**
      * @param string $price
+     * @return $this
      */
     public function setPrice($price)
     {
         $this->price = $price;
-
-        return $this;
-    }
-
-    public function __toString()
-    {
-        return $this->getDate()->format('d.m.Y').' '.$this->getDepartureTime().' '.$this->getOrigin(
-        ).' '.$this->getArrivalTime().' '.$this->getDestination().' '.$this->getPrice();
-    }
-
-    /**
-     * @return string
-     */
-    public function getSourceSubmit()
-    {
-        return $this->sourceSubmit;
-    }
-
-    /**
-     * @param string $sourceSubmit
-     */
-    public function setSourceSubmit($sourceSubmit)
-    {
-        $this->sourceSubmit = $sourceSubmit;
 
         return $this;
     }
@@ -184,6 +172,25 @@ class Result
     /**
      * @return string
      */
+    public function getSourceSubmit()
+    {
+        return $this->sourceSubmit;
+    }
+
+    /**
+     * @param string $sourceSubmit
+     * @return $this
+     */
+    public function setSourceSubmit($sourceSubmit)
+    {
+        $this->sourceSubmit = $sourceSubmit;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
     public function getSource()
     {
         return $this->source;
@@ -191,6 +198,7 @@ class Result
 
     /**
      * @param string $source
+     * @return $this
      */
     public function setSource($source)
     {

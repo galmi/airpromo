@@ -30,6 +30,7 @@ class Params
 
     /**
      * @param string $origin
+     * @return $this
      */
     public function setOrigin($origin)
     {
@@ -48,6 +49,7 @@ class Params
 
     /**
      * @param string $destination
+     * @return $this
      */
     public function setDestination($destination)
     {
@@ -66,6 +68,7 @@ class Params
 
     /**
      * @param \DateTime $departDate
+     * @return $this
      */
     public function setDepartDate($departDate)
     {
@@ -84,6 +87,7 @@ class Params
 
     /**
      * @param \DateTime $returnDate
+     * @return $this
      */
     public function setReturnDate($returnDate)
     {
