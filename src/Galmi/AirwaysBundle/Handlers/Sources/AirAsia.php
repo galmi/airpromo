@@ -50,7 +50,8 @@ class AirAsia extends SourceAbstract
             'mon' => 'true',
             'cc' => 'THB',
         ];
-        if (!empty($params->getReturnDate())) {
+        $dateTime = $params->getReturnDate();
+        if (!empty($dateTime)) {
             $data['dd2'] = $params->getReturnDate()->format('Y-m-d');
             $data['r'] = 'true';
         }
