@@ -54,6 +54,7 @@ class NokAir extends SourceAbstract
         $uri = $this->uri;
         $data = $this->getParamsData($params);
         $html = $this->downloader->submit($uri, $data);
+
         return $this->parseResults($html, $params);
     }
 
@@ -79,11 +80,11 @@ class NokAir extends SourceAbstract
                 "FareClass" => "",
                 "BookingNo" => "",
                 "IsBulk" => "0",
-                "PromotionCode" => ""
+                "PromotionCode" => "",
             ],
-            "Currency" => "THB"
+            "Currency" => "THB",
         ];
+
         return json_encode($data, JSON_UNESCAPED_SLASHES);
     }
-
 }

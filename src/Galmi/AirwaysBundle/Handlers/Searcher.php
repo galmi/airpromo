@@ -41,8 +41,7 @@ class Searcher
     {
         $results = [];
         $sources = $this->getSources();
-        if (!is_null($sourceId) && isset($sources[$sourceId]))
-        {
+        if (!is_null($sourceId) && isset($sources[$sourceId])) {
             $results = $sources[$sourceId]->getResults($params);
         } else {
             foreach ($sources as $source) {
@@ -50,6 +49,7 @@ class Searcher
                 $results = array_merge($results, $result);
             }
         }
+
         return $results;
     }
 }

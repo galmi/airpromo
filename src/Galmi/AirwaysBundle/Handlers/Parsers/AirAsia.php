@@ -24,38 +24,53 @@ class AirAsia extends ParserAbstract
         $departure = $table_avail_tables->first();
         $departure
             ->filter('.fare-light-row, .fare-dark-row')
-            ->reduce(function (Crawler $node) use (&$results, $params) {
-                if ($node->filter('.avail-table-detail-table')->count() == 0)
-                    return;
-                $result = new Result();
-                $result->setDepartureTime($node->filter('.avail-table-detail-table')->eq(0)->filter('.avail-table-detail .text-center div')->eq(0)->text());
-                $result->setOrigin($params->getOrigin());
-                $result->setArrivalTime($node->filter('.avail-table-detail-table tr')->last()->filter('.avail-table-detail')->eq(1)->filter('.text-center div')->eq(0)->text());
-                $result->setDestination($params->getDestination());
-                $promoNode = $node->filter('.LF .promo-discount-amount');
-                $price = null;
-                if ($promoNode->count())
-                    $price = trim($promoNode->text());
-                if (empty($price)) {
-                    $lfNode = $node->filter('.LF .avail-fare-price:not(.discount)');
-                    if ($lfNode->count()) {
-                        $price = $lfNode->text();
-                    } else {
-                        $pfNode = $node->filter('.PF .avail-fare-price:not(.discount)');
-                        if ($pfNode->count())
-                            $price = $pfNode->text();
+            ->reduce(
+                function (Crawler $node) use (&$results, $params) {
+                    if ($node->filter('.avail-table-detail-table')->count() == 0) {
+                        return;
                     }
-                }
-                if (empty($price))
-                    return;
-                $price = filter_var($price, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-                $result->setPrice($price);
-                $result->setDate($params->getDepartDate());
-                $result->setSourceSubmit($this->getRedirectData($params));
-                $result->setSource('airasia');
+                    $result = new Result();
+                    $result->setDepartureTime(
+                        $node->filter('.avail-table-detail-table')->eq(0)->filter(
+                            '.avail-table-detail .text-center div'
+                        )->eq(0)->text()
+                    );
+                    $result->setOrigin($params->getOrigin());
+                    $result->setArrivalTime(
+                        $node->filter('.avail-table-detail-table tr')->last()->filter('.avail-table-detail')->eq(
+                            1
+                        )->filter('.text-center div')->eq(0)->text()
+                    );
+                    $result->setDestination($params->getDestination());
+                    $promoNode = $node->filter('.LF .promo-discount-amount');
+                    $price = null;
+                    if ($promoNode->count()) {
+                        $price = trim($promoNode->text());
+                    }
+                    if (empty($price)) {
+                        $lfNode = $node->filter('.LF .avail-fare-price:not(.discount)');
+                        if ($lfNode->count()) {
+                            $price = $lfNode->text();
+                        } else {
+                            $pfNode = $node->filter('.PF .avail-fare-price:not(.discount)');
+                            if ($pfNode->count()) {
+                                $price = $pfNode->text();
+                            }
+                        }
+                    }
+                    if (empty($price)) {
+                        return;
+                    }
+                    $price = filter_var($price, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+                    $result->setPrice($price);
+                    $result->setDate($params->getDepartDate());
+                    $result->setSourceSubmit($this->getRedirectData($params));
+                    $result->setSource('airasia');
 
-                $results[] = $result;
-            });
+                    $results[] = $result;
+                }
+            );
+
         return $results;
     }
 
@@ -81,8 +96,8 @@ class AirAsia extends ParserAbstract
                 'r' => 'false',
                 's' => 'true',
                 'd1' => $params->getDestination(),
-                'mon' => 'true'
-            ]
+                'mon' => 'true',
+            ],
         ];
     }
 }

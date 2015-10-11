@@ -41,6 +41,7 @@ class LionAirThai extends SourceAbstract
     {
         $data = $this->getParamsData($params);
         $html = $this->downloader->submit($this->uri, $data);
+
         return $this->parseResults($html, $params);
     }
 
@@ -60,8 +61,9 @@ class LionAirThai extends SourceAbstract
             'sChild' => 0,
             'sInfant' => 0,
             'currency' => 'THB',
-            'cTabID' => 35
+            'cTabID' => 35,
         ];
+
         return $data;
     }
 }

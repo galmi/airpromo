@@ -30,8 +30,9 @@ class ThaiSmile extends SourceAbstract
      */
     public function getResults(Params $params)
     {
-        $uri = $this->uri . '?' . $this->getParamsString($params);
+        $uri = $this->uri.'?'.$this->getParamsString($params);
         $html = $this->downloader->get($uri);
+
         return $this->parseResults($html, $params);
     }
 
@@ -47,13 +48,13 @@ class ThaiSmile extends SourceAbstract
             'dd1' => $params->getDepartDate() ? $params->getDepartDate()->format('Y-m-d') : null,
             'ADT' => 1,
             's' => 'true',
-            'mon' => 'true'
+            'mon' => 'true',
         ];
         if (!empty($params->getReturnDate())) {
             $data['dd2'] = $params->getReturnDate()->format('Y-m-d');
             $data['r'] = 'true';
         }
+
         return http_build_query($data);
     }
-
 }

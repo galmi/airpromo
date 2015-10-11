@@ -16,40 +16,55 @@ class NokAir extends ParserAbstract
     {
         $results = [];
         $crawler = new Crawler($html);
-        $tableDeparture = $crawler->filter('#Outbound_' . $params->getDepartDate()->format('d-m-Y'));
+        $tableDeparture = $crawler->filter('#Outbound_'.$params->getDepartDate()->format('d-m-Y'));
         $tableDeparture
             ->filter('.Text_body tr')
-            ->reduce(function (Crawler $node) use (&$results, $params) {
-                $row0 = $node->filter('td')->eq(0)->text();
-                if (preg_match("/[0-9]{2}:[0-9]{2}/", $row0)) {
-                    $result = new Result();
-                    $result
-                        ->setOrigin($params->getOrigin())
-                        ->setDestination($params->getDestination())
-                        ->setDepartureTime($node->filter('td')->eq(0)->text())
-                        ->setArrivalTime($node->filter('td')->eq(1)->text())
-                        ->setDate($params->getDepartDate())
-                        ->setSourceSubmit($this->getRedirectData($params))
-                        ->setSource('nokair');
-                    $pricePromo = filter_var($node->filter('td')->eq(6)->text(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-                    if ($pricePromo) {
-                        $result->setPrice($pricePromo);
-                    } else {
-                        $priceEco = filter_var($node->filter('td')->eq(7)->text(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-                        if ($priceEco) {
-                            $result->setPrice($priceEco);
+            ->reduce(
+                function (Crawler $node) use (&$results, $params) {
+                    $row0 = $node->filter('td')->eq(0)->text();
+                    if (preg_match("/[0-9]{2}:[0-9]{2}/", $row0)) {
+                        $result = new Result();
+                        $result
+                            ->setOrigin($params->getOrigin())
+                            ->setDestination($params->getDestination())
+                            ->setDepartureTime($node->filter('td')->eq(0)->text())
+                            ->setArrivalTime($node->filter('td')->eq(1)->text())
+                            ->setDate($params->getDepartDate())
+                            ->setSourceSubmit($this->getRedirectData($params))
+                            ->setSource('nokair');
+                        $pricePromo = filter_var(
+                            $node->filter('td')->eq(6)->text(),
+                            FILTER_SANITIZE_NUMBER_FLOAT,
+                            FILTER_FLAG_ALLOW_FRACTION
+                        );
+                        if ($pricePromo) {
+                            $result->setPrice($pricePromo);
                         } else {
-                            $priceFlexi = filter_var($node->filter('td')->eq(8)->text(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-                            if ($priceFlexi) {
-                                $result->setPrice($priceFlexi);
+                            $priceEco = filter_var(
+                                $node->filter('td')->eq(7)->text(),
+                                FILTER_SANITIZE_NUMBER_FLOAT,
+                                FILTER_FLAG_ALLOW_FRACTION
+                            );
+                            if ($priceEco) {
+                                $result->setPrice($priceEco);
                             } else {
-                                return;
+                                $priceFlexi = filter_var(
+                                    $node->filter('td')->eq(8)->text(),
+                                    FILTER_SANITIZE_NUMBER_FLOAT,
+                                    FILTER_FLAG_ALLOW_FRACTION
+                                );
+                                if ($priceFlexi) {
+                                    $result->setPrice($priceFlexi);
+                                } else {
+                                    return;
+                                }
                             }
                         }
+                        $results[] = $result;
                     }
-                    $results[] = $result;
                 }
-            });
+            );
+
         return $results;
     }
 
@@ -72,8 +87,8 @@ class NokAir extends ParserAbstract
                 'lstDepartureDate' => $params->getDepartDate()->format('d'),
                 'lstAdult' => 1,
                 'lstDeparture' => $params->getOrigin(),
-                'roundtripFlag' => '0'
-            ]
+                'roundtripFlag' => '0',
+            ],
         ];
     }
 }

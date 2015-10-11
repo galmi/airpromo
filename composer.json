@@ -1,5 +1,6 @@
 {
     "name": "ildar/airpromo",
+    "description": "Search and compare domestic air fares in Thailand",
     "license": "proprietary",
     "type": "project",
     "autoload": {

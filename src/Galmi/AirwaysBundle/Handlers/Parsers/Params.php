@@ -34,6 +34,7 @@ class Params
     public function setOrigin($origin)
     {
         $this->origin = $origin;
+
         return $this;
     }
 
@@ -51,6 +52,7 @@ class Params
     public function setDestination($destination)
     {
         $this->destination = $destination;
+
         return $this;
     }
 
@@ -68,6 +70,7 @@ class Params
     public function setDepartDate($departDate)
     {
         $this->departDate = $departDate;
+
         return $this;
     }
 
@@ -85,6 +88,7 @@ class Params
     public function setReturnDate($returnDate)
     {
         $this->returnDate = $returnDate;
+
         return $this;
     }
 }

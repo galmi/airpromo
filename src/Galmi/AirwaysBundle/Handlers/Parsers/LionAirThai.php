@@ -25,22 +25,29 @@ class LionAirThai extends ParserAbstract
         $table = $crawler->filter('#divOBEconomy');
         $table
             ->filter('.flight_list')
-            ->reduce(function (Crawler $node) use (&$results, $params) {
-                $price = filter_var($node->filter('.f_price label')->text(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-                if ($price) {
-                    $result = new Result();
-                    $result
-                        ->setPrice($price)
-                        ->setOrigin(trim($node->filter('.date_time .double')->eq(0)->filter('label')->text()))
-                        ->setDepartureTime($node->filter('.date_time .double')->eq(0)->filter('large')->text())
-                        ->setDestination(trim($node->filter('.date_time .double')->eq(1)->filter('label')->text()))
-                        ->setArrivalTime($node->filter('.date_time .double')->eq(1)->filter('large')->text())
-                        ->setDate($params->getDepartDate())
-                        ->setSourceSubmit($this->getRedirectData($params))
-                        ->setSource('lionairthai');
-                    $results[] = $result;
+            ->reduce(
+                function (Crawler $node) use (&$results, $params) {
+                    $price = filter_var(
+                        $node->filter('.f_price label')->text(),
+                        FILTER_SANITIZE_NUMBER_FLOAT,
+                        FILTER_FLAG_ALLOW_FRACTION
+                    );
+                    if ($price) {
+                        $result = new Result();
+                        $result
+                            ->setPrice($price)
+                            ->setOrigin(trim($node->filter('.date_time .double')->eq(0)->filter('label')->text()))
+                            ->setDepartureTime($node->filter('.date_time .double')->eq(0)->filter('large')->text())
+                            ->setDestination(trim($node->filter('.date_time .double')->eq(1)->filter('label')->text()))
+                            ->setArrivalTime($node->filter('.date_time .double')->eq(1)->filter('large')->text())
+                            ->setDate($params->getDepartDate())
+                            ->setSourceSubmit($this->getRedirectData($params))
+                            ->setSource('lionairthai');
+                        $results[] = $result;
+                    }
                 }
-            });
+            );
+
         return $results;
     }
 
@@ -57,17 +64,17 @@ class LionAirThai extends ParserAbstract
             'uri' => "https://search.lionairthai.com/default.aspx",
             'method' => 'GET',
             'data' => [
-                'depCity'   => $params->getOrigin(),
-                'depDate'   => $params->getDepartDate()->format('d/m/Y'),
-                'aid'       => 207,
-                'St'        => 'fa',
-                'Jtype'     => 1,
-                'infant1'   => 0,
-                'currency'  => 'THB',
-                'arrCity'   => $params->getDestination(),
-                'adult1'    => 1,
-                'child1'    => 0
-            ]
+                'depCity' => $params->getOrigin(),
+                'depDate' => $params->getDepartDate()->format('d/m/Y'),
+                'aid' => 207,
+                'St' => 'fa',
+                'Jtype' => 1,
+                'infant1' => 0,
+                'currency' => 'THB',
+                'arrCity' => $params->getDestination(),
+                'adult1' => 1,
+                'child1' => 0,
+            ],
         ];
     }
 }

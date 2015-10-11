@@ -32,7 +32,7 @@ class Downloader
      */
     public function get($uri)
     {
-        $cookieTmp = tempnam('/tmp','cookie');
+        $cookieTmp = tempnam('/tmp', 'cookie');
         $html = shell_exec("curl -c {$cookieTmp} -L \"$uri\"");
 
         return $html;
@@ -46,7 +46,7 @@ class Downloader
     public function submit($uri, $data)
     {
 //        curl -c /private/tmp/coockie123 --data "pjourney=2&depCity=DMK&arrCity=URT&dpd1=06%2F08%2F2015&dpd2=&sAdult=1&sChild=0&sInfant=0&currency=THB&cTabID=35" -L http://search.lionairthai.com/mobile/Search/SearchFlight
-        $cookieTmp = tempnam('/tmp','cookie');
+        $cookieTmp = tempnam('/tmp', 'cookie');
         if (is_array($data)) {
             $data = http_build_query($data, '', '&');
         }

@@ -28,8 +28,9 @@ class AirAsia extends SourceAbstract
      */
     public function getResults(Params $params)
     {
-        $uri = $this->uri . '?' . $this->getParamsString($params);
+        $uri = $this->uri.'?'.$this->getParamsString($params);
         $html = $this->downloader->get($uri);
+
         return $this->parseResults($html, $params);
     }
 
@@ -48,12 +49,13 @@ class AirAsia extends SourceAbstract
             'inl' => 0,
             's' => 'true',
             'mon' => 'true',
-            'cc' => 'THB'
+            'cc' => 'THB',
         ];
         if (!empty($params->getReturnDate())) {
             $data['dd2'] = $params->getReturnDate()->format('Y-m-d');
             $data['r'] = 'true';
         }
+
         return http_build_query($data);
     }
 }
